@@ -151,19 +151,6 @@
       }
 
 
-      #search {
-        margin: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        font-size: 11px;
-      }
-      #search input {
-        font-size: 11px;
-        margin: 2px;
-      }
-      #search-text {width: 170px}
-
-
       #sidebar ul {
         margin-left: 0;
         padding-left: 0;
@@ -194,39 +181,12 @@
         info.innerHTML = xhr.responseText;
         info.style.display = 'block'
       }
-
-      function prepend() {
-        search = document.getElementById('search-text');
-        text = search.value;
-        search.value = 'site:rubyonrails.org ' + text;
-      }
-
-      window.onload = function() {
-        document.getElementById('search-text').value = '';
-      }
     </script>
   </head>
   <body>
     <div id="page">
       <div id="sidebar">
         <ul id="sidebar-items">
-          <li>
-            <form id="search" action="http://www.google.com/search" method="get" onSubmit="prepend();">
-              <input type="hidden" name="hl" value="en" />
-              <input type="text" id="search-text" name="q" value="site:rubyonrails.org " />
-              <input type="submit" value="Search" /> the Rails site
-            </form>
-          </li>
-
-          <li>
-            <h3>Join the community</h3>
-            <ul class="links">
-              <li><a href="http://www.rubyonrails.org/">Ruby on Rails</a></li>
-              <li><a href="http://weblog.rubyonrails.org/">Official weblog</a></li>
-              <li><a href="http://wiki.rubyonrails.org/">Wiki</a></li>
-            </ul>
-          </li>
-
           <li>
             <h3>Browse the documentation</h3>
             <ul class="links">
