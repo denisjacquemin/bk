@@ -1,0 +1,100 @@
+.fieldset {
+    background: #eee;
+    padding: 10px;
+    border: 1px solid #aaa;
+    margin: 15px 0;
+}
+
+.form .columns .smallcolumn {
+    width: 28%;
+}
+
+.form .columns .largecolumn {
+    width: 68%;
+}
+
+.form .columns .verysmallcolumn {
+    width: 18%;
+}
+
+.form .columns .verylargecolumn {
+    width: 78%;
+}
+
+.form .custform1 .one {
+    width: 33%;
+    float: left;
+}
+
+.form .custform1 .two{
+    width: 30%;
+    float: left;
+}
+
+.form .custform1 .three {
+    width: 30%;
+    float: left;
+}
+
+#quick-search {
+    float:right;
+    width: 300px;
+    
+    font-weight: normal;
+    text-align: right;
+    padding: 0 15px 0 0;
+    margin: 0;
+}
+
+#quick-search label {
+    color:#666666;
+    padding: 0 2px 0 0;
+    font-size: 0.6em;
+    display: inline;
+}
+
+#quick-search input {
+    display: inline;
+    width: 150px;
+    font-size: 0.7em;
+}
+
+#user-navigation li.blank, #user-navigation li a:link.blank, #user-navigation li a:visited.blank {
+  color: #fff;
+  padding: 1px 4px;
+}
+#user-navigation li.blank {
+  padding:5px 10px;
+}
+
+#header {
+    background: #ccc;
+}
+
+.blue-box {
+    border: 1px solid #C0D1EC;
+    background: #F2F5FB;
+    padding: 6px 10px 2px;
+}
+
+.blue-box h2 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Lucida Grande",verdana,arial,helvetica,sans-serif;
+}
+
+.blue {
+    background: #EDF3FE;
+}
+
+.light_label {
+    font-size:12px;
+}
+
+#sidebar .block .top {
+    margin-top: 15px;
+}
+
+.table td.right {
+	text-align: right;
+}
