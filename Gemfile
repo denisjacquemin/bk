@@ -6,6 +6,11 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'web-app-theme', '>= 0.6.2'
+gem 'haml'
+gem 'hpricot'
+gem 'ruby_parser'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'
