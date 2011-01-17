@@ -32,6 +32,8 @@ class CustomersController < ApplicationController
     @customer.build_nationality
     @customer.build_title
 
+    @customer.reference = 'C' + (Customer.all.count + 1).to_s
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @customer }
