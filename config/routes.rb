@@ -1,4 +1,6 @@
 Billit::Application.routes.draw do
+  resources :countries
+
   resources :titles
 
   resources :languages

@@ -26,7 +26,11 @@ Title.create(:name => 'Mademoiselle')
 Title.create(:name => 'Maitre')
 Title.create(:name => 'Docteur')
 
-
+Country.create(:name => 'Belgique', :code => 'be')
+Country.create(:name => 'France', :code => 'fr')
+Country.create(:name => 'Pays-bas', :code => 'nl')
+Country.create(:name => 'Luxembourg', :code => 'lu')
+Country.create(:name => 'Allemagne', :code => 'de')
 
 
 
