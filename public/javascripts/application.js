@@ -1,2 +1,14 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+var quicksearch = null;
+
+document.observe("dom:loaded", function() {
+  
+  // init Quick Search on customers/index
+  if ($('qs-target') != undefined) {
+    quicksearch = new CustomerFilter('qs-target');
+    quicksearch.filter($F('quicksearch'));
+  }
+  
+  // put the focus on input with a .focus selector
+  $$('.focus').invoke('select');
+  
+});

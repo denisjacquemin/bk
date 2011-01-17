@@ -46,6 +46,7 @@ fr:
       office_phone: Telephone professionnel
       cellphone: GSM
       fax: Fax
+      phone: Telephone
       idnum: Numero de carte d'identitee
       jobdescription: Profession
       comment: Commentaires
