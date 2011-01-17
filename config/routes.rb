@@ -1,4 +1,6 @@
 Billit::Application.routes.draw do
+  resources :sexes
+
   resources :addresses
 
   resources :customers

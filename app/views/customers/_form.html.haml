@@ -15,8 +15,8 @@
       = f.label :sex_id, t("assur.customer.gender"), :class => :label
       = f.collection_select(:sex_id, Sex.all, :id, :name)
     .three
-      = f.label :civilstatus_id, t("assur.customer.civilstatus"), :class => :label
-      = f.collection_select(:civilstatus_id, Civilstatus.all, :id, :name)
+      -#= f.label :civilstatus_id, t("assur.customer.civilstatus"), :class => :label
+      -#= f.collection_select(:civilstatus_id, Civilstatus.all, :id, :name)
 .group
   .columns.wat-cf.custform1 
     .one
