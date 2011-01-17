@@ -60,37 +60,13 @@
   .group
     .columns.wat-cf 
       .column.left
-        = f.label :primary_email, t("assur.customer.primary_email"), :class => :label
-        = f.text_field :primary_email, :class => 'text_field'
+        = f.label :email, t("assur.customer.email"), :class => :label
+        = f.text_field :email, :class => 'text_field'
         %span.description Ex: george.dupont@example.com
       .column.right
-        = f.label :secondary_email, t("assur.customer.secondary_email"), :class => :label
-        = f.text_field :secondary_email, :class => 'text_field'
-        %span.description Ex: george.dupont@boulot.be     
-  .group
-    .columns.wat-cf 
-      .column.left
-        = f.label :private_phone, t("assur.customer.private_phone"), :class => :label
-        = f.text_field :private_phone, :class => 'text_field'
-      .column.right
-        = f.label :office_phone, t("assur.customer.office_phone"), :class => :label
-        = f.text_field :office_phone, :class => 'text_field'
-  .group
-    .columns.wat-cf 
-      .column.left
-        = f.label :cellphone, t("assur.customer.cellphone"), :class => :label
-        = f.text_field :cellphone, :class => 'text_field'
-      .column.right
-        = f.label :fax, t("assur.customer.fax"), :class => :label
-        = f.text_field :fax, :class => 'text_field'
-.group
-  = f.label :idnum, t("assur.customer.idnum"), :class => :label
-  = f.text_field :idnum, :class => 'text_field'
-  %span.description Ex: 78.04.12-245.56
-.group
-  = f.label :jobdescription, t("assur.customer.jobdescription"), :class => :label
-  = f.text_field :jobdescription, :class => 'text_field'
-  %span.description Ex: a simple text
+        = f.label :phone, t("assur.customer.phone"), :class => :label
+        = f.text_field :phone, :class => 'text_field'
+        %span.description Ex: 0123 23 45 67
 .group
   = f.label :comment, t("assur.customer.comment"), :class => :label
   = f.text_area :comment, :class => 'text_area'

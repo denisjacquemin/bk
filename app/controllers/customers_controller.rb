@@ -25,6 +25,13 @@ class CustomersController < ApplicationController
   # GET /customers/new.xml
   def new
     @customer = Customer.new
+    @customer.build_address
+    @customer.address.build_country
+    @customer.build_sex
+    @customer.build_civilstatus
+    @customer.build_language
+    @customer.build_nationality
+    @customer.build_title
 
     respond_to do |format|
       format.html # new.html.erb
