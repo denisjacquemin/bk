@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  reference: MyString
+  effective_date: 2011-01-17
+  status_id: 1
+  amount_tvac: 1
+  customer_id: 1
+
+two:
+  name: MyString
+  reference: MyString
+  effective_date: 2011-01-17
+  status_id: 1
+  amount_tvac: 1
+  customer_id: 1

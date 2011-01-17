@@ -58,6 +58,12 @@ fr:
       currentpassword: Mot de passe courant
       successfully_created: Client cree avec succes
       successfully_updated: Client mis a jour avec succes
+    bill:
+        Description: Description
+        Customer_name: Nom de client
+        Reference: Reference
+        Amount_TVAC: Montant TVAC
+        Bills: Factures
     folder:
         folder: dossier
         Folder: Dossier
