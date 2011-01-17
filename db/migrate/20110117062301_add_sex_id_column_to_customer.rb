@@ -1,4 +1,4 @@
-class AddSexIdColumnToCustomerTable < ActiveRecord::Migration
+class AddSexIdColumnToCustomer < ActiveRecord::Migration
   def self.up
     add_column :customers, :sex_id, :integer
   end
