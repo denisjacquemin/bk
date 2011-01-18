@@ -25,6 +25,8 @@ class BillsController < ApplicationController
   # GET /bills/new.xml
   def new
     @bill = Bill.new
+    
+    @bill.reference = 'B' + (Bill.all.count + 1).to_s
 
     respond_to do |format|
       format.html # new.html.erb

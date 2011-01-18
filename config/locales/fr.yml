@@ -68,6 +68,7 @@ fr:
         bill: facture
         Effective_date: Date de facturation
         New_bill: Nouvelle facture
+        Customer: Client
     folder:
         folder: dossier
         Folder: Dossier
