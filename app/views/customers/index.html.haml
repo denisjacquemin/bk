@@ -8,7 +8,7 @@
       = t("assur.general.listing")
       = t("assur.customer.customers")
       #quick-search.form 
-        = label_tag :quicksearch, t("assur.customer.quick_search")
+        = label_tag :quicksearch, t("assur.general.quick_search")
         = text_field_tag :quicksearch, '', :class => 'text_field focus', :onKeyUp => 'quicksearch.filter(this.value);'
     .inner
       %table.table{:id => 'qs-target'}
