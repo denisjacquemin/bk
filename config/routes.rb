@@ -1,4 +1,6 @@
 Billit::Application.routes.draw do
+  resources :products
+
   resources :bills
 
   resources :countries
