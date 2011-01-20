@@ -32,6 +32,9 @@ Country.create(:name => 'Pays-bas', :code => 'nl')
 Country.create(:name => 'Luxembourg', :code => 'lu')
 Country.create(:name => 'Allemagne', :code => 'de')
 
+Tva.create(:value => 6)
+Tva.create(:value => 21)
+
 
 
 
