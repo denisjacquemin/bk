@@ -12,6 +12,13 @@
   <div id="container">
     <div id="header">
       <h1><a href="/">Web App</a></h1>
+      <div id="user-navigation">
+        <ul class="wat-cf">
+            <!--<li >Bienvenue <%= current_user.email %></li>-->
+            <li><%= link_to t("assur.general.profile"), edit_user_registration_path %></li>
+            <li><%= link_to t("assur.general.logout"), destroy_user_session_path, :class => 'logout' %></li>         
+        </ul>
+      </div>
       <%= render :partial => 'shared/main_navigation' %>
       <div id="main-navigation">
         <ul class="wat-cf"></ul>
