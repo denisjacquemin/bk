@@ -1,0 +1,2 @@
+= p.hidden_field(:_delete)  unless p.object.new_record?
+= link_to("remove", "##{p.object.class.name.underscore}", :class => 'remove')

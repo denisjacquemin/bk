@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     end
     
     def login_required
-      unless user_signed_in? or ['sessions'].include? controller_name
+      unless user_signed_in? or ['sessions', 'passwords', 'registrations', 'confirmations'].include? controller_name
         authenticate_user!
       end
     end

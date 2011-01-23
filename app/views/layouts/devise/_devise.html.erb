@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web App</title>
+  <%= stylesheet_link_tag "devise" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="center">
+    <div id="top"></div>
+    <div id="login">
+      <% flash.each do |type, message| -%>
+        <div class="message <%= type %>">
+          <p><%= message %></p>
+        </div>
+      <% end -%>
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

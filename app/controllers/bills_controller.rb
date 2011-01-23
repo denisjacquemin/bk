@@ -25,8 +25,7 @@ class BillsController < ApplicationController
   # GET /bills/new.xml
   def new
     @bill = Bill.new
-    @bill.products << Product.new
-    
+    @bill.products.build    
     @bill.reference = 'B' + (Bill.all.count + 1).to_s
 
     respond_to do |format|

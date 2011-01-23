@@ -1,0 +1,82 @@
+body {
+    background-color: #999999;
+    font-family: "Lucida Grande",verdana,arial,helvetica,sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+#center {
+    font-family: "Lucida Grande",arial,sans-serif;
+    margin: 50px auto;
+    width: 480px;
+}
+
+#top {
+    background: url("/images/login_dialog.png") no-repeat scroll left top transparent;
+    height: 12px;
+    width: 480px;
+}
+
+#login {
+    background: url("/images/login_dialog.png") no-repeat scroll left bottom transparent;
+    padding: 30px 40px;
+    width: 400px;
+}
+
+#center #login input[type="text"], #center #login input[type="password"] {
+    color: #333333;
+    font-size: 18px;
+    height: 25px;
+    max-width: 350px;
+}
+
+#center #login label {
+    display: block;
+    font-size: 14px;
+    width: 100%;
+}
+
+#center #login h2 {
+    color: #333333;
+    font-size: 20px;
+    margin: 0 0 15px;
+    padding: 0;
+}
+
+#center #login a {
+    color: #555555;
+    padding: 1px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#center #login li {
+    font-size: 12px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+#center #login ul {
+    border-top: 1px dashed #888888;
+    margin: 20px 0;
+    padding: 10px 0 0;
+}
+
+#center #login .remember label {
+    display: inline;
+    font-size: 13px;
+    width:100%;
+}
+
+#center #login .message {
+    font-size: 12px;
+}
+
+
+#center #login .notice {
+    color: green;
+}
+
+#center #login .alert {
+    color: red;
+}

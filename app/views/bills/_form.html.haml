@@ -25,8 +25,8 @@
     %th{:width => '7%'} TVA
     %th Total TVAC
   = f.fields_for :products do |p|
-    = render :partial => 'products/new_product', :locals => {:p => p}
-    = render :partial => 'products/product', :collection => @bill.products, :locals => {:p => p}
+    = render :partial => 'products/product', :locals => {:p => p}
+    -#= render :partial => 'products/product', :collection => @bill.products, :locals => {:p => p}
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
