@@ -26,10 +26,11 @@
     %th{:width => '7%'} Prix unitere
     %th{:width => '7%'} TVA
     %th Total TVAC
+    %th &nbsp;
   = f.fields_for :products do |p|
     = render :partial => 'product', :locals => {:f => p}
-    -#= render :partial => 'products/product', :collection => @bill.products, :locals => {:p => p}
-= link_to 'Ajouter un produit', '#product', :class => "add_nested_item", :rel => "products"
+.group
+  = link_to 'Ajouter un produit', '#product', :class => "add_nested_item", :rel => "products"
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")

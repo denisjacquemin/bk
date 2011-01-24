@@ -33,4 +33,14 @@ document.observe("dom:loaded", function() {
       });
     });
   });
+  
+  $$('.product').each(function(p){
+      p.observe('change', function(){
+          if (p.down('.q') && p.down('.up')) {
+              var q = p.down('.q');
+              var up = p.down('.up');
+              alert('total= ' + q * up);
+          }
+      });
+  });
 });
