@@ -69,6 +69,9 @@ fr:
         Effective_date: Date de facturation
         New_bill: Nouvelle facture
         Customer: Client
+        Generate_pdf: Generer PDF
+        Send_by_email: Envoyer par email
+        Actions_on_bill: Actions sur la facture
     folder:
         folder: dossier
         Folder: Dossier
