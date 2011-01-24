@@ -99,6 +99,14 @@
 	text-align: right;
 }
 
-.w95 {
-    width: 95%;
+.notice ul {
+    padding: 0;
+    margin:0;
+}
+
+.notice ul li {
+    margin: 10px 0;
+    padding: 0;
+    display: block;
+    border-bottom: none;
 }

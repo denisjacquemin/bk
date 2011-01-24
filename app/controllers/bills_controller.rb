@@ -46,7 +46,7 @@ class BillsController < ApplicationController
 
     respond_to do |format|
       if @bill.save
-        format.html { redirect_to(@bill, :notice => 'Bill was successfully created.') }
+        format.html { redirect_to edit_bill_url(@bill), :notice => "#{t('assur.bill.Successfully_created')}." }
         format.xml  { render :xml => @bill, :status => :created, :location => @bill }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class BillsController < ApplicationController
 
     respond_to do |format|
       if @bill.update_attributes(params[:bill])
-        format.html { redirect_to(@bill, :notice => 'Bill was successfully updated.') }
+        format.html { redirect_to edit_bill_url(@bill), :notice => "#{t('assur.bill.Successfully_updated')}." }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -72,6 +72,10 @@ fr:
         Generate_pdf: Generer PDF
         Send_by_email: Envoyer par email
         Actions_on_bill: Actions sur la facture
+        Successfully_created: Facture cree avec succes
+        Successfully_updated: Facture mise a jour avec succes
+        new_bill_right_notice: Sauver la facture pour pouvoir generer une version pdf ou l'envoyer une facture, 
+        Info_bill: Informations Facture
     folder:
         folder: dossier
         Folder: Dossier
