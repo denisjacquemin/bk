@@ -2,7 +2,9 @@
   = f.label :reference, t("assur.bill.Reference"), :class => :label
   = f.text_field :reference, :class => 'text_field'
 - content_for :javascripts do
-  = "var product='#{generate_template(f, :products)}'"
+  = javascript_tag do
+    = "var product='#{generate_template(f, :products)}'"
+  = javascript_include_tag 'autocomplete'
 .group
   .columns.wat-cf 
     .verylargecolumn.left     
