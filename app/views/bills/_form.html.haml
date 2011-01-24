@@ -1,6 +1,8 @@
 - content_for :h2_field do
   = f.label :reference, t("assur.bill.Reference"), :class => :label
   = f.text_field :reference, :class => 'text_field'
+- content_for :javascripts do
+  = "var product='#{generate_template(f, :products)}'"
 .group
   .columns.wat-cf 
     .verylargecolumn.left     
@@ -17,7 +19,7 @@
     .column.right
       = f.label :effective_date, t("assur.bill.Effective_date"), :class => :label
       = f.text_field :effective_date, :class => 'text_field'
-%table.table.w95
+%table.table.w95{:id => 'products'}
   %tr
     %th{:width => '65%'} Nom produit / description
     %th{:width => '7%'} Quantitee
@@ -25,8 +27,9 @@
     %th{:width => '7%'} TVA
     %th Total TVAC
   = f.fields_for :products do |p|
-    = render :partial => 'products/product', :locals => {:p => p}
+    = render :partial => 'product', :locals => {:f => p}
     -#= render :partial => 'products/product', :collection => @bill.products, :locals => {:p => p}
+= link_to 'Ajouter un produit', '#product', :class => "add_nested_item", :rel => "products"
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
