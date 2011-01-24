@@ -1,4 +1,5 @@
 analyse*.txt
+todo.txt
 .bundle
 db/*.sqlite3
 log/*.log
