@@ -75,7 +75,7 @@ fr:
         Successfully_created: Facture cree avec succes
         Successfully_updated: Facture mise a jour avec succes
         new_bill_right_notice: Sauver la facture pour pouvoir generer une version pdf ou l'envoyer une facture, 
-        Info_bill: Informations Facture
+        Info_bill: Informations facture
         Author: Auteur
         creation_date: Creation
         last_upadte_date: Modification

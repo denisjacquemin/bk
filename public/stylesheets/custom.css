@@ -67,10 +67,6 @@
   padding:5px 10px;
 }
 
-#header {
-    background: #ccc;
-}
-
 .blue-box {
     border: 1px solid #C0D1EC;
     background: #F2F5FB;
@@ -122,4 +118,8 @@
 
 .notice table tr {
     height: 23px;
+}
+
+.table td {
+    padding: 5px;
 }
