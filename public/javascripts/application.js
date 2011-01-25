@@ -17,12 +17,19 @@ document.observe("dom:loaded", function() {
   // put the focus on input with a .focus selector
   $$('.focus').invoke('select');
   
-  $$('.remove').each(function(el) {
-      el.observe('click', function() {
-         target = el.href.replace(/.*#/, '.');
-         el.up(target).hide();
-         if(hidden_input = el.previous("input[type=hidden]")) hidden_input.value = '1';
-      });
+  document.observe('click', function(e, el) {
+      if (el = e.findElement('.remove')) {
+        target = el.href.replace(/.*#/, '.');
+        
+        // if 'el' is already saved in database, hide 'el' to submit a delete request
+        // else 'el' was dynamicaly added and needs to be removed from dom
+        if(hidden_input = el.previous("input[type=hidden]")) { 
+            hidden_input.value = '1';
+            el.up(target).hide();
+        } else {
+            el.up(target).remove();
+        }
+      }
   });
   
   $$('.add_nested_item').each(function(el) {
