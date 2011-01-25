@@ -43,6 +43,7 @@ class BillsController < ApplicationController
   # POST /bills.xml
   def create
     @bill = Bill.new(params[:bill])
+    @bill.author_id = current_user.id
 
     respond_to do |format|
       if @bill.save

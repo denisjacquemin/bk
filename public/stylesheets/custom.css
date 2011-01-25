@@ -107,6 +107,19 @@
 .notice ul li {
     margin: 10px 0;
     padding: 0;
-    display: block;
+    display: inline;
+    width:100%;
     border-bottom: none;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.notice table tr {
+    height: 23px;
 }

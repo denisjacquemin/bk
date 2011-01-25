@@ -8,7 +8,14 @@
 .block.notice
   %h3= t('assur.bill.Info_bill')
   .content
-    %ul
-      %li= 'Auteur: Denis Jacquemin'
-      %li= 'Creation: 24 janvier 2011, 13h43'
-      %li= 'Derniere modification: 30 janvier 2011, 11h02'
+    %table
+      %tr
+        %td.strong= "#{t('assur.bill.Author')}:"
+        %td.text-right= b.author_email
+      %tr
+        %td.strong= "#{t('assur.bill.creation_date')}:"
+        %td.text-right= b.created_at
+      %tr
+        %td.strong= "#{t('assur.bill.last_upadte_date')}:"
+        %td.text-right= b.updated_at
+        
