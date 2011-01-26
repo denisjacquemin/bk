@@ -10,4 +10,4 @@
         - for bill in customer.bills  
           %tr
             %td= link_to bill.name, edit_bill_path(bill)
-            %td.text-right= link_to '9456', '#'
+            %td.text-right= link_to bill.total_tvac, edit_bill_path(bill)

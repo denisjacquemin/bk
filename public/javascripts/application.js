@@ -43,7 +43,7 @@ document.observe("dom:loaded", function() {
                   compute = false;
               }
           });
-          alert('compute: ' + compute);
+          $('bill_total_tvac').value = 9999;
         }
       }
   });

@@ -59,7 +59,7 @@ class BillsController < ApplicationController
   # PUT /bills/1
   # PUT /bills/1.xml
   def update
-    @bill = Bill.find(params[:id])
+    @bill = Bill.find(params[:id]) 
 
     respond_to do |format|
       if @bill.update_attributes(params[:bill])
