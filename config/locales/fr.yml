@@ -6,35 +6,35 @@ fr:
       delete: Effacer
       save: Sauver
       cancel: Annuler
-      details: details
-      Details: Details
+      details: détails
+      Details: Détails
       add: Ajouter
-      created_on: cree le
-      forgotpassword: Oublie mon mot de passe
+      created_on: créé le
+      forgotpassword: Oublié mon mot de passe
       notyetregistered: Pas encore inscrit?
       profile: Profile
-      logout: Deconnexion
+      logout: Déconnexion
       leave_blank_if_you_dont_want_to_change_it: Laisser blanc si vous ne voulez pas le changer
       we_need_current_password_to_change_it: Nous avons besoin de votre mot de passe courant pour pouvoir le changer
       listing: Listing
       list: Liste
-      are_you_sure: Etes vous sur?
+      are_you_sure: Etes vous sûr?
       quick_search: Recherche rapide
     customer:
       customers: clients
       Customers: Clients
       customer: client
-      firstname: Prenom
+      firstname: Prénom
       lastname: Nom
       birthdate: Date de naissance
       city: Ville
-      reference: Reference
+      reference: Référence
       gender: Sexe
       civilstatus: Statut civil
-      nationality: Nationalite
+      nationality: Nationalité
       language: Langue
       street: Rue
-      number: Numero
+      number: Numéro
       box: Boite
       zipcode: Code postal
       city: Ville
@@ -42,12 +42,12 @@ fr:
       title: Titre
       primary_email: Email 1
       secondary_email: Email 2
-      private_phone: Telephone prive
-      office_phone: Telephone professionnel
+      private_phone: Téléphone privé
+      office_phone: Téléphone professionnel
       cellphone: GSM
       fax: Fax
-      phone: Telephone
-      idnum: Numero de carte d'identitee
+      phone: Téléphone
+      idnum: Numéro de carte d'identitée
       jobdescription: Profession
       comment: Commentaires
       cancelaccount: Annuler mon compte
@@ -56,12 +56,12 @@ fr:
       sign_in: Identification
       confirmpassword: Confirmer mot de passe
       currentpassword: Mot de passe courant
-      successfully_created: Client cree avec succes
-      successfully_updated: Client mis a jour avec succes
+      successfully_created: Client créé avec succès
+      successfully_updated: Client mis à jour avec succès
     bill:
         Description: Description
         Customer_name: Nom de client
-        Reference: Reference
+        Reference: Référence
         Amount_TVAC: Montant TVAC
         Bills: Factures
         bills: factures
@@ -69,51 +69,27 @@ fr:
         Effective_date: Date de facturation
         New_bill: Nouvelle facture
         Customer: Client
-        Generate_pdf: Generer PDF
+        Generate_pdf: Générer PDF
         Send_by_email: Envoyer par email
         Actions_on_bill: Actions sur la facture
-        Successfully_created: Facture cree avec succes
-        Successfully_updated: Facture mise a jour avec succes
-        new_bill_right_notice: Sauver la facture pour pouvoir generer une version pdf ou l'envoyer une facture, 
+        Successfully_created: Facture créé avec succès
+        Successfully_updated: Facture mise à jour avec succès
+        new_bill_right_notice: Sauver la facture pour pouvoir générer une version pdf ou l'envoyer. 
         Info_bill: Informations facture
         Author: Auteur
-        creation_date: Creation
+        creation_date: Création
         last_upadte_date: Modification
-    folder:
-        folder: dossier
-        Folder: Dossier
-        folders: Dossiers
-        add: Créér dossier
-        category: Categorie
-        categories: Categories
-        brands: Produits
-        brand: produit
-        select_category: Selectionner une categorie
-        name: Nom de dossier
-        to_folder: au dossier
-        products: Produits
-    brand:
-        Products: Produits
-        products: produits
-        product: produit
-        Product: Produit
-        Name: Nom
-        Category: Categorie
-        Company: Companie
-        select_company: Selectionner companie
-        successfully_created: Produit cree avec succes
-        successfully_updated: Produit mis a jour avec succes
-    company:
-        Company: Companie
-        Company_name: Nom companie
-        Companies: Companies
-    category:
-        Category: Categorie
-        Category_name: Nom categorie
-        Categories: Categories
+    product:
+        Product_name_description: Nom article / description
+        Quantity: Quantité
+        Unit_price: Prix unitère
+        VAT: TVA
+        Total_VAT: Total TVAC
+        Total: Total
+        HTVA: HTVA
+        TVAC: TVAC
+        Add_product: Ajouter un article
         
-        
-      
     all_customers: Tous les Clients
     delete: Effacer
     show: Details
