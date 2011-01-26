@@ -85,6 +85,7 @@ fr:
         Unit_price: Prix unitère
         VAT: TVA
         Total_VAT: Total TVAC
+        Total_HVAT: Total HTVA
         Total: Total
         HTVA: HTVA
         TVAC: TVAC

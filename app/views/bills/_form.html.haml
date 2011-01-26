@@ -28,6 +28,7 @@
       %th{:width => '10%'}= t('assur.product.Quantity')
       %th{:width => '10%'}= t('assur.product.Unit_price')
       %th{:width => '10%'}= t('assur.product.VAT')
+      %th= t('assur.product.Total_HVAT')
       %th= t('assur.product.Total_VAT')
       %th &nbsp;
   %tbody
@@ -35,12 +36,13 @@
     = f.fields_for :products do |p|
       = render :partial => 'product', :locals => {:f => p}
   %tfoot
-    %tr
-      %td= t('assur.product.Total')
+    %tr.strong.greybg
+      %td.text-right &nbsp;
       %td &nbsp;
-      %td.text-right= t('assur.product.HTVA')
-      %td &nbsp;
-      %td.text-right= t('assur.product.TVAC')
+      %td.text-right= t('assur.product.Total')
+      %td.text-right &nbsp;
+      %td.text-right 8888
+      %td.text-right 9999
       %td &nbsp;
 .group
   = link_to  t('assur.product.Add_product'), '#product', :class => "add_nested_item", :rel => "products"
