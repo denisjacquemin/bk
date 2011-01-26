@@ -108,12 +108,17 @@
     border-bottom: none;
 }
 
-.strong {
-    font-weight: bold;
+.notice table {
+    margin: 5px 0 0 0;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.text-right {
-    text-align: right;
+.notice table th {
+    background-color: #EAEAEA;
+    color: #222222;
+    font-weight: normal;
+    padding: 5px;
 }
 
 .notice table tr {
@@ -122,4 +127,32 @@
 
 .table td {
     padding: 5px;
+}
+
+.w20 {
+    width: 20%;
+}
+
+.w80 {
+    width: 80%;
+}
+
+#sidebar .block .content {
+    padding: 0 7px;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
 }

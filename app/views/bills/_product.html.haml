@@ -1,7 +1,7 @@
 %tr.product
   %td= f.text_field :name, :class => 'text_field'
-  %td= f.text_field :quantity, :class => 'text_field q text-right'
-  %td= f.text_field :unit_price, :class => 'text_field up text-right'
+  %td= f.text_field :quantity, :class => 'text_field q text-right ct'
+  %td= f.text_field :unit_price, :class => 'text_field up text-right ct'
   %td= f.collection_select(:tva_id, Tva.all, :id, :value)
   %td &nbsp;
   %td= render :partial => 'remove_link_unless_new_record', :locals => {:f => f}

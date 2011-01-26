@@ -1,0 +1,13 @@
+.block.notice
+  %h3= t('assur.bill.Info_bill')
+  .content
+    %table
+      %thead
+        %tr
+          %th.w80.text-left Description
+          %th.w20.text-center Montant TVAC
+      %tbody
+        - for bill in customer.bills  
+          %tr
+            %td= link_to bill.name, edit_bill_path(bill)
+            %td.text-right= link_to '9456', '#'

@@ -11,4 +11,4 @@
     .inner
       = form_for @customer, :url => customer_path(@customer), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f }
-- content_for :sidebar, render(:partial => 'edit_sidebar', :locals => {:folder => @folder})
+- content_for :sidebar, render(:partial => 'edit_sidebar', :locals => {:customer => @customer})
