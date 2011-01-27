@@ -11,6 +11,7 @@ gem 'haml'
 gem 'hpricot'
 gem 'ruby_parser'
 gem 'devise'
+gem 'prawn'
 
 # Use unicorn as the web server
 # gem 'unicorn'

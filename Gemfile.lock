@@ -46,6 +46,13 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     polyglot (0.3.1)
+    prawn (0.8.4)
+      prawn-core (>= 0.8.4, < 0.9)
+      prawn-layout (>= 0.8.4, < 0.9)
+      prawn-security (>= 0.8.4, < 0.9)
+    prawn-core (0.8.4)
+    prawn-layout (0.8.4)
+    prawn-security (0.8.4)
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
@@ -84,6 +91,7 @@ DEPENDENCIES
   devise
   haml
   hpricot
+  prawn
   rails (= 3.0.3)
   ruby_parser
   sqlite3-ruby
