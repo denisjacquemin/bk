@@ -2,7 +2,7 @@
   %h3= t('assur.bill.Actions_on_bill') 
   %ul.navigation
     %li
-      = link_to t('assur.bill.Generate_pdf'), '#'
+      = link_to t('assur.bill.Generate_pdf'), bill_path(b, :format => :pdf)
     %li
       = link_to t('assur.bill.Send_by_email')
 .block.notice

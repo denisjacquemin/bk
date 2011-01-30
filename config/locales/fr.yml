@@ -90,6 +90,14 @@ fr:
         HTVA: HTVA
         TVAC: TVAC
         Add_product: Ajouter un article
+    pdf:
+        Customer_reference: Référence client
+        Bill_reference: Référence facture
+        header_product_description: Description article
+        header_quantity: Quantitée
+        header_unit_price: Prix unitère
+        header_tva: TVA
+        Bill: Facture
         
     all_customers: Tous les Clients
     delete: Effacer

@@ -12,6 +12,7 @@ gem 'hpricot'
 gem 'ruby_parser'
 gem 'devise'
 gem 'prawn'
+gem 'prawnto'
 
 # Use unicorn as the web server
 # gem 'unicorn'
