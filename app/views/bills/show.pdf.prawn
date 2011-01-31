@@ -18,10 +18,14 @@ pdf.repeat :all do
       pdf.text "Fax: 061/61.25.99", :size => 10
       pdf.text "GSM: 0461/61.25.99", :size => 10
       pdf.move_down(15)
-      pdf.text "Facture a: ", :size => 10, :style => :bold
-      pdf.text "#{@bill.customer_firstname} #{@bill.customer_lastname}", :size => 10
-      pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 10
-      pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 10
+      unless @bill.customer.nil?
+        pdf.text "Facture a: ", :size => 10, :style => :bold
+        pdf.text "#{@bill.customer_firstname} #{@bill.customer_lastname}", :size => 10
+        unless @bill.customer.address.nil?
+          pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 10
+          pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 10
+        end
+      end
       
       
   end
@@ -41,7 +45,7 @@ pdf.repeat :all do
       pdf.font "Helvetica"
       pdf.stroke_horizontal_rule
       pdf.move_down(3)
-      pdf.text "Nom Societe | TVA BE 0463.770.658 | NE: 11.15.11 | ING 310-1541386-45 | Fortis 210-0983261-24  | KBC 210-0983261-24", :size => 8
+      pdf.text "Nom Societe | TVA BE 0463.770.658 | NE: 11.15.11 | ING 310-1541386-45 | Fortis 210-0983261-24  | KBC 210-0983261-24", :align => :center, :size => 8
   end
   page_counter.draw
 end
@@ -61,6 +65,7 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.
        :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.header_quantity'), t('assur.pdf.header_unit_price'), t('assur.pdf.header_tva')], 
        :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right },
        :column_widths => { 0 => 345, 1 => 65, 2 => 65, 3 => 65 }
+   
    
 end
 

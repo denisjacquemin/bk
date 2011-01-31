@@ -8,4 +8,5 @@ class Bill < ActiveRecord::Base
   delegate :firstname, :to => :customer, :prefix => true, :allow_nil => true
   delegate :lastname, :to => :customer, :prefix => true, :allow_nil => true
   delegate :email, :to => :author, :prefix => true, :allow_nil => true
+  
 end
