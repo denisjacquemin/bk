@@ -33,6 +33,18 @@ document.observe("dom:loaded", function() {
   });
   
   document.observe('change', function(e, el) {
+      
+      if (el = e.findElement('.number')) {
+          var regExpr = new RegExp("^-{0,1}\");
+          if (!regExpr.test(el.value)) {
+              //el.style.backgroundColor = '#F00';
+              alert('true');
+          } else {
+              alert('false');
+          }
+      }
+      
+      
       if (el = e.findElement('.ct')) {
         var product = el.up('.product');
         if (product) {
@@ -47,6 +59,7 @@ document.observe("dom:loaded", function() {
         }
       }
   });
+
   
   $$('.add_nested_item').each(function(el) {
     el.observe('click', function() {

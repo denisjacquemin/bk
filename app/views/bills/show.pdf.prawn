@@ -9,11 +9,11 @@ pdf.repeat :all do
   # header
   pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width  do
       pdf.font "Helvetica"
-      pdf.text "Nom Societe", :align => :left, :size => 20
-      pdf.text "Slogan de la societe", :size => 10, :style => :italic
+      pdf.text current_user.company.name, :align => :left, :size => 20
+      pdf.text current_user.company.slogan, :size => 10, :style => :italic
       pdf.move_down(10)
-      pdf.text "11, nom de la rue", :size => 10
-      pdf.text "6900, Marche en Famenne", :size => 10
+      pdf.text "#{current_user.company.address.number}, #{current_user.company.address.street}", :size => 10
+      pdf.text "#{current_user.company.address.zipcode}, #{current_user.company.address.city}", :size => 10
       pdf.text "Tel: 061/61.25.99", :size => 10
       pdf.text "Fax: 061/61.25.99", :size => 10
       pdf.text "GSM: 0461/61.25.99", :size => 10

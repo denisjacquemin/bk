@@ -1,0 +1,14 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "Liste")}", customers_path
+      %li.active= link_to "#{t("web-app-theme.new", :default => "Nouveau")}", new_customer_path
+  .content
+    %h2.title
+      = t("assur.general.new")
+      = t("assur.customer.customer")
+    .inner
+      = form_for @company, :url => companies_path, :html => { :class => :form } do |f|
+        = render :partial => "form", :locals => {:f => f}
+- content_for :sidebar, render(:partial => 'new_sidebar')
+

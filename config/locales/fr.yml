@@ -99,6 +99,9 @@ fr:
         header_unit_price: Prix unitère
         header_tva: TVA
         Bill: Facture
+    company:
+        name: Nom
+        slogan: Slogan
         
     all_customers: Tous les Clients
     delete: Effacer

@@ -25,6 +25,7 @@ class CompaniesController < ApplicationController
   # GET /companies/new.xml
   def new
     @company = Company.new
+    @company.build_address
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,11 +35,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
-    unless current_user.company.nil?
-      @company = Company.find(current_user.company.id)
-    else
-      @company = Company.new
-    end
+    @company = Company.find(current_user.company.id)
   end
 
   # POST /companies
@@ -48,6 +45,8 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
+        current_user.company = @company
+        current_user.save # Associate new company with current_user
         format.html { redirect_to(@company, :notice => 'Company was successfully created.') }
         format.xml  { render :xml => @company, :status => :created, :location => @company }
       else
