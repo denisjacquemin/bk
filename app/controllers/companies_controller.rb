@@ -34,7 +34,11 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
-    @company = Company.find(params[:id])
+    unless current_user.company.nil?
+      @company = Company.find(current_user.company.id)
+    else
+      @company = Company.new
+    end
   end
 
   # POST /companies

@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
   has_many :bills
+  belongs_to :company
+  
 end
