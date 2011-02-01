@@ -1,13 +1,15 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first= link_to t("assur.general.list"), customers_path
-      %li= link_to t("assur.general.new"), new_customer_path
-      %li.active= link_to t("assur.general.details"), edit_customer_path
+      - if current_user.company.nil?
+        %li.first.active= link_to t('assur.general.Company'), new_company_path
+      - else
+        %li.first.active= link_to t('assur.general.Company'), edit_company_path(current_user.company)
+      %li= link_to t('assur.bill.Bill'), '#'
+      %li= link_to t("assur.general.profile"), edit_user_registration_path
   .content
     %h2.title
-      = t("assur.general.details")
-      = t("assur.general.company")
+      = t("assur.general.Company")
     .inner
       = form_for @company, :url => company_path(@company), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f }

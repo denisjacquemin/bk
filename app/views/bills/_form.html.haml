@@ -32,7 +32,8 @@
       %th= t('assur.product.Total_VAT')
       %th &nbsp;
   %tbody
-    = f.hidden_field :total_tvac
+    = f.hidden_field :totalhtva
+    = f.hidden_field :totaltvac
     = f.fields_for :products do |p|
       = render :partial => 'product', :locals => {:f => p}
   %tfoot

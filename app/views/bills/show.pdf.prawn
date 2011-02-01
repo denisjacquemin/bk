@@ -36,8 +36,8 @@ pdf.repeat :all do
       pdf.move_down(10)
       pdf.fill_color "000000"
       pdf.text "Date: 12 Fevrier 2011", :align => :right, :size => 10
-      pdf.text "Reference facture: f87870", :align => :right, :size => 10
-      pdf.text "Reference client: c8778", :align => :right, :size => 10
+      pdf.text "Reference facture: #{@bill.reference}", :align => :right, :size => 10
+      pdf.text "Reference client: #{@bill.customer.reference}", :align => :right, :size => 10
   end
  
   # footer

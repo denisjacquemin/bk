@@ -16,11 +16,10 @@
         <ul class="wat-cf">
             <!--<li >Bienvenue <%= current_user.email %></li>-->
             <% if current_user.company.nil? %>
-              <li><%= link_to t('assur.general.company'), new_company_path %></li>
+              <li><%= link_to t('assur.general.Configuration'), new_company_path %></li>
             <% else %>
-              <li><%= link_to t('assur.general.company'), edit_company_path(current_user.company) %></li>
+              <li><%= link_to t('assur.general.Configuration'), edit_company_path(current_user.company) %></li>
             <% end %>
-            <li><%= link_to t("assur.general.profile"), edit_user_registration_path %></li>
             <li><%= link_to t("assur.general.logout"), destroy_user_session_path, :class => 'logout' %></li>         
         </ul>
       </div>

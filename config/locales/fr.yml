@@ -12,7 +12,7 @@ fr:
       created_on: créé le
       forgotpassword: Oublié mon mot de passe
       notyetregistered: Pas encore inscrit?
-      profile: Profile
+      profile: Profile utilisateur
       logout: Déconnexion
       leave_blank_if_you_dont_want_to_change_it: Laisser blanc si vous ne voulez pas le changer
       we_need_current_password_to_change_it: Nous avons besoin de votre mot de passe courant pour pouvoir le changer
@@ -20,7 +20,8 @@ fr:
       list: Liste
       are_you_sure: Etes vous sûr?
       quick_search: Recherche rapide
-      company: Compagnie
+      Company: Compagnie
+      Configuration: Configuration
     customer:
       customers: clients
       Customers: Clients
@@ -67,6 +68,7 @@ fr:
         Bills: Factures
         bills: factures
         bill: facture
+        Bill: Facture
         Effective_date: Date de facturation
         New_bill: Nouvelle facture
         Customer: Client
