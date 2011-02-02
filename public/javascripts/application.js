@@ -31,42 +31,6 @@ document.observe("dom:loaded", function() {
         }
       }
   });
-  
-  document.observe('change', function(e, el) {
-      
-      //if (el = e.findElement('.number')) {
-      //    var regExpr = new RegExp("^-{0,1}\");
-      //    if (!regExpr.test(el.value)) {
-      //        //el.style.backgroundColor = '#F00';
-      //        alert('true');
-      //    } else {
-      //        alert('false');
-      //    }
-      //}
-      
-      
-      if (el = e.findElement('.ct')) {
-        var product = el.up('.product');
-        if (product) {
-          var total = 0;
-          var quantity = 0;
-          var up = 0;
-          
-          product.select('.ct').each(function(ct){
-              if (ct.hasClassName('q'))  { quantity = parseInt(ct.value); }
-              if (ct.hasClassName('up')) { up = parseInt(ct.value); }
-              
-          });
-          
-          total = quantity * up;
-          product.select('.totalhtva').each(function(t) { 
-              alert();
-              //t.innerHTML = total; 
-          });
-          product.select('.totaltvac').each(function(t) { t.innerHTML = total; });
-        }
-      }
-  });
 
   
   $$('.add_nested_item').each(function(el) {

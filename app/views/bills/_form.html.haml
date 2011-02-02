@@ -4,7 +4,7 @@
 - content_for :javascripts do
   = javascript_tag do
     = "var product='#{generate_template(f, :products)}'"
-  = javascript_include_tag 'autocomplete'
+  = javascript_include_tag 'autocomplete', 'bill'
 .group
   .columns.wat-cf 
     .verylargecolumn.left     

@@ -5,6 +5,8 @@
       = link_to t('assur.bill.Generate_pdf'), bill_path(b, :format => :pdf)
     %li
       = link_to t('assur.bill.Send_by_email')
+    %li
+      = link_to 'Envoyer via Zoomit'
 .block.notice
   %h3= t('assur.bill.Info_bill')
   .content

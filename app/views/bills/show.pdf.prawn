@@ -54,17 +54,16 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.
    items = @bill.products.map do |item|
        [
            item.name,
-           item.quantity,
-           item.unit_price,
-           item.tva.value
+           item.totalhtva,
+           item.totaltvac
        ]
    end
    
    pdf.table items, :border_style => :grid,
        :row_colors         => :pdf_writer,
-       :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.header_quantity'), t('assur.pdf.header_unit_price'), t('assur.pdf.header_tva')], 
-       :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right },
-       :column_widths => { 0 => 345, 1 => 65, 2 => 65, 3 => 65 }
+       :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.header_quantity'), t('assur.pdf.header_unit_price')], 
+       :align => { 0 => :left, 1 => :right, 2 => :right},
+       :column_widths => { 0 => 345, 1 => 65, 2 => 65}
    
    
 end
