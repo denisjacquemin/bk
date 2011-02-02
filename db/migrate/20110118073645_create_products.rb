@@ -2,9 +2,8 @@ class CreateProducts < ActiveRecord::Migration
   def self.up
     create_table :products do |t|
       t.string :name
-      t.integer :quantity
-      t.integer :unit_price
-      t.integer :amount_tva
+      t.integer :quantity, :default => 1
+      t.float :unit_price
 
       t.timestamps
     end

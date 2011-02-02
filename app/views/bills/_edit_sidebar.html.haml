@@ -16,8 +16,8 @@
         %td.text-right= b.author_email
       %tr
         %td.strong= "#{t('assur.bill.creation_date')}:"
-        %td.text-right= b.created_at
+        %td.text-right= l b.created_at, :format => :long
       %tr
         %td.strong= "#{t('assur.bill.last_upadte_date')}:"
-        %td.text-right= b.updated_at
+        %td.text-right= l b.updated_at, :format => :long
         
