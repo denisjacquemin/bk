@@ -28,12 +28,13 @@ ActiveRecord::Schema.define(:version => 20110201072400) do
     t.string   "reference"
     t.date     "effective_date"
     t.integer  "status_id"
+    t.integer  "amount_tvac"
     t.integer  "customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "author_id"
-    t.integer  "totaltvac"
-    t.integer  "totalhtva"
+    t.float    "totaltvac"
+    t.float    "totalhtva"
   end
 
   create_table "companies", :force => true do |t|
@@ -84,15 +85,14 @@ ActiveRecord::Schema.define(:version => 20110201072400) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.integer  "quantity"
-    t.integer  "unit_price"
-    t.integer  "amount_tva"
+    t.integer  "quantity",   :default => 1
+    t.float    "unit_price"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "bill_id"
     t.integer  "tva_id"
-    t.integer  "totaltvac"
-    t.integer  "totalhtva"
+    t.float    "totaltvac"
+    t.float    "totalhtva"
   end
 
   create_table "sexes", :force => true do |t|

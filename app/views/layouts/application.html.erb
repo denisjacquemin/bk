@@ -3,9 +3,6 @@
 <head>
   <title>Web App</title>
   <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", "custom" %>
-  <%= javascript_include_tag 'prototype', 'application' %>
-  <%= javascript_include_tag 'quick-search' %>
-  <%= yield(:javascripts) %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -49,5 +46,8 @@
       </div>
     </div>    
   </div>
+  <%= javascript_include_tag 'prototype', 'application' %>
+  <%= javascript_include_tag 'quick-search' %>
+  <%= yield(:javascripts) %>
 </body>
 </html>
