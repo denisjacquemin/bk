@@ -303,4 +303,4 @@ Autocomplete.prototype = {
 
 };
 
-Event.observe(document, 'dom:loaded', function(){ Autocomplete.isDomLoaded = true; }, false);
+

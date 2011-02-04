@@ -5,6 +5,7 @@ class Customer < ActiveRecord::Base
   belongs_to :language
   belongs_to :nationality
   belongs_to :title
+  belongs_to :company
   
   has_many :bills
   

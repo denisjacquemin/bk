@@ -50,7 +50,7 @@ class CustomersController < ApplicationController
   # POST /customers.xml
   def create
     @customer = Customer.new(params[:customer])
-
+    @customer.company_id = current_user.company_id
     respond_to do |format|
       if @customer.save
         format.html { redirect_to edit_customer_url(@customer), :notice => "#{t('assur.customer.successfully_created')}." }
@@ -88,5 +88,16 @@ class CustomersController < ApplicationController
       format.html { redirect_to(customers_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def autocomplete
+    
+    customers = Customer.where("company_id = ? and (firstname like ? or lastname like ?)", current_user.company_id, "%#{params[:query]}%", "%#{params[:query]}%")
+    render :json => {
+      :query => params[:query],
+      :suggestions => customers.collect{ |c| "#{c.firstname} #{c.lastname}" },
+      :data => customers.collect(&:id)
+    }
+    
   end
 end

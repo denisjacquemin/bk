@@ -3,6 +3,20 @@ document.observe("dom:loaded", function() {
        p.down('.totalhtva').innerHTML = p.down('.totalhtvahidden').value;
        p.down('.totaltvac').innerHTML = p.down('.totaltvachidden').value;
    }); 
+   
+   Autocomplete.isDomLoaded = true;
+   new Autocomplete('customer_autocomplete', { 
+       serviceUrl:'/customers/autocomplete',
+       minChars:2, 
+       maxHeight:400,
+       width:403,
+       deferRequestBy:100,
+       // callback function:
+       onSelect: function(value, data){
+           $('customer_autocomplete').value = value;
+           $('bill_customer_id').value = data;
+       }
+   });
 });
 
 document.observe('change', function(e, el) {

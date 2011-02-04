@@ -3,6 +3,7 @@
 <head>
   <title>Web App</title>
   <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", "custom" %>
+  <%= yield(:css) %>
   <%= csrf_meta_tag %>
 </head>
 <body>
