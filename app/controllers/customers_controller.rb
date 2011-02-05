@@ -92,10 +92,10 @@ class CustomersController < ApplicationController
   
   def autocomplete
     
-    customers = Customer.where("company_id = ? and (firstname like ? or lastname like ?)", current_user.company_id, "%#{params[:query]}%", "%#{params[:query]}%")
+    customers = Customer.where("company_id = ? and (firstname like ? or lastname like ? or reference like ?)", current_user.company_id, "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     render :json => {
       :query => params[:query],
-      :suggestions => customers.collect{ |c| "#{c.firstname} #{c.lastname}" },
+      :suggestions => customers.collect{ |c| c.fullname_with_reference },
       :data => customers.collect(&:id)
     }
     

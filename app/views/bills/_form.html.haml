@@ -19,7 +19,7 @@
   .columns.wat-cf 
     .column.left     
       = f.label :customer_id, t("assur.bill.Customer"), :class => :label
-      = text_field_tag 'customer_autocomplete', '', :class => 'text_field'
+      = text_field_tag 'customer_autocomplete', @bill.customer.fullname_with_reference, :class => 'text_field'
       = f.hidden_field :customer_id
       %span.description 
         Entrez minimum 2 carateres du nom, prenom ou de la reference client

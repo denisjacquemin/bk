@@ -15,4 +15,12 @@ class Customer < ActiveRecord::Base
   accepts_nested_attributes_for :language
   accepts_nested_attributes_for :nationality
   accepts_nested_attributes_for :title
+  
+  def fullname
+    "#{self.firstname} #{self.lastname}"
+  end
+  
+  def fullname_with_reference
+    "#{self.fullname} ref: #{self.reference}"
+  end
 end
