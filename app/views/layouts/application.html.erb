@@ -44,7 +44,7 @@
   <%= javascript_include_tag 'quick-search', 'growl.js' %>
   <%= yield(:javascripts) %>
     <% flash.each do |type, message| -%>
-        <div class="flash <%= type %>"><%= message %></div> 
+        <div class="flash <%= type %>" style="display:none"><%= message %></div> 
     <% end -%>
 </body>
 </html>
