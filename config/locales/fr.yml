@@ -85,7 +85,7 @@ fr:
     product:
         Product_name_description: Nom article / description
         Quantity: Quantité
-        Unit_price: Prix unitère
+        Unit_price: Prix unitère (htva)
         VAT: TVA
         Total_VAT: Total TVAC
         Total_HVAT: Total HTVA

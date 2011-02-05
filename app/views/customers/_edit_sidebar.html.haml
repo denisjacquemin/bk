@@ -11,8 +11,8 @@
         - for bill in customer.bills  
           %tr
             %td= link_to bill.name, edit_bill_path(bill)
-            %td.text-right= link_to bill.total_tvac, edit_bill_path(bill)
-          - total = total + bill.total_tvac
+            %td.text-right= link_to bill.totaltvac, edit_bill_path(bill)
+          - total = total + bill.totaltvac
       %tfoot.greybg
         %tr.strong
           %td= t('assur.product.Total')
