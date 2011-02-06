@@ -22,6 +22,7 @@ fr:
       quick_search: Recherche rapide
       Company: Compagnie
       Configuration: Configuration
+      error_in_form: Veuillez corriger les erreurs ci-dessous
     customer:
       customers: clients
       Customers: Clients
@@ -106,17 +107,12 @@ fr:
     company:
         name: Nom
         slogan: Slogan
-        
+        successfully_created: Infos compagnie créées avec succès
+        successfully_updated: Infos compagnie mises à jour avec succès
     all_customers: Tous les Clients
     delete: Effacer
     show: Details
     edit: Editer
-  activerecord:
-    models:
-      sex: Sex
-    attributes:
-      sex:
-
   date:
     formats:
       default: "%d/%m/%Y"
@@ -250,8 +246,8 @@ fr:
     created_at: "Créé le"
     updated_at: "Modifié le"
   
-  errors:
-    format: "Le %{attribute} %{message}"
+  errors: 
+    format: "Le champ %{attribute} %{message}"
     messages: &errors_messages
       inclusion: "n'est pas inclus(e) dans la liste"
       exclusion: "n'est pas disponible"
@@ -288,3 +284,7 @@ fr:
         <<: *errors_template
       full_messages:
         format: "%{attribute} %{message}"
+    models: 
+    attributes:
+      bill:
+        name: Description

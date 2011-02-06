@@ -18,15 +18,8 @@ pdf.repeat :all do
       pdf.text "Fax: 061/61.25.99", :size => 10
       pdf.text "GSM: 0461/61.25.99", :size => 10
       pdf.move_down(15)
-      unless @bill.customer.nil?
-        pdf.text "Facture a: ", :size => 10, :style => :bold
-        pdf.text "#{@bill.customer_firstname} #{@bill.customer_lastname}", :size => 10
-        unless @bill.customer.address.nil?
-          pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 10
-          pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 10
-        end
-      end
-      
+      pdf.text "Reference facture: #{@bill.reference}", :align => :left, :size => 10
+      pdf.text "Reference client: #{@bill.customer.reference}", :align => :left, :size => 10
       
   end
   pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width do
@@ -35,9 +28,21 @@ pdf.repeat :all do
       pdf.text "Facture", :align => :right, :size => 30, :style => :bold
       pdf.move_down(10)
       pdf.fill_color "000000"
-      pdf.text "Date: 12 Fevrier 2011", :align => :right, :size => 10
-      pdf.text "Reference facture: #{@bill.reference}", :align => :right, :size => 10
-      pdf.text "Reference client: #{@bill.customer.reference}", :align => :right, :size => 10
+      pdf.text "Date: #{l @bill.effective_date}", :align => :right, :size => 15
+      pdf.move_down(10)
+      
+      
+  end
+  
+  # Customer Address
+  pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width do
+    unless @bill.customer.nil?
+      pdf.text "#{@bill.customer_firstname} #{@bill.customer_lastname}", :size => 10, :align => :right
+      unless @bill.customer.address.nil?
+        pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 10, :align => :right
+        pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 10, :align => :right
+      end
+    end
   end
  
   # footer

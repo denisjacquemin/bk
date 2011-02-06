@@ -7,6 +7,7 @@
   = javascript_include_tag 'autocomplete', 'bill'
 - content_for :css do
   = stylesheet_link_tag "autocomplete"
+= render "shared/error_messages", :target => @bill
 .group
   .columns.wat-cf 
     .verylargecolumn.left     

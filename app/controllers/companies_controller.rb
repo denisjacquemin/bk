@@ -47,7 +47,7 @@ class CompaniesController < ApplicationController
       if @company.save
         current_user.company = @company
         current_user.save # Associate new company with current_user
-        format.html { redirect_to(@company, :notice => 'Company was successfully created.') }
+        format.html { redirect_to edit_company_url(@company), :notice => "#{t('assur.company.successfully_created')}." }
         format.xml  { render :xml => @company, :status => :created, :location => @company }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.update_attributes(params[:company])
-        format.html { redirect_to(@company, :notice => 'Company was successfully updated.') }
+        format.html { redirect_to edit_company_url(@company), :notice => "#{t('assur.company.successfully_updated')}." }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
