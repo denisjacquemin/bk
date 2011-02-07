@@ -35,12 +35,12 @@ pdf.repeat :all do
   end
   
   # Customer Address
-  pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width do
+  pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 100], :width  => pdf.bounds.width - 70 do
     unless @bill.customer.nil?
-      pdf.text "#{@bill.customer_firstname} #{@bill.customer_lastname}", :size => 10, :align => :right
+      pdf.text "#{@bill.customer_firstname} #{@bill.customer_lastname}", :size => 12, :align => :right
       unless @bill.customer.address.nil?
-        pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 10, :align => :right
-        pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 10, :align => :right
+        pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 12, :align => :right
+        pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 12, :align => :right
       end
     end
   end
