@@ -196,3 +196,7 @@
 .field_with_errors input {
     background-color: #FFBABA;
 }
+
+table#products.table tfoot {
+    font-size: 14px;
+}

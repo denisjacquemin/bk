@@ -2,7 +2,10 @@ document.observe("dom:loaded", function() {
    $$('.product').each(function(p){
        p.down('.totalhtva').innerHTML = p.down('.totalhtvahidden').value;
        p.down('.totaltvac').innerHTML = p.down('.totaltvachidden').value;
-   }); 
+   });
+   
+   $('globaltotalhtva').innerHTML = $F('bill_totalhtva');
+   $('globaltotaltvac').innerHTML = $F('bill_totaltvac');
    
    Autocomplete.isDomLoaded = true;
    new Autocomplete('customer_autocomplete', { 
