@@ -288,3 +288,4 @@ fr:
     attributes:
       bill:
         name: Description
+        reference: Référence
