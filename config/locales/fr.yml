@@ -289,3 +289,4 @@ fr:
       bill:
         name: Description
         reference: Référence
+        customer_id: Client

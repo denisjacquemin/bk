@@ -19,6 +19,13 @@ document.observe("dom:loaded", function() {
    });
 });
 
+// if customer_autocomplete field is changed, set bill_customer_id's value to nothing
+$('customer_autocomplete').observe('change', function(field) {
+    if ($F('customer_autocomplete').strip() == '') {
+        $('bill_customer_id').value = '';
+    }
+});
+
 document.observe('change', function(e, el) {
     
     //if (el = e.findElement('.number')) {
