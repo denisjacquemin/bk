@@ -16,6 +16,8 @@ class Customer < ActiveRecord::Base
   accepts_nested_attributes_for :nationality
   accepts_nested_attributes_for :title
   
+  scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
+  
   def fullname
     "#{self.firstname} #{self.lastname}"
   end
