@@ -9,8 +9,8 @@ pdf.repeat :all do
   # header
   pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width  do
       pdf.font "Helvetica"
-      pdf.text current_user.company.name, :align => :left, :size => 20
-      pdf.text current_user.company.slogan, :size => 10, :style => :italic
+      pdf.text current_user.company.name, :align => :left, :size => 20 unless current_user.company.name.nil?
+      pdf.text current_user.company.slogan, :size => 10, :style => :italic unless current_user.company.slogan.nil?
       pdf.move_down(5)
       pdf.text "#{current_user.company.address.number}, #{current_user.company.address.street}", :size => 10
       pdf.text "#{current_user.company.address.zipcode}, #{current_user.company.address.city}", :size => 10
