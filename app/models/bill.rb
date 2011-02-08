@@ -11,4 +11,7 @@ class Bill < ActiveRecord::Base
   delegate :fullname_with_reference, :to => :customer, :prefix => true, :allow_nil => true
   
   validates :name, :reference, :customer_id, :presence => true
+  
+  scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
+  
 end

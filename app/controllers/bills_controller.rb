@@ -2,7 +2,7 @@ class BillsController < ApplicationController
   # GET /bills
   # GET /bills.xml
   def index
-    @bills = Bill.all
+    @bills = Bill.by_company(current_user.company_id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -43,6 +43,7 @@ class BillsController < ApplicationController
   def create
     @bill = Bill.new(params[:bill])
     @bill.author_id = current_user.id
+    @bill.company_id = current_user.company_id
 
     respond_to do |format|
       if @bill.save
