@@ -2,7 +2,7 @@ require 'prawn/layout'
 
 page_number_y = [pdf.bounds.right-30, pdf.bounds.bottom + 12]
 page_counter = pdf.lazy_bounding_box(page_number_y, :width => 50) do   
-     pdf.text "Page: #{pdf.page_count}", :size => 8
+     pdf.text "#{t('assur.pdf.Page')}: #{pdf.page_count}", :size => 8
 end
 
 pdf.repeat :all do
@@ -11,24 +11,24 @@ pdf.repeat :all do
       pdf.font "Helvetica"
       pdf.text current_user.company.name, :align => :left, :size => 20
       pdf.text current_user.company.slogan, :size => 10, :style => :italic
-      pdf.move_down(10)
+      pdf.move_down(5)
       pdf.text "#{current_user.company.address.number}, #{current_user.company.address.street}", :size => 10
       pdf.text "#{current_user.company.address.zipcode}, #{current_user.company.address.city}", :size => 10
       pdf.text "Tel: 061/61.25.99", :size => 10
       pdf.text "Fax: 061/61.25.99", :size => 10
       pdf.text "GSM: 0461/61.25.99", :size => 10
       pdf.move_down(15)
-      pdf.text "Reference facture: #{@bill.reference}", :align => :left, :size => 10
-      pdf.text "Reference client: #{@bill.customer.reference}", :align => :left, :size => 10
+      pdf.text "#{t('assur.pdf.Bill_reference')}: #{@bill.reference}", :align => :left, :size => 10
+      pdf.text "#{t('assur.pdf.Customer_reference')}: #{@bill.customer.reference}", :align => :left, :size => 10
       
   end
   pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width do
       pdf.fill_color "AAAAAA"
       pdf.font "Helvetica"
-      pdf.text "Facture", :align => :right, :size => 30, :style => :bold
+      pdf.text t('assur.pdf.Bill'), :align => :right, :size => 30, :style => :bold
       pdf.move_down(10)
       pdf.fill_color "000000"
-      pdf.text "Date: #{l @bill.effective_date}", :align => :right, :size => 15
+      pdf.text "#{t('assur.pdf.Date')}: #{l @bill.effective_date}", :align => :right, :size => 15
       pdf.move_down(10)
       
       
@@ -56,6 +56,10 @@ pdf.repeat :all do
 end
 
 pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.width, :height => pdf.bounds.height - 300) do                 
+   
+   pdf.text @bill.name, :size => 12
+   pdf.move_down(10)
+   
    items = @bill.products.map do |item|
        [
            item.name,
@@ -68,8 +72,12 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.
        :row_colors         => :pdf_writer,
        :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.header_htva'), t('assur.pdf.header_tvac')], 
        :align => { 0 => :left, 1 => :right, 2 => :right},
-       :column_widths => { 0 => 345, 1 => 65, 2 => 65}
-   
+       :column_widths => { 0 => 410, 1 => 65, 2 => 65}
+  
+   pdf.move_down(10)  
+   pdf.text "#{t('assur.pdf.Total_htva')} #{@bill.totalhtva}", :size => 10, :align => :right
+   pdf.move_down(5)
+   pdf.text "#{t('assur.pdf.Total_tvac')} #{@bill.totaltvac}", :size => 13, :align => :right
    
 end
 

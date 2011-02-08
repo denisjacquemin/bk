@@ -97,13 +97,19 @@ fr:
     pdf:
         Customer_reference: Référence client
         Bill_reference: Référence facture
-        header_product_description: Description article
+        header_product_description: Description article(s)
         header_quantity: Quantitée
         header_unit_price: Prix unitère
         header_tva: TVA
         header_htva: HTVA
         header_tvac: TVAC
         Bill: Facture
+        Page: Page
+        Bill: Facture
+        Date: Date
+        Total_htva: Total HTVA
+        Total_tvac: Total TVAC
+        
     company:
         name: Nom
         slogan: Slogan
