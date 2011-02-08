@@ -29,6 +29,7 @@ document.observe("dom:loaded", function() {
   $$('.focus').invoke('select');
   
   document.observe('click', function(e, el) {
+      
       if (el = e.findElement('.remove')) {
         target = el.href.replace(/.*#/, '.');
         
@@ -40,7 +41,14 @@ document.observe("dom:loaded", function() {
         } else {
             el.up(target).remove();
         }
+        
+        // only for Bill.edit screen, refresh the global total
+        if (target == '.product') {
+            computeGlobalTotal();
+        }
       }
+      
+
   });
 
   

@@ -4,8 +4,10 @@ document.observe("dom:loaded", function() {
        p.down('.totaltvac').innerHTML = p.down('.totaltvachidden').value;
    });
    
-   $('globaltotalhtva').innerHTML = $F('bill_totalhtva');
-   $('globaltotaltvac').innerHTML = $F('bill_totaltvac');
+   computeGlobalTotal();
+   
+   //$('globaltotalhtva').innerHTML = $F('bill_totalhtva');
+   //$('globaltotaltvac').innerHTML = $F('bill_totaltvac');
    
    Autocomplete.isDomLoaded = true;
    new Autocomplete('customer_autocomplete', { 
@@ -45,43 +47,57 @@ document.observe('change', function(e, el) {
     if (el = e.findElement('.ct')) {
       var product = el.up('.product');
       if (product) {
-        var total = 0.0;
-        var quantity = 0.0;
-        var up = 0.0;
-        var tva = 0.0;
+        computeTotalForAProduct(product);
         
-        product.select('.ct').each(function(ct){
-            if (ct.hasClassName('q'))  { quantity = parseFloat(ct.value); }
-            if (ct.hasClassName('up')) { up = parseFloat(ct.value); }
-            if (ct.hasClassName('tva')) { tva = parseFloat(ct.options[ct.selectedIndex].innerHTML); }
-        });
-        
-        // total for current product
-        totalhtva = quantity * up;
-         
-        product.down('.totalhtva').innerHTML = totalhtva;
-        product.down('.totalhtvahidden').value = totalhtva;
-        
-        totaltvac = totalhtva + (totalhtva * (tva/100));
-        product.down('.totaltvac').innerHTML = Math.round(totaltvac*100)/100;
-        product.down('.totaltvachidden').value = Math.round(totaltvac*100)/100;
-        
-        // update global total 
-        var globaltotal_tvac = 0.0;
-        $$('.totaltvac').each(function(t){
-            globaltotal_tvac = globaltotal_tvac + parseFloat(t.innerHTML);
-        });
-        
-        var globaltotal_htva = 0.0;
-        $$('.totalhtva').each(function(t){
-            globaltotal_htva = globaltotal_htva + parseFloat(t.innerHTML);
-        });
-        
-        $('bill_totalhtva').value = globaltotal_htva;
-        $('globaltotalhtva').innerHTML = globaltotal_htva;
-        
-        $('bill_totaltvac').value = Math.round(globaltotal_tvac*100)/100;
-        $('globaltotaltvac').innerHTML = Math.round(globaltotal_tvac*100)/100;
+        computeGlobalTotal();
       }
     }
 });
+
+
+function computeTotalForAProduct(product) {
+    
+    var total = 0.0;
+    var quantity = 0.0;
+    var up = 0.0;
+    var tva = 0.0;
+    
+    product.select('.ct').each(function(ct){
+        if (ct.hasClassName('q'))  { quantity = parseFloat(ct.value); }
+        if (ct.hasClassName('up')) { up = parseFloat(ct.value); }
+        if (ct.hasClassName('tva')) { tva = parseFloat(ct.options[ct.selectedIndex].innerHTML); }
+    });
+    
+    // total for current product
+    totalhtva = quantity * up;
+     
+    product.down('.totalhtva').innerHTML = totalhtva;
+    product.down('.totalhtvahidden').value = totalhtva;
+    
+    totaltvac = totalhtva + (totalhtva * (tva/100));
+    product.down('.totaltvac').innerHTML = Math.round(totaltvac*100)/100;
+    product.down('.totaltvachidden').value = Math.round(totaltvac*100)/100;
+}
+
+function computeGlobalTotal() {
+    // update global total 
+    var globaltotal_tvac = 0.0;
+    $$('.totaltvac').each(function(t){
+        if (t.up('.product').visible()) {
+            globaltotal_tvac = globaltotal_tvac + parseFloat(t.innerHTML);
+        }
+    });
+    
+    var globaltotal_htva = 0.0;
+    $$('.totalhtva').each(function(t){
+        if (t.up('.product').visible()) {
+            globaltotal_htva = globaltotal_htva + parseFloat(t.innerHTML);
+        }
+    });
+    
+    $('bill_totalhtva').value = globaltotal_htva;
+    $('globaltotalhtva').innerHTML = globaltotal_htva;
+    
+    $('bill_totaltvac').value = Math.round(globaltotal_tvac*100)/100;
+    $('globaltotaltvac').innerHTML = Math.round(globaltotal_tvac*100)/100;
+}
