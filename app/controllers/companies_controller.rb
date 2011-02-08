@@ -45,8 +45,6 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
-        current_user.company = @company
-        current_user.save # Associate new company with current_user
         format.html { redirect_to edit_company_url(@company), :notice => "#{t('assur.company.successfully_created')}." }
         format.xml  { render :xml => @company, :status => :created, :location => @company }
       else
