@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   belongs_to :company
   
   # Associate a new user with a company
-  before_save :associate_with_company
+  before_create :associate_with_company
   
   def associate_with_company
     company = Company.create
