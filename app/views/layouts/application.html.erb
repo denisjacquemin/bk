@@ -16,7 +16,7 @@
             <% if current_user.company.nil? %>
               <li><%= link_to t('assur.general.Configuration'), new_company_path %></li>
             <% else %>
-              <li><%= link_to t('assur.general.Configuration'), edit_company_path(current_user.company) %></li>
+              <li><%= link_to t('assur.general.Configuration'), configuration_path %></li>
             <% end %>
             <li><%= link_to t("assur.general.logout"), destroy_user_session_path, :class => 'logout' %></li>         
         </ul>
