@@ -84,7 +84,7 @@ fr:
         creation_date: Création
         last_upadte_date: Modification
     product:
-        Product_name_description: Nom article / description
+        Product_name_description: Description article(s)
         Quantity: Quantité
         Unit_price: Prix unitère (htva)
         VAT: TVA
