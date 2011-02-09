@@ -5,6 +5,7 @@
   %td= f.collection_select(:tva_id, Tva.all, :id, :value, {}, :class => 'tva ct')
   %td.text-right.totalhtva
   %td.text-right.totaltvac 
-  %td= render :partial => 'remove_link_unless_new_record', :locals => {:f => f}
-  =f.hidden_field :totaltvac, :class => 'totaltvachidden'
-  =f.hidden_field :totalhtva, :class => 'totalhtvahidden'
+  %td
+    = render :partial => 'remove_link_unless_new_record', :locals => {:f => f}
+    =f.hidden_field :totaltvac, :class => 'totaltvachidden'
+    =f.hidden_field :totalhtva, :class => 'totalhtvahidden'
