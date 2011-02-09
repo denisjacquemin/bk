@@ -112,9 +112,16 @@ fr:
         
     company:
         name: Nom
+        name_description: "ex: Ma compagnie Sprl"
         slogan: Slogan
         successfully_created: Infos compagnie créées avec succès
         successfully_updated: Infos compagnie mises à jour avec succès
+        enreg_number: NE
+        enreg_number_description: "ex: 11.22.33"
+        tva_number: TVA
+        tva_number_description: "ex: BE 0123.456.789"
+        
+            
     all_customers: Tous les Clients
     delete: Effacer
     show: Details

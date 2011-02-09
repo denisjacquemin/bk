@@ -50,7 +50,7 @@ pdf.repeat :all do
       pdf.font "Helvetica"
       pdf.stroke_horizontal_rule
       pdf.move_down(3)
-      pdf.text "Nom Societe | TVA BE 0463.770.658 | NE: 11.15.11 | ING 310-1541386-45 | Fortis 210-0983261-24  | KBC 210-0983261-24", :align => :center, :size => 8
+      pdf.text "#{current_user.company.name unless current_user.company.name.nil?} | TVA #{current_user.company.tva_number unless current_user.company.tva_number.nil?} | NE: #{current_user.company.enreg_number unless current_user.company.enreg_number.nil?} | ING 310-1541386-45 | Fortis 210-0983261-24  | KBC 210-0983261-24", :align => :center, :size => 8
   end
   page_counter.draw
 end
