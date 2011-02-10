@@ -19,7 +19,7 @@ pdf.repeat :all do
       pdf.text "GSM: 0461/61.25.99", :size => 10
       pdf.move_down(15)
       pdf.text "#{t('assur.pdf.Bill_reference')}: #{@bill.reference}", :align => :left, :size => 10
-      pdf.text "#{t('assur.pdf.Customer_reference')}: #{@bill.customer.reference}", :align => :left, :size => 10
+      pdf.text "#{t('assur.pdf.Customer_reference')}: #{@bill.customer.reference}", :align => :left, :size => 10 unless @bill.customer.nil?
       
   end
   pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width do

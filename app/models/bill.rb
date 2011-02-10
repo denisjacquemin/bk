@@ -10,7 +10,7 @@ class Bill < ActiveRecord::Base
   delegate :email, :to => :author, :prefix => true, :allow_nil => true
   delegate :fullname_with_reference, :to => :customer, :prefix => true, :allow_nil => true
   
-  validates :name, :reference, :customer_id, :presence => true
+  validates :name, :reference, :presence => true
   
   scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
   
