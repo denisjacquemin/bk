@@ -1,0 +1,11 @@
+.group.bankaccount
+  %table{:width => '100%'}
+    %tr
+      %td
+        = f.label :name, t("assur.company.bank_account_name"), :class => :label
+    %tr
+      %td= f.text_field :name, :class => 'text_field'
+      %td{:width => '16px'}= render :partial => 'shared/remove_link_unless_new_record', :locals => {:f => f}
+    %tr
+      %td
+        %span.description= t('assur.company.bank_account_name_description')

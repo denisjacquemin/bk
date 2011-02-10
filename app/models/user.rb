@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   def associate_with_company
     company = Company.create
     company.address = Address.create
+    company.bankaccounts << Bankaccount.create
     company.save
     self.company = company
   end

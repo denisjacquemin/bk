@@ -120,7 +120,9 @@ fr:
         enreg_number_description: "ex: 11.22.33"
         tva_number: TVA
         tva_number_description: "ex: BE 0123.456.789"
-        
+        bank_account_name: CCP
+        bank_account_name_description: "ex: Fortis 210-1234567-24"
+        Add_bankaccout: Ajouter un CCP
             
     all_customers: Tous les Clients
     delete: Effacer
