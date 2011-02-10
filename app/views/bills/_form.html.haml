@@ -27,7 +27,7 @@
         = link_to 'aide', '#'
     .column.right
       = f.label :effective_date, t("assur.bill.Effective_date"), :class => :label
-      = f.date_select :effective_date, :class => 'text_field'
+      = f.date_select :effective_date, :start_year => Time.now.year-1, :class => 'text_field'
 %table.table{:id => 'products'}
   %thead
     %tr
