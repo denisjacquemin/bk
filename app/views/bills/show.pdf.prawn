@@ -5,15 +5,17 @@ page_counter = pdf.lazy_bounding_box(page_number_y, :width => 50) do
      pdf.text "#{t('assur.pdf.Page')}: #{pdf.page_count}", :size => 8
 end
 
+company = @bill.author.company
+
 pdf.repeat :all do
   # header
   pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width  do
       pdf.font "Helvetica"
-      pdf.text current_user.company.name, :align => :left, :size => 20 unless current_user.company.name.nil?
-      pdf.text current_user.company.slogan, :size => 10, :style => :italic unless current_user.company.slogan.nil?
+      pdf.text company.name, :align => :left, :size => 20 unless company.name.nil?
+      pdf.text company.slogan, :size => 10, :style => :italic unless company.slogan.nil?
       pdf.move_down(5)
-      pdf.text "#{current_user.company.address.number}, #{current_user.company.address.street}", :size => 10
-      pdf.text "#{current_user.company.address.zipcode}, #{current_user.company.address.city}", :size => 10
+      pdf.text "#{company.address.number}, #{company.address.street}", :size => 10
+      pdf.text "#{company.address.zipcode}, #{company.address.city}", :size => 10
       pdf.text "Tel: 061/61.25.99", :size => 10
       pdf.text "Fax: 061/61.25.99", :size => 10
       pdf.text "GSM: 0461/61.25.99", :size => 10
@@ -50,7 +52,11 @@ pdf.repeat :all do
       pdf.font "Helvetica"
       pdf.stroke_horizontal_rule
       pdf.move_down(3)
-      pdf.text "#{current_user.company.name unless current_user.company.name.nil?} | TVA #{current_user.company.tva_number unless current_user.company.tva_number.nil?} | NE: #{current_user.company.enreg_number unless current_user.company.enreg_number.nil?} | ING 310-1541386-45 | Fortis 210-0983261-24  | KBC 210-0983261-24", :align => :center, :size => 8
+      footer = "#{company.name unless company.name.nil?} | TVA #{company.tva_number unless company.tva_number.nil?} | NE: #{company.enreg_number unless company.enreg_number.nil?} "
+      for bankaccount in @bill.author.company.bankaccounts do
+        footer = footer + "| #{bankaccount.name} "
+      end
+      pdf.text footer, :align => :center, :size => 8
   end
   page_counter.draw
 end
