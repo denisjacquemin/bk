@@ -299,9 +299,13 @@ fr:
         <<: *errors_template
       full_messages:
         format: "%{attribute} %{message}"
-    models: 
+    models:
+      products: article
     attributes:
       bill:
         name: Description
         reference: Référence
         customer_id: Client
+      products:
+        quantity: quantitée
+        unit_price: Prix unitère
