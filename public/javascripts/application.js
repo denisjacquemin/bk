@@ -47,10 +47,11 @@ document.observe("dom:loaded", function() {
             computeGlobalTotal();
         }
       }
-      
-
   });
 
+  $$('.error').each(function(e){
+      $$('div.field_with_errors input')[0].focus();
+  });
   
   $$('.add_nested_item').each(function(el) {
     el.observe('click', function() {

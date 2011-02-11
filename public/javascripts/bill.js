@@ -5,10 +5,7 @@ document.observe("dom:loaded", function() {
    });
    
    computeGlobalTotal();
-   
-   //$('globaltotalhtva').innerHTML = $F('bill_totalhtva');
-   //$('globaltotaltvac').innerHTML = $F('bill_totaltvac');
-   
+
    Autocomplete.isDomLoaded = true;
    new Autocomplete('customer_autocomplete', { 
        serviceUrl:'/customers/autocomplete',
@@ -33,17 +30,6 @@ $('customer_autocomplete').observe('change', function(field) {
 
 document.observe('change', function(e, el) {
     
-    //if (el = e.findElement('.number')) {
-    //    var regExpr = new RegExp("^-{0,1}\");
-    //    if (!regExpr.test(el.value)) {
-    //        //el.style.backgroundColor = '#F00';
-    //        alert('true');
-    //    } else {
-    //        alert('false');
-    //    }
-    //}
-    
-    
     if (el = e.findElement('.ct')) {
       var product = el.up('.product');
       if (product) {
@@ -56,7 +42,7 @@ document.observe('change', function(e, el) {
 
 
 function computeTotalForAProduct(product) {
-    
+
     var total = 0.0;
     var quantity = 0.0;
     var up = 0.0;
@@ -100,4 +86,15 @@ function computeGlobalTotal() {
     
     $('bill_totaltvac').value = Math.round(globaltotal_tvac*100)/100;
     $('globaltotaltvac').innerHTML = Math.round(globaltotal_tvac*100)/100;
+}
+
+function isNumerical(field) {
+    var isNumerical = false;
+    var re = new RegExp(/\A[+-]?\d+\Z/);
+    
+    if (field.match(re)) {
+        isNumerical = true;
+    }
+    // enlever le background rouge s'il est present --> trop fort
+    return isNumerical;
 }
