@@ -135,7 +135,7 @@ Gr0wl.Smoke = Class.create(Gr0wl.Base, {
 		  last = 0;
 		}
 		scrollTop = this.getScrollTop();
-		delta = scrollTop+10+(last*83);
+		delta = scrollTop+200+(last*83);
 		
 		options = Object.extend(options, {
             position: {'top':delta+'px', 'right':'10px', 'display':'block'},

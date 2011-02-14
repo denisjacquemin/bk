@@ -49,9 +49,19 @@ function computeTotalForAProduct(product) {
     var tva = 0.0;
     
     product.select('.ct').each(function(ct){
-        if (ct.hasClassName('q'))  { quantity = parseFloat(ct.value); }
-        if (ct.hasClassName('up')) { up = parseFloat(ct.value); }
-        if (ct.hasClassName('tva')) { tva = parseFloat(ct.options[ct.selectedIndex].innerHTML); }
+        if (ct.hasClassName('q'))  { 
+            if (validateNumeric(ct.value, ct)) {
+                quantity = parseFloat(ct.value); 
+            }
+        }
+        if (ct.hasClassName('up')) { 
+            if (validateNumeric(ct.value)) {
+                up = parseFloat(ct.value);
+            } 
+        }
+        if (ct.hasClassName('tva')) { 
+            tva = parseFloat(ct.options[ct.selectedIndex].innerHTML);
+        }
     });
     
     // total for current product
@@ -88,13 +98,19 @@ function computeGlobalTotal() {
     $('globaltotaltvac').innerHTML = Math.round(globaltotal_tvac*100)/100;
 }
 
-function isNumerical(field) {
-    var isNumerical = false;
-    var re = new RegExp(/\A[+-]?\d+\Z/);
-    
-    if (field.match(re)) {
-        isNumerical = true;
-    }
-    // enlever le background rouge s'il est present --> trop fort
-    return isNumerical;
+function validateNumeric(input, element) {
+  var valid = true;
+  if(!IsNumeric(input)) {
+    valid = false;
+    element.setStyle({backgroundColor: '#FFBABA'});
+  }
+  
+  if(valid) { element.setStyle({backgroundColor: '#FFF'}); }
+  
+  return valid;
+}
+
+function IsNumeric(input)
+{
+   return (input - 0) == input && input.length > 0;
 }
