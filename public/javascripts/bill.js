@@ -55,7 +55,7 @@ function computeTotalForAProduct(product) {
             }
         }
         if (ct.hasClassName('up')) { 
-            if (validateNumeric(ct.value)) {
+            if (validateNumeric(ct.value, ct)) {
                 up = parseFloat(ct.value);
             } 
         }

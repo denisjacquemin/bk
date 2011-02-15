@@ -47,6 +47,8 @@ pdf.repeat :all do
     end
   end
  
+
+  
   # footer
   pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 25], :width  => pdf.bounds.width do
       pdf.font "Helvetica"
@@ -75,14 +77,18 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.
    end
    
    pdf.table items, :border_style => :grid,
-       :row_colors         => :pdf_writer,
+       :row_colors => :pdf_writer,
        :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.header_htva'), t('assur.pdf.header_tvac')], 
        :align => { 0 => :left, 1 => :right, 2 => :right},
-       :column_widths => { 0 => 410, 1 => 65, 2 => 65}
-  
-   pdf.move_down(10)  
-   pdf.text "#{t('assur.pdf.Total_htva')} #{@bill.totalhtva}", :size => 10, :align => :right
-   pdf.move_down(5)
-   pdf.text "#{t('assur.pdf.Total_tvac')} #{@bill.totaltvac}", :size => 13, :align => :right
-   
+       :column_widths => { 0 => 400, 1 => 70, 2 => 70}
+end
+
+pdf.move_down(10)  
+pdf.text "#{t('assur.pdf.Total_htva')} #{@bill.totalhtva}", :size => 10, :align => :right
+pdf.move_down(5)
+pdf.text "#{t('assur.pdf.Total_tvac')} #{@bill.totaltvac}", :size => 13, :align => :right
+
+pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 70], :width  => pdf.bounds.width do
+    pdf.font "Helvetica"
+    pdf.text @bill.note, :size => 8
 end

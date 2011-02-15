@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110209072545) do
+ActiveRecord::Schema.define(:version => 20110214055208) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20110209072545) do
     t.float    "totaltvac"
     t.float    "totalhtva"
     t.integer  "company_id"
+    t.text     "note"
   end
 
   create_table "companies", :force => true do |t|
@@ -90,6 +91,12 @@ ActiveRecord::Schema.define(:version => 20110209072545) do
   create_table "nationalities", :force => true do |t|
     t.string   "name"
     t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notes", :force => true do |t|
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
