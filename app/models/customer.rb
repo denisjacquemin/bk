@@ -22,6 +22,10 @@ class Customer < ActiveRecord::Base
     "#{self.firstname} #{self.lastname}"
   end
   
+  def fullname_with_underscore
+    self.fullname.gsub(' ', '_')
+  end
+  
   def fullname_with_reference
     "#{self.fullname} ref: #{self.reference}"
   end

@@ -62,3 +62,11 @@ document.observe("dom:loaded", function() {
     });
   });
 });
+
+function toCurrency(amount) {
+  return amount.toFixed(2);
+}
+
+Number.prototype.toCurrency = function () {
+  return toCurrency(this);
+}

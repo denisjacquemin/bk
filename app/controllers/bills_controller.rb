@@ -14,8 +14,12 @@ class BillsController < ApplicationController
   # GET /bills/1.xml
   def show
     @bill = Bill.find(params[:id])
+    
+    # set filename :format => fct_Cutomer-fullname_bill-reference_bill-effective-date.pdf
+    prawnto :filename => "fct_#{@bill.customer_fullname_with_underscore}_#{@bill.reference}_#{@bill.effective_date}.pdf"
 
     respond_to do |format|
+      #format.pdf { render :action => "show", :format => :pdf, :options => {:filename => 'toto.pdf'} }
       format.pdf
     end
   end

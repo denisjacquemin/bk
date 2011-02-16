@@ -1,7 +1,7 @@
 document.observe("dom:loaded", function() {
    $$('.product').each(function(p){
-       p.down('.totalhtva').innerHTML = p.down('.totalhtvahidden').value;
-       p.down('.totaltvac').innerHTML = p.down('.totaltvachidden').value;
+       p.down('.totalhtva').innerHTML = parseFloat(p.down('.totalhtvahidden').value).toCurrency();
+       p.down('.totaltvac').innerHTML = parseFloat(p.down('.totaltvachidden').value).toCurrency();
    });
    
    computeGlobalTotal();
@@ -67,11 +67,11 @@ function computeTotalForAProduct(product) {
     // total for current product
     totalhtva = quantity * up;
      
-    product.down('.totalhtva').innerHTML = totalhtva;
+    product.down('.totalhtva').innerHTML = parseFloat(totalhtva).toCurrency();
     product.down('.totalhtvahidden').value = totalhtva;
     
     totaltvac = totalhtva + (totalhtva * (tva/100));
-    product.down('.totaltvac').innerHTML = Math.round(totaltvac*100)/100;
+    product.down('.totaltvac').innerHTML = parseFloat(Math.round(totaltvac*100)/100).toCurrency();
     product.down('.totaltvachidden').value = Math.round(totaltvac*100)/100;
 }
 
@@ -92,10 +92,10 @@ function computeGlobalTotal() {
     });
     
     $('bill_totalhtva').value = globaltotal_htva;
-    $('globaltotalhtva').innerHTML = globaltotal_htva;
+    $('globaltotalhtva').innerHTML = parseFloat(globaltotal_htva).toCurrency();
     
     $('bill_totaltvac').value = Math.round(globaltotal_tvac*100)/100;
-    $('globaltotaltvac').innerHTML = Math.round(globaltotal_tvac*100)/100;
+    $('globaltotaltvac').innerHTML = parseFloat(Math.round(globaltotal_tvac*100)/100).toCurrency();
 }
 
 function validateNumeric(input, element) {

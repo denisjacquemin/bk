@@ -6,6 +6,8 @@ class Bill < ActiveRecord::Base
   accepts_nested_attributes_for :products, :allow_destroy => true
   delegate :firstname, :to => :customer, :prefix => true, :allow_nil => true
   delegate :lastname, :to => :customer, :prefix => true, :allow_nil => true
+  delegate :fullname, :to => :customer, :prefix => true, :allow_nil => true
+  delegate :fullname_with_underscore, :to => :customer, :prefix => true, :allow_nil => true
   delegate :email, :to => :author, :prefix => true, :allow_nil => true
   delegate :fullname_with_reference, :to => :customer, :prefix => true, :allow_nil => true
   
