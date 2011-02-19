@@ -30,7 +30,7 @@
               = "#{bill.customer_firstname} #{bill.customer_lastname}"
             %td
               = bill.reference
-            %td
+            %td.text-right
               = bill.totaltvac
             %td.last
               \#{link_to "#{t("assur.general.delete")}", bill_path(bill), :method => :delete, :confirm => "#{t("assur.general.are_you_sure")}"}
