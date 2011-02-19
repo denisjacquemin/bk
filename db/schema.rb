@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110214055208) do
+ActiveRecord::Schema.define(:version => 20110218073407) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -40,10 +40,10 @@ ActiveRecord::Schema.define(:version => 20110214055208) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "author_id"
-    t.float    "totaltvac"
-    t.float    "totalhtva"
     t.integer  "company_id"
     t.text     "note"
+    t.integer  "totaltvac_in_cents", :default => 0, :null => false
+    t.integer  "totalhtva_in_cents", :default => 0, :null => false
   end
 
   create_table "companies", :force => true do |t|
@@ -103,14 +103,14 @@ ActiveRecord::Schema.define(:version => 20110214055208) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.integer  "quantity",   :default => 1
-    t.float    "unit_price"
+    t.integer  "quantity",           :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "bill_id"
     t.integer  "tva_id"
-    t.float    "totaltvac"
-    t.float    "totalhtva"
+    t.integer  "totaltvac_in_cents", :default => 0, :null => false
+    t.integer  "totalhtva_in_cents", :default => 0, :null => false
+    t.integer  "price_in_cents",     :default => 0, :null => false
   end
 
   create_table "sexes", :force => true do |t|
