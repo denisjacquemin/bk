@@ -1,19 +1,19 @@
-.block.notice
-  %h3= t('assur.bill.Info_bill')
-  .content
-    %table
-      %thead
-        %tr
-          %th.w80.text-left Description
-          %th.w20.text-center Montant TVAC
-      %tbody
-        - total = 0
-        - for bill in customer.bills  
-          %tr
-            %td= link_to bill.name, edit_bill_path(bill)
-            %td.text-right= link_to bill.totaltvac, edit_bill_path(bill)
-          - total = total + bill.totaltvac
-      %tfoot.greybg
-        %tr.strong
-          %td= t('assur.product.Total')
-          %td.text-right= total
+-#.block.notice
+-#  %h3= t('assur.bill.Info_bill')
+-#  .content
+-#    %table
+-#      %thead
+-#        %tr
+-#          %th.w80.text-left Description
+-#          %th.w20.text-center Montant TVAC
+-#      %tbody
+-#        - total = 0
+-#        - for bill in customer.bills  
+-#          %tr
+-#            %td= link_to bill.name, edit_bill_path(bill)
+-#            %td.text-right= link_to bill.totaltvac, edit_bill_path(bill)
+-#          - total = total + bill.totaltvac
+-#      %tfoot.greybg
+-#        %tr.strong
+-#          %td= t('assur.product.Total')
+-#          %td.text-right= total
