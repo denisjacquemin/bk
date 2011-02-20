@@ -16,6 +16,10 @@ class Customer < ActiveRecord::Base
   accepts_nested_attributes_for :nationality
   accepts_nested_attributes_for :title
   
+  validates :firstname, :lastname, :reference, :presence => true
+  validates_uniqueness_of :reference
+  
+  
   scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
   
   def fullname

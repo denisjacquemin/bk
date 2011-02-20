@@ -18,6 +18,7 @@ class Bill < ActiveRecord::Base
   
   validates_numericality_of :totaltvac, :totalhtva
   validates :name, :reference, :presence => true
+  validates_uniqueness_of :reference
   
   accepts_nested_attributes_for :products, :allow_destroy => true
   delegate :firstname, :to => :customer, :prefix => true, :allow_nil => true
