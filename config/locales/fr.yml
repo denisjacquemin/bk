@@ -266,7 +266,7 @@ fr:
     format: "Le champ %{attribute} %{message}"
     messages: &errors_messages
       inclusion: "n'est pas inclus(e) dans la liste"
-      exclusion: "n'est pas disponible"
+      exclusion: "est déjà utilisé"
       invalid: "n'est pas valide"
       confirmation: "ne concorde pas avec la confirmation"
       accepted: "doit être accepté(e)"
@@ -293,7 +293,7 @@ fr:
   activerecord:
     errors:
       messages:
-        taken: "n'est pas disponible"
+        taken: "est déjà utilisé"
         record_invalid: "La validation a échoué : %{errors}"
         <<: *errors_messages
       template:
