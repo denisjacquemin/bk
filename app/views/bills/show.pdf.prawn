@@ -1,4 +1,4 @@
-require 'prawn/layout' 
+require 'prawn/layout'
 
 page_number_y = [pdf.bounds.right-30, pdf.bounds.bottom + 12]
 page_counter = pdf.lazy_bounding_box(page_number_y, :width => 50) do   
@@ -60,7 +60,10 @@ pdf.repeat :all do
       end
       pdf.text footer, :align => :center, :size => 8
   end
-  page_counter.draw
+  #page_counter.draw
+  pdf.font_size(8) {
+    pdf.number_pages "<page>/<total>", [pdf.bounds.right-10, pdf.bounds.bottom + 5]
+  }
 end
 
 pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.width, :height => pdf.bounds.height - 300) do                 
