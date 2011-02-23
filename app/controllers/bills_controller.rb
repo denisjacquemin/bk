@@ -46,7 +46,15 @@ class BillsController < ApplicationController
   def create
     @bill = Bill.new(params[:bill])
     @bill.author_id = current_user.id
-    @bill.company_id = current_user.company_id
+    company = current_user.company
+    @bill.company_id = company.id
+    
+    # init location with company's address city... if exist
+    unless company.address.nil?
+      unless company.address.city.nil?
+        @bill.location = "#{company.address.city}"
+      end
+    end
 
     respond_to do |format|
       if @bill.save
