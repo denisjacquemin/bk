@@ -70,10 +70,10 @@ fr:
         bills: factures
         bill: facture
         Bill: Facture
-        Effective_date: Date de facturation
+        Effective_date: Lieu et date de facturation
         New_bill: Nouvelle facture
         Customer: Client
-        Generate_pdf: Générer PDF
+        Generate_pdf: Générer facture (.pdf)
         Send_by_email: Envoyer par email
         Actions_on_bill: Actions sur la facture
         Successfully_created: Facture créé avec succès
@@ -84,6 +84,7 @@ fr:
         creation_date: Création
         last_upadte_date: Modification
         note: Note
+        location: le
     product:
         Product_name_description: Description article(s)
         Quantity: Quantité
