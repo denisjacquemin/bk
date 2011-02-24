@@ -30,4 +30,15 @@ class Bill < ActiveRecord::Base
   
   scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
   
+  def location_for_bill(company)
+    # if location not set
+    if self.location.nil? 
+      if (!company.nil? && !company.address.nil? && !company.address.city.nil?)
+        # set location to company's address city... if exist
+        self.location = company.address.city
+      end
+    end
+    self.location
+  end
+  
 end
