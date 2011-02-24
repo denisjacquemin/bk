@@ -9,10 +9,9 @@
 <body>
   <div id="container">
     <div id="header">
-      <h1><a href="/">Web App</a></h1>
+      <h1><a href="/"><%= current_user.company.name %></a></h1>
       <div id="user-navigation">
         <ul class="wat-cf">
-            <!--<li >Bienvenue <%= current_user.email %></li>-->
             <% if current_user.company.nil? %>
               <li><%= link_to t('assur.general.Configuration'), new_company_path %></li>
             <% else %>
