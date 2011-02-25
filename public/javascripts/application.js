@@ -50,7 +50,7 @@ document.observe("dom:loaded", function() {
       
       if (el = e.findElement('.in_place_edit')) {
           el.down('.readonly').hide();
-          el.down('input').show();
+          el.down('input').show().select();
       }
       
   });
