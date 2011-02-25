@@ -47,6 +47,12 @@ document.observe("dom:loaded", function() {
             computeGlobalTotal();
         }
       }
+      
+      if (el = e.findElement('.in_place_edit')) {
+          el.down('.readonly').hide();
+          el.down('input').show();
+      }
+      
   });
 
   $$('.error').each(function(e){
