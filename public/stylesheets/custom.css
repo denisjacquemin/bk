@@ -15,8 +15,11 @@
 
 .form .columns .verysmallcolumn {
     width: 18%;
+    
 }
-
+.form .columns .verysmallcolumn .readonly {
+    font-size: 1.2em;
+}
 .form .columns .verylargecolumn {
     width: 78%;
 }
@@ -210,4 +213,5 @@ table#products.table tfoot {
     font-size: 1.2em;
     margin: 0;
     padding: 1px 0;
+    width:120px;
 }
