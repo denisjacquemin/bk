@@ -1,3 +1,15 @@
+body {
+    background: url('../images/greybg.jpg') repeat-x #EBEBEB;
+}
+
+.block {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.199219) 0px 0px 5px inset;
+}
+
+#sidebar ul li {
+  border: none;
+}
+
 .fieldset {
     background: #eee;
     padding: 10px;
