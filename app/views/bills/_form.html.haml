@@ -15,7 +15,9 @@
       = f.text_field :name, :class => 'text_field focus'
     .verysmallcolumn.right
       = f.label :reference, t("assur.bill.Reference"), :class => :label
-      = f.text_field :reference, :class => 'text_field'
+      %span.in_place_edit{:target => 'bill_reference'}
+        %span.readonly= @bill.reference
+        = text_field_tag 'bill[reference]', @bill.reference, :class => 'in_place_edit_text_field', :style => 'display:none'
 .group
   .columns.wat-cf 
     .column.left     
@@ -28,10 +30,10 @@
     .column.right
       = f.label :effective_date, t("assur.bill.Effective_date"), :class => :label
       %span.in_place_edit{:target => 'bill_location'}
-        %span.readonly
-          = "#{@bill.location_for_bill(current_user.company)} #{t('assur.bill.location')}"
+        %span.readonly= @bill.location_for_bill(current_user.company)
         = text_field_tag 'bill[location]', @bill.location_for_bill(current_user.company), :class => 'in_place_edit_text_field', :style => 'display:none'
-      = f.date_select :effective_date, :start_year => Time.now.year-1, :class => 'text_field'
+        = " #{t('assur.bill.location')}"
+      = f.date_select :effective_date, :start_year => Time.now.year-2, :end_year => Time.now.year+2, :class => 'text_field'
 %table.table{:id => 'products'}
   %thead
     %tr
