@@ -1,7 +1,10 @@
 require 'prawn/layout'
 
 company = @bill.author.company
-
+location_and_date = l @bill.effective_date
+unless @bill.location.empty?
+  location_and_date = "#{@bill.location} #{t('assur.bill.location')} #{l @bill.effective_date}"
+end
 
 
 pdf.repeat :all do
@@ -27,7 +30,7 @@ pdf.repeat :all do
       pdf.text t('assur.pdf.Bill'), :align => :right, :size => 30, :style => :bold
       pdf.move_down(10)
       pdf.fill_color "000000"
-      pdf.text "#{t('assur.pdf.Date')}: #{l @bill.effective_date}", :align => :right, :size => 15
+      pdf.text location_and_date, :align => :right, :size => 15
       pdf.move_down(10)
       
       
@@ -40,6 +43,9 @@ pdf.repeat :all do
       unless @bill.customer.address.nil?
         pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 12, :align => :right
         pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 12, :align => :right
+      end
+      unless @bill.customer.tva_number.empty?
+        pdf.text @bill.customer.tva_number, :size => 12, :align => :right
       end
     end
   end
