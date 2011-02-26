@@ -23,6 +23,8 @@ fr:
       Company: Compagnie
       Configuration: Configuration
       error_in_form: Veuillez corriger les erreurs ci-dessous
+      ie: 'Ex:'
+      ie_tva: BE 0123.456.789
     customer:
       customers: clients
       Customers: Clients
@@ -61,6 +63,7 @@ fr:
       currentpassword: Mot de passe courant
       successfully_created: Client créé avec succès
       successfully_updated: Client mis à jour avec succès
+      Tva_number: Numéro TVA
     bill:
         Description: Description
         Customer_name: Nom de client
@@ -119,9 +122,8 @@ fr:
         successfully_created: Infos compagnie créées avec succès
         successfully_updated: Infos compagnie mises à jour avec succès
         enreg_number: NE
-        enreg_number_description: "ex: 11.22.33"
-        tva_number: TVA
-        tva_number_description: "ex: BE 0123.456.789"
+        ie_enreg_number_description: "11.22.33"
+        Tva_number: Numéro TVA
         bank_account_name: CCP
         bank_account_name_description: "ex: Fortis 210-1234567-24"
         Add_bankaccout: Ajouter un CCP
