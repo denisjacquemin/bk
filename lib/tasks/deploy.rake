@@ -6,8 +6,8 @@ task :deploy => :environment do
   #puts "-----> pushing to github"
   #system("git push origin master") ? true : fail
 
-  #puts "-----> deploying to heroku"
-  #system("git push heroku master") ? true : fail
+  puts "-----> deploying to heroku"
+  system("git push heroku master") ? true : fail
 
   #puts "-----> notifying hoptoad"
   #system("rake hoptoad:deploy TO=production REVISION=`git rev-parse HEAD`") ? true : fail
