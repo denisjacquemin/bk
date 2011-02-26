@@ -4,4 +4,3 @@ todo.txt
 db/*.sqlite3
 log/*.log
 tmp/**/*
-db/schema.rb
