@@ -66,7 +66,7 @@ fr:
       Tva_number: Numéro TVA
     bill:
         Description: Description
-        Customer_name: Nom de client
+        Customer_name: Nom du client
         Reference: Référence
         Amount_TVAC: Montant TVAC
         Bills: Factures
