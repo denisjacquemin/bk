@@ -1,0 +1,13 @@
+- if (state == 2) # late 
+  - colors = 'statusr'
+- elsif (state == 1) # send
+  - colors = 'statusy'
+- elsif (state == 3) # pais 
+  - colors = 'statusg'
+  
+- unless state == 0
+  .status{:class => colors}
+    .statusi
+      .name
+        %span
+          = state
