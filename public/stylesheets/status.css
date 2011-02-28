@@ -1,0 +1,28 @@
+.status { height: 12px; font-size:9px;float:left;font-weight:normal;font-family:Verdana;border-width:1px 0;border-style:solid;overflow:visible;margin:0 .8em 0 1px;}
+
+.status .statusi{margin:0 -1px;border-width:0 1px;border-style:solid;}
+.status .statusi .name{overflow:hidden;}
+.status .statusi .name span{float:left;font-size:100%;padding:0 .6em;}
+
+.statusy {
+    background-color:#F2FAB1;
+    border-color:#C1C78D; 
+    color: #000;
+}
+
+.statusy .statusi {border-color:#bdbdbd;}
+
+.statusr {
+    background-color:#B81F1F;
+    border-color:#931818;
+    color: #fff;
+}
+.statusr .statusi {border-color:#931818;}
+
+.statusg {
+    background-color:#3C962E;
+    border-color:#307824;
+    color: #fff;
+}
+
+.statusg .statusi {border-color:#307824;}

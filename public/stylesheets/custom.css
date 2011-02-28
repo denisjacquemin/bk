@@ -10,6 +10,21 @@ body {
   border: none;
 }
 
+.secondary-navigation ul li.active, .secondary-navigation ul li.active a:hover {
+    background-color: #F2F5FB;
+}
+
+#main .block .content {
+    padding:0;
+}
+
+#main .block .content h2 {
+    background-color: #F2F5FB;
+    padding: 15px;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #C0D1EC;
+}
+
 .fieldset {
     background: #eee;
     padding: 10px;
@@ -214,16 +229,4 @@ body {
 
 table#products.table tfoot {
     font-size: 14px;
-}
-
-.in_place_edit .readonly:hover {
-    background: yellow;
-}
-
-.in_place_edit_text_field {
-    border: 1px solid #E2E2E2;
-    font-size: 1.2em;
-    margin: 0;
-    padding: 1px 0;
-    width:120px;
 }
