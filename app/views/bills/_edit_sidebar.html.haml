@@ -8,6 +8,18 @@
     %li
       = link_to 'Envoyer via Zoomit'
 .block.notice
+  %h3 
+    Statut de la facture
+  .content
+    %table
+      = form_tag(:controller => 'bills', :action => 'update_status', :method => 'POST')
+        = hidden_field_tag 'bill_id', b.id
+        - for status in Status.all_active_ordered
+          %tr
+            %td
+              = radio_button_tag(:status, status.id)
+              = t status.name
+.block.notice
   %h3= t('assur.bill.Info_bill')
   .content
     %table
