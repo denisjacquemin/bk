@@ -20,18 +20,15 @@
             = t("assur.bill.Customer_name")
           %th 
             = t("assur.bill.Reference")
-          %th 
+          %th.last.text-right
             = t("assur.bill.Amount_TVAC")
-          %th.last &nbsp;
         - @bills.each do |bill|
           %tr.row{:class => cycle("odd", "even")}
             %td= render :partial => 'status', :locals => {:state => bill.status}
             %td= link_to "#{bill.name}", edit_bill_path(bill)
             %td= "#{bill.customer_firstname} #{bill.customer_lastname}"
             %td= bill.reference
-            %td.text-right= bill.totaltvac
-            %td.last
-              \#{link_to "#{t("assur.general.delete")}", bill_path(bill), :method => :delete, :confirm => "#{t("assur.general.are_you_sure")}"}
+            %td.last.text-right= bill.totaltvac  
       .actions-bar.wat-cf
         .actions
 - content_for :sidebar, render(:partial => 'index_sidebar')
