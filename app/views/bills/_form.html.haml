@@ -63,8 +63,13 @@
 .group
   = f.label :note, t("assur.bill.note"), :class => :label
   = f.text_area :note, :class => 'text_area', :rows => 5
-.group.navform.wat-cf
-  %button.button{:type => "submit"}
-    = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
-    = t("assur.general.save")
-  = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("assur.general.cancel")}") + " " + t("assur.general.cancel"), customers_path, :class => "button"
+.group.navform
+  .columns.wat-cf
+    .column.left
+      %button.button{:type => "submit"}
+        = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
+        = t("assur.general.save")
+      = link_to image_tag("web-app-theme/icons/cross.png", :alt => t("assur.general.cancel")) + " " + t("assur.general.cancel"), customers_path, :class => "button"
+    - unless f.object.new_record?
+      .column.right
+        = link_to image_tag("web-app-theme/icons/bin.png", :alt => t("assur.general.delete")) + " " + t("assur.general.delete"), bill_path(@bill), :class => "button rbutton", :method => :delete, :confirm => t("assur.general.are_you_sure")
