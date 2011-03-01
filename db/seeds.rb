@@ -35,6 +35,9 @@ Country.create(:name => 'Allemagne', :code => 'de')
 Tva.create(:value => 6)
 Tva.create(:value => 21)
 
+Status.create(:name => 'assur.status.sent', :active => 1, :sort => 1 )
+Status.create(:name => 'assur.status.paid', :active => 1, :sort => 2 )
+Status.create(:name => 'assur.status.late', :active => 1, :sort => 3 )
 
 
 
