@@ -29,7 +29,11 @@ class BillsController < ApplicationController
     @bill = Bill.new
     @bill.products.build
     @bill.reference = 'B' + (Bill.all.count + 1).to_s
-
+    
+    unless params[:c].nil?
+      @bill.customer_id = params[:c]
+    end
+      
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @bill }
@@ -93,5 +97,9 @@ class BillsController < ApplicationController
       format.html { redirect_to(bills_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def update_status
+    
   end
 end

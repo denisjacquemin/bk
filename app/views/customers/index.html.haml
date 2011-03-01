@@ -29,7 +29,7 @@
             %td
               = customer.reference
             %td.last
-              \#{link_to "#{t("assur.general.delete")}", customer_path(customer), :method => :delete, :confirm => "#{t("assur.general.are_you_sure")}"}
+              = link_to t('assur.bill.new_bill'), new_bill_path(:c => customer.id)
       .actions-bar.wat-cf
         .actions
 - content_for :sidebar, render(:partial => 'index_sidebar')
