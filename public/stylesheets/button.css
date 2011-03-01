@@ -1,0 +1,4 @@
+a.rbutton:link, a.rbutton:visited, a.rbutton:hover, a.rbutton:active, button.rbutton {
+    float:right;
+    margin: 0;
+}
