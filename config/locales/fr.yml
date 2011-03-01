@@ -3,7 +3,7 @@ fr:
     general:
       links: Liens
       new: Nouveau
-      delete: Effacer
+      delete: Supprimer
       save: Sauver
       cancel: Annuler
       details: détails
@@ -127,6 +127,10 @@ fr:
         bank_account_name: CCP
         bank_account_name_description: "ex: Fortis 210-1234567-24"
         Add_bankaccout: Ajouter un CCP
+    status:
+        late: Retard
+        sent: Envoyé
+        paid: Payé
             
     all_customers: Tous les Clients
     delete: Effacer
