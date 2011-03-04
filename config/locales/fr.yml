@@ -88,6 +88,7 @@ fr:
         last_upadte_date: Modification
         note: Note
         location: le
+        new_bill: Nouvelle facture
     product:
         Product_name_description: Description article(s)
         Quantity: Quantité
