@@ -1,4 +1,4 @@
-.autocomplete-w1 { font-size: 13px; background:url(img/shadow.png) no-repeat bottom right; position:absolute; top:9px; left:6px; /* IE6 fix: */ _background:none; _top:1px; }
+.autocomplete-w1 { font-size: 13px; position:absolute; top:9px; left:6px; /* IE6 fix: */ _background:none; _top:1px; }
 .autocomplete { width:300px; border:1px solid #999; background:#FFF; cursor:default; text-align:left; max-height:350px; overflow:auto; margin:-6px 6px 6px -6px; /* IE specific: */ _height:350px;  _margin:0px 6px 6px 0; overflow-x:hidden; }
 .autocomplete .selected { background:#F0F0F0; }
 .autocomplete div { padding:2px 5px; white-space:nowrap; }
