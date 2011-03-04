@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Web App</title>
-  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", "custom", "status", "inline_edit", "button", :cache => true %>
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", "custom", "status", "inline_edit", "button" %>
   <%= yield(:css) %>
   <%= csrf_meta_tag %>
 </head>
@@ -39,7 +39,7 @@
       </div>
     </div>    
   </div>
-  <%= javascript_include_tag :defaults, 'quick-search', 'growl.js', :cache => true%>
+  <%= javascript_include_tag :defaults, 'quick-search', 'growl.js' %>
   <%= yield(:javascripts) %>
     <% flash.each do |type, message| -%>
         <div class="flash <%= type %>" style="display:none"><%= message %></div> 
