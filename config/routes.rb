@@ -5,8 +5,10 @@ Billit::Application.routes.draw do
 
   devise_for :users
 
+  match 'products/sort' => 'products#sort'
   resources :products
 
+  match 'bill/update_status' => 'bills#update_status'
   resources :bills
 
   resources :countries
