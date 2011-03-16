@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110304064508) do
+ActiveRecord::Schema.define(:version => 20110316065245) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20110304064508) do
     t.integer  "totalhtva_in_cents", :default => 0, :null => false
     t.string   "location"
     t.integer  "status",             :default => 0
+    t.text     "bill_footer"
   end
 
   create_table "companies", :force => true do |t|
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20110304064508) do
     t.datetime "updated_at"
     t.string   "tva_number"
     t.string   "enreg_number"
+    t.text     "bill_footer"
   end
 
   create_table "countries", :force => true do |t|
