@@ -1,4 +1,5 @@
 Billit::Application.routes.draw do
+  match 'configuration/bill' => 'configurations#index', :as => :configuration_bill
   match 'configuration' => 'companies#edit', :as => :configuration
   match 'company/edit' => 'companies#edit', :as => :current_company_edit
   resources :companies

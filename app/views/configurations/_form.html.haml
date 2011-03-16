@@ -1,0 +1,11 @@
+.group
+  = f.label :bill_footer, t("assur.company.bill_footer"), :class => :label
+  = f.text_area :bill_footer, :class => 'text_area focus', :rows => 5
+  %span.description= t('assur.company.bill_footer_desc')
+.group.navform
+  .columns.wat-cf
+    .column.left
+      %button.button{:type => "submit"}
+        = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
+        = t("assur.general.save")
+      = link_to image_tag("web-app-theme/icons/cross.png", :alt => t("assur.general.cancel")) + " " + t("assur.general.cancel"), configuration_path, :class => "button"
