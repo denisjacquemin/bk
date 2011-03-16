@@ -1,0 +1,44 @@
+.ptable, .pthead, .ptbody, .ptr {
+    float:left;
+    width:660px;
+    margin:0;
+    padding:0;
+    clear:both;
+    background: red;
+}
+
+.pth {
+    float:left;
+}
+
+.pth.drag {
+    width: 20px;
+}
+
+.pth.desc {
+    width: 220px;
+}
+
+.pth.quantity {
+    width: 70px;
+}
+
+.pth.up {
+    width: 100px;
+}
+
+.pth.vat {
+    width: 70px;
+}
+
+.pth.thtva {
+    width: 100px;
+}
+
+.pth.ttvac {
+    width: 100px;
+}
+
+.pth.del {
+    width: 20px;
+}
