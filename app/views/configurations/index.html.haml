@@ -5,7 +5,7 @@
         %li.first= link_to t('assur.general.Company'), new_company_path
       - else
         %li.first= link_to t('assur.general.Company'), current_company_edit_path
-      %li.active= link_to t('assur.bill.Bill'), configuration_path
+      %li.active= link_to t('assur.bill.Bill'), configuration_bill_path
       %li= link_to t("assur.general.profile"), edit_user_registration_path
   .content
     %h2.title
