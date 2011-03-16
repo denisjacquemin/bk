@@ -1,9 +1,8 @@
 %tr.product
-  %td.handle [drag]
   %td= f.text_field :name, :class => 'text_field'
   %td= f.text_field :quantity, :class => 'text_field q text-right ct number'
   %td= f.text_field :price, :class => 'text_field up text-right ct'
-  %td= f.collection_select(:tva_id, Tva.all, :id, :value, {}, :class => 'tva ct')
+  %td= f.collection_select(:tva_id, @tvas, :id, :value, {}, :class => 'tva ct')
   %td.text-right.totalhtva.currency
   %td.text-right.totaltvac.currency
   %td
