@@ -30,6 +30,8 @@ class BillsController < ApplicationController
     @bill.products.build
     @bill.reference = 'B' + (Bill.all.count + 1).to_s
     
+    @tvas = Tva.by_company(current_user.company_id).ordered
+    
     unless params[:c].nil?
       @bill.customer_id = params[:c]
     end
@@ -43,6 +45,7 @@ class BillsController < ApplicationController
   # GET /bills/1/edit
   def edit
     @bill = Bill.find(params[:id])
+    @tvas = Tva.by_company(current_user.company_id).ordered
   end
 
   # POST /bills
