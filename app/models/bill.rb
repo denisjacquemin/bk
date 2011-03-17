@@ -29,6 +29,7 @@ class Bill < ActiveRecord::Base
   delegate :fullname_with_reference, :to => :customer, :prefix => true, :allow_nil => true
   
   scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
+  scope :with_id, lambda { |bill_id| where("id =?", bill_id)}
   
   def location_for_bill(company)
     # if location not set
