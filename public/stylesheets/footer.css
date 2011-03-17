@@ -1,0 +1,39 @@
+#footer .column {
+    font-size: 0.95em;   
+    float: left;
+}
+
+#footer dl {
+    display: block;
+    margin: 1em 0px 1em 2em;
+}
+
+#footer dt {
+    color: #444;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+    white-space: nowrap;
+    padding: 0;
+    display: block;
+}
+
+#footer dd {
+    -webkit-margin-start: 40px;
+    display: block;
+    color: #666;
+    font-weight: 200;
+    margin: 0 0 3px 0;
+    padding: 0;
+}
+
+#footer dd a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 200;
+    margin: 0 0 2px 0;
+    padding: 0;
+}
+
+#footer dd a:hover {
+    text-decoration: underline;
+}
