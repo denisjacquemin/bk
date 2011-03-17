@@ -45,8 +45,12 @@ class BillsController < ApplicationController
 
   # GET /bills/1/edit
   def edit
-    @bill = Bill.find(params[:id])
-    @tvas = Tva.by_company(current_user.company_id).ordered
+    @bill = Bill.with_id(params[:id]).by_company(current_user.company_id).first
+    unless @bill.nil?
+        @tvas = Tva.by_company(current_user.company_id).ordered
+    else
+        redirect_to :no_access
+    end
   end
 
   # POST /bills
@@ -57,7 +61,7 @@ class BillsController < ApplicationController
     company = current_user.company
     @bill.company_id = company.id
     
-    # init location with company's address city... if exist
+    # init location with company's address city... if exists
     unless company.address.nil?
       unless company.address.city.nil?
         @bill.location = "#{company.address.city}"
