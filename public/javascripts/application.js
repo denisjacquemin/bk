@@ -28,6 +28,15 @@ document.observe("dom:loaded", function() {
   // put the focus on input with a .focus selector
   $$('.focus').invoke('select');
   
+  $$('.in_place_edit').each(function(ipe) {
+      var input = ipe.down('input');
+       
+      if (ipe.down('input').value=='') { 
+        ipe.down('.readonly').hide();
+        input.show();
+      }
+  });
+  
   document.observe('click', function(e, el) {
       
       if (el = e.findElement('.remove')) {
