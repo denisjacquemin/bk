@@ -26,6 +26,7 @@ fr:
       error_in_form: Veuillez corriger les erreurs ci-dessous
       ie: 'Ex:'
       ie_tva: BE 0123.456.789
+      no_access: No Access!!
     customer:
       customers: clients
       Customers: Clients
@@ -87,9 +88,10 @@ fr:
         Author: Auteur
         creation_date: Création
         last_upadte_date: Modification
-        note: Note
+        note: Note de pied de page
         location: le
         new_bill: Nouvelle facture
+        config_note_help: Il est conseillé d’indiquer au pied de la facture, le délai de règlement et la date d’échéance
     product:
         Product_name_description: Description article(s)
         Quantity: Quantité
@@ -126,9 +128,12 @@ fr:
         enreg_number: NE
         ie_enreg_number_description: "11.22.33"
         Tva_number: Numéro TVA
-        bank_account_name: CCP
-        bank_account_name_description: "ex: Fortis 210-1234567-24"
+        bank_account_name: Compte Bancaire
+        bank_account_name_description: "ex: Fortis IBAN BE35 210-1234567-24 BIC 686899"
+        bank_account_help: Il est conseillé d’indiquer les comptes bancaires en format IBAN ainsi que le code BIC.
         Add_bankaccout: Ajouter un CCP
+        bill_footer: Note de pied de page
+        bill_footer_desc: Ce texte est perssonalisable pour chaque facture
     status:
         late: Retard
         sent: Envoyé
