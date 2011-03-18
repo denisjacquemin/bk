@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.xml
   def index
-    @customers = Customer.by_company(current_user.company_id)
+    @customers = Customer.by_company(current_user.company_id).active
 
     respond_to do |format|
       format.html # index.html.erb
@@ -33,7 +33,7 @@ class CustomersController < ApplicationController
     @customer.build_nationality
     @customer.build_title
 
-    @customer.reference = 'C' + (Customer.all.count + 1).to_s
+    @customer.reference = 'C-' + current_user.company_id.to_s + (Customer.by_company(current_user.company_id).last.id + 1).to_s
 
     respond_to do |format|
       format.html # new.html.erb
@@ -82,7 +82,8 @@ class CustomersController < ApplicationController
   # DELETE /customers/1.xml
   def destroy
     @customer = Customer.find(params[:id])
-    @customer.destroy
+    @customer.deleted = 1
+    @customer.save
 
     respond_to do |format|
       format.html { redirect_to(customers_url) }
