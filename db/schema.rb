@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110316065245) do
+ActiveRecord::Schema.define(:version => 20110318072409) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -42,11 +42,12 @@ ActiveRecord::Schema.define(:version => 20110316065245) do
     t.integer  "author_id"
     t.integer  "company_id"
     t.text     "note"
-    t.integer  "totaltvac_in_cents", :default => 0, :null => false
-    t.integer  "totalhtva_in_cents", :default => 0, :null => false
+    t.integer  "totaltvac_in_cents", :default => 0,     :null => false
+    t.integer  "totalhtva_in_cents", :default => 0,     :null => false
     t.string   "location"
     t.integer  "status",             :default => 0
     t.text     "bill_footer"
+    t.boolean  "deleted",            :default => false
   end
 
   create_table "companies", :force => true do |t|
@@ -85,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20110316065245) do
     t.string   "reference"
     t.integer  "company_id"
     t.string   "tva_number"
+    t.boolean  "deleted",        :default => false
   end
 
   create_table "languages", :force => true do |t|
