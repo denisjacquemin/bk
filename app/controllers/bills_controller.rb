@@ -2,7 +2,7 @@ class BillsController < ApplicationController
   # GET /bills
   # GET /bills.xml
   def index
-    @bills = Bill.by_company(current_user.company_id)
+    @bills = Bill.by_company(current_user.company_id).active
 
     respond_to do |format|
       format.html # index.html.erb
@@ -99,7 +99,8 @@ class BillsController < ApplicationController
   # DELETE /bills/1.xml
   def destroy
     @bill = Bill.find(params[:id])
-    @bill.destroy
+    @bill.deleted = 1
+    @bill.save
 
     respond_to do |format|
       format.html { redirect_to(bills_url) }
@@ -108,6 +109,9 @@ class BillsController < ApplicationController
   end
   
   def update_status
-    
+    bill = Bill.find(params[:bill_id])
+    bill.status = params[:status]
+    bill.save
+    render :nothing => true
   end
 end
