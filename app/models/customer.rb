@@ -21,6 +21,7 @@ class Customer < ActiveRecord::Base
   
   
   scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
+  scope :active, where('deleted = ?', false)
   
   def fullname
     "#{self.firstname} #{self.lastname}"
