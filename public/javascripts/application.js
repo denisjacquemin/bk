@@ -9,8 +9,11 @@ var quicksearch = null;
 document.observe("dom:loaded", function() {
 
   window.setTimeout(function() {
-      Effect.SlideUp('message');
-  }, 3000);
+      Effect.SlideDown('message', { duration:0.7 });
+  }, 500);
+  window.setTimeout(function() {
+      Effect.SlideUp('message', { duration:0.7 });
+  }, 5000);
 
   // init Quick Search on customers/index
   if ($('qs-target') != undefined) {

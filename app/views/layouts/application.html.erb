@@ -8,6 +8,14 @@
 </head>
 <body>
   <div id="container">
+    <%= render :partial => 'shared/permanent_message' %>
+    <% unless flash.empty? %>
+      <ul id="message" style="display:none;">
+        <% flash.each do |type, message| -%>
+            <li><%= message %></li> 
+        <% end -%>
+      </ul>
+    <% end -%>
     <div id="header">
       <h1><a href="/"><%= current_user.company.name %></a></h1>
       <div id="user-navigation">
@@ -39,14 +47,5 @@
   </div>
   <%= javascript_include_tag :defaults, 'quick-search' %>
   <%= yield(:javascripts) %>
-    <% unless flash.empty? %>
-      <div id="message">
-        <ul>
-          <% flash.each do |type, message| -%>
-              <li><%= message %></li> 
-          <% end -%>
-        </ul>
-      </div>
-    <% end -%>
 </body>
 </html>

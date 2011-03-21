@@ -9,14 +9,33 @@
     z-index: 100;
 }
 
-#message ul {
+#message {
     list-style-type: none;
 }
 
-#message ul li {
+#message li {
     color: white;
     padding: 0;
     margin:20px;
     font-size: 18px;
+    border: none;
+}
+
+#permanent-message {
+    width: 100%;
+    background-color: #003048;
+}
+
+#permanent-message ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#permanent-message ul li {
+    color: white;
+    padding: 10px;
+    margin: 0;
+    font-size: 15px;
     border: none;
 }
