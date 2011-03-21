@@ -28,7 +28,8 @@ class BillsController < ApplicationController
   def new
     @bill = Bill.new
     @bill.products.build
-    @bill.reference = 'B' + (Bill.all.count + 1).to_s
+    @bill.reference = 'B-' + current_user.company_id.to_s + (Bill.by_company(current_user.company_id).last.id + 1).to_s
+    
     @bill.note = current_user.company.bill_footer
     
     @tvas = Tva.by_company(current_user.company_id).ordered
