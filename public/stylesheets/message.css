@@ -1,0 +1,22 @@
+#message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    opacity: 0.9;
+    display: block;
+    background-color: #003048;
+    z-index: 100;
+}
+
+#message ul {
+    list-style-type: none;
+}
+
+#message ul li {
+    color: white;
+    padding: 0;
+    margin:20px;
+    font-size: 18px;
+    border: none;
+}

@@ -7,18 +7,11 @@ replace_ids = function(s){
 
 var quicksearch = null;
 document.observe("dom:loaded", function() {
-  
-    Growl.initialize(); 
-    
-    $$('.flash').each(function(f){
-        Growl.Smoke({
-            title: f.innerHTML,
-            text: f.innerHTML,
-            image: "/images/web-app-theme/icons/information.png",
-            duration: 5.0
-        });
-    });
-    
+
+  window.setTimeout(function() {
+      Effect.SlideUp('message');
+  }, 3000);
+
   // init Quick Search on customers/index
   if ($('qs-target') != undefined) {
     quicksearch = new CustomerFilter('qs-target');
