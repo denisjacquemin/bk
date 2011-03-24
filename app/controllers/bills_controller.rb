@@ -1,4 +1,6 @@
 class BillsController < ApplicationController
+  load_and_authorize_resource
+  
   # GET /bills
   # GET /bills.xml
   def index
@@ -46,12 +48,8 @@ class BillsController < ApplicationController
 
   # GET /bills/1/edit
   def edit
-    @bill = Bill.with_id(params[:id]).by_company(current_user.company_id).first
-    unless @bill.nil?
-        @tvas = Tva.by_company(current_user.company_id).ordered
-    else
-        redirect_to :no_access
-    end
+    @bill = Bill.find(params[:id])
+    @tvas = Tva.by_company(current_user.company_id).ordered
   end
 
   # POST /bills

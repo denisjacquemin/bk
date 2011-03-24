@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  load_and_authorize_resource
   
   # GET /customers
   # GET /customers.xml
@@ -93,7 +94,7 @@ class CustomersController < ApplicationController
   
   def autocomplete
     
-    customers = Customer.where("company_id = ? and (firstname like ? or lastname like ? or reference like ?)", current_user.company_id, "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+    customers = Customer.where("deleted = ? and company_id = ? and (firstname like ? or lastname like ? or reference like ?)", false, current_user.company_id, "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     render :json => {
       :query => params[:query],
       :suggestions => customers.collect{ |c| c.fullname_with_reference },
