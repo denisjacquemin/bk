@@ -14,6 +14,7 @@ gem 'devise'
 gem 'prawn'
 gem 'prawnto'
 gem 'money'
+gem 'cancan'
 
 # Use unicorn as the web server
 # gem 'unicorn'

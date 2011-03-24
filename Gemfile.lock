@@ -31,13 +31,14 @@ GEM
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
-    devise (1.1.7)
+    cancan (1.6.2)
+    devise (1.1.8)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     haml (3.0.25)
-    hpricot (0.8.3)
+    hpricot (0.8.4)
     i18n (0.5.0)
     mail (2.2.15)
       activesupport (>= 2.3.6)
@@ -45,7 +46,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    money (3.6.0)
+    money (3.6.1)
       i18n (~> 0.4)
     polyglot (0.3.1)
     prawn (0.8.4)
@@ -58,7 +59,7 @@ GEM
     prawnto (0.0.4)
       prawn
       rails (>= 2.1)
-    rack (1.2.1)
+    rack (1.2.2)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
     rack-test (0.5.7)
@@ -86,7 +87,7 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tzinfo (0.3.24)
+    tzinfo (0.3.25)
     warden (1.0.3)
       rack (>= 1.0.0)
     web-app-theme (0.6.3)
@@ -95,6 +96,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cancan
   devise
   haml
   hpricot
