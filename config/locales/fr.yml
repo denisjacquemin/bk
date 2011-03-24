@@ -27,6 +27,9 @@ fr:
       ie: 'Ex:'
       ie_tva: BE 0123.456.789
       no_access: No Access!!
+      complete_company_profile: "Prenez le temps de completer les details de votre entreprise, addresse, compte bancaires, etc... (menu <a href=\"configuration\">configuration</a>)"
+    exception:
+      not_authorized_access: "Accès refusé!"
     customer:
       customers: clients
       Customers: Clients
@@ -81,7 +84,7 @@ fr:
         Generate_pdf: Générer facture (.pdf)
         Send_by_email: Envoyer par email
         Actions_on_bill: Actions sur la facture
-        Successfully_created: Facture créé avec succès
+        Successfully_created: Facture créée avec succès
         Successfully_updated: Facture mise à jour avec succès
         new_bill_right_notice: Sauver la facture pour pouvoir générer une version pdf ou l'envoyer. 
         Info_bill: Informations facture
@@ -97,8 +100,8 @@ fr:
         Quantity: Quantité
         Unit_price: Prix unitère (htva)
         VAT: TVA
-        Total_VAT: Total TVAC
-        Total_HVAT: Total HTVA
+        Total_VAT: Total (tvac)
+        Total_HVAT: Total (htva)
         Total: Total
         HTVA: HTVA
         TVAC: TVAC
@@ -130,7 +133,7 @@ fr:
         Tva_number: Numéro TVA
         bank_account_name: Compte Bancaire
         bank_account_name_description: "ex: Fortis IBAN BE35 210-1234567-24 BIC 686899"
-        bank_account_help: Il est conseillé d’indiquer les comptes bancaires en format IBAN ainsi que le code BIC.
+        bank_account_help: "Il est conseillé d’indiquer les comptes bancaires en format IBAN ainsi que le code BIC (ex: IBAN BE35 210-1234567-24 BIC 686899)."
         Add_bankaccout: Ajouter un CCP
         bill_footer: Note de pied de page
         bill_footer_desc: Ce texte est perssonalisable pour chaque facture
@@ -324,3 +327,4 @@ fr:
       products:
         quantity: quantitée
         unit_price: Prix unitère
+  
