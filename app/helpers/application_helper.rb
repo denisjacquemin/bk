@@ -12,4 +12,12 @@ module ApplicationHelper
   def generate_template(form_builder, method, options = {})
     escape_javascript generate_html(form_builder, method, options)
   end
+  
+  def mark_required(object, attribute)
+    if object.class.validators_on(attribute).map(&:class).include? ActiveModel::Validations::PresenceValidator
+      "*" 
+    else 
+      ""
+    end
+  end
 end

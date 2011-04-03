@@ -11,24 +11,24 @@
 .group
   .columns.wat-cf 
     .verylargecolumn.left     
-      = f.label :name, t("assur.bill.Description"), :class => :label
+      = f.label :name, t("assur.bill.Description") + mark_required(@bill, :name), :class => :label
       = f.text_field :name, :class => 'text_field focus'
     .verysmallcolumn.right
-      = f.label :reference, t("assur.bill.Reference"), :class => :label
+      = f.label :reference, t("assur.bill.Reference") + mark_required(@bill, :reference), :class => :label
       %span.in_place_edit{:target => 'bill_reference'}
         %span.readonly= @bill.reference
         = text_field_tag 'bill[reference]', @bill.reference, :class => 'in_place_edit_text_field', :style => 'display:none'
 .group
   .columns.wat-cf 
     .column.left     
-      = f.label :customer_id, t("assur.bill.Customer"), :class => :label
+      = f.label :customer_id, t("assur.bill.Customer") + mark_required(@bill, :customer_id), :class => :label
       = text_field_tag 'customer_autocomplete',@bill.customer_fullname_with_reference , :class => 'text_field'
       = f.hidden_field :customer_id
       %span.description 
         Entrez minimum 2 caracteres du nom, prenom ou de la reference client
         = link_to 'aide', '#'
     .column.right
-      = f.label :effective_date, t("assur.bill.Effective_date"), :class => :label
+      = f.label :effective_date, t("assur.bill.Effective_date") + mark_required(@bill, :effective_date), :class => :label
       %span.in_place_edit{:target => 'bill_location'}
         %span.readonly= @bill.location_for_bill(current_user.company)
         = text_field_tag 'bill[location]', @bill.location_for_bill(current_user.company), :class => 'in_place_edit_text_field', :style => 'display:none'
@@ -59,15 +59,16 @@
 = f.hidden_field :totalhtva
 = f.hidden_field :totaltvac
 .group
-  = link_to  t('assur.product.Add_product'), '#product', :class => "add_nested_item", :rel => "products"
+  .columns.wat-cf
+    = link_to  image_tag("web-app-theme/icons/add.png" , :alt => t('assur.product.Add_product')) + " " + t("assur.product.Add_product"), '#product', :class => "button add_nested_item", :rel => "products"
 .group
-  = f.label :note, t("assur.bill.note"), :class => :label
+  = f.label :note, t("assur.bill.note") + mark_required(@bill, :note), :class => :label
   = f.text_area :note, :class => 'text_area', :rows => 5
   %span.description= t 'assur.bill.config_note_help'
 .group.navform
   .columns.wat-cf
     .column.left
-      %button.button{:type => "submit"}
+      %button.button{:type => "button", :onclick => 'document.forms[0].submit();'}
         = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
         = t("assur.general.save")
       = link_to image_tag("web-app-theme/icons/cross.png", :alt => t("assur.general.cancel")) + " " + t("assur.general.cancel"), customers_path, :class => "button"
