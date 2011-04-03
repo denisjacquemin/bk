@@ -57,9 +57,15 @@ pdf.repeat :all do
       pdf.font "Helvetica"
       pdf.stroke_horizontal_rule
       pdf.move_down(3)
-      footer = "#{company.name unless company.name.nil?} | TVA #{company.tva_number unless company.tva_number.nil?} | NE: #{company.enreg_number unless company.enreg_number.nil?} "
+      
+      tva_number = ''
+      tva_number = " | TVA: #{company.tva_number }" unless company.tva_number.empty?
+      ne = ''
+      ne = " | NE: #{company.enreg_number }" unless company.enreg_number.empty?
+      
+      footer = "#{company.name unless company.name.nil?} #{tva_number}#{ne}"
       for bankaccount in @bill.author.company.bankaccounts do
-        footer = footer + "| #{bankaccount.name} "
+        footer = footer + " | #{bankaccount.name} "
       end
       pdf.text footer, :align => :center, :size => 8
   end
@@ -71,12 +77,13 @@ end
 
 pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.width, :height => pdf.bounds.height - 300) do                 
    
-   pdf.text @bill.name, :size => 12
+   pdf.text @bill.name, :size => 14
    pdf.move_down(10)
    
    items = @bill.products.map do |item|
        [
            item.name,
+           item.quantity,
            item.totalhtva,
            item.totaltvac
        ]
@@ -84,17 +91,17 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.
    
    pdf.table items, :border_style => :grid,
        :row_colors => :pdf_writer,
-       :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.header_htva'), t('assur.pdf.header_tvac')], 
-       :align => { 0 => :left, 1 => :right, 2 => :right},
-       :column_widths => { 0 => 400, 1 => 70, 2 => 70}
+       :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.Quantity'), t('assur.pdf.header_htva'), t('assur.pdf.header_tvac')], 
+       :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right},
+       :column_widths => { 0 => 335, 1 => 65, 2 => 70, 3 => 70}
+   
+   pdf.move_down(20)  
+   pdf.text "#{t('assur.pdf.Total_htva')} #{@bill.totalhtva}", :size => 10, :align => :right
+   pdf.move_down(5)
+   pdf.text "#{t('assur.pdf.Total_tvac')} #{@bill.totaltvac}", :size => 15, :align => :right
 end
-
-pdf.move_down(10)  
-pdf.text "#{t('assur.pdf.Total_htva')} #{@bill.totalhtva}", :size => 10, :align => :right
-pdf.move_down(5)
-pdf.text "#{t('assur.pdf.Total_tvac')} #{@bill.totaltvac}", :size => 13, :align => :right
 
 pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 70], :width  => pdf.bounds.width do
     pdf.font "Helvetica"
-    pdf.text @bill.note, :size => 8
+    pdf.text @bill.note, :size => 12
 end
