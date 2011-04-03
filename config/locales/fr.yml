@@ -18,7 +18,7 @@ fr:
       we_need_current_password_to_change_it: Nous avons besoin de votre mot de passe courant pour pouvoir le changer
       listing: Listing
       list: Liste
-      are_you_sure: Etes vous sûr?
+      are_you_sure: Ex sûr?
       quick_search: Recherche rapide
       Company: Compagnie
       Bills: Factures
@@ -26,8 +26,17 @@ fr:
       error_in_form: Veuillez corriger les erreurs ci-dessous
       ie: 'Ex:'
       ie_tva: BE 0123.456.789
-      no_access: No Access!!
-      complete_company_profile: "Prenez le temps de completer les details de votre entreprise, addresse, compte bancaires, etc... (menu <a href=\"configuration\">configuration</a>)"
+      complete_company_profile: "Prenez le temps de compléter les détails de votre entreprise, addresse, comptes bancaire, etc... dans le menu"
+      Email: Email
+      Password: Mot de passe
+      confirmation_password: Confirmation mot de passe
+      curent_password: Mot de passe courant
+    devise:
+      leave_blank: laissez ce champ vide si vous ne souhatez pas modifier votre mot de passe
+      current_password_help: pour des raisons de sécurité, veuiller entrer votre mot de passe courant
+      forgot_password: Oublié votre mot de passe?
+      Connection: Connexion 
+      send_new_password: Reset de mot de passe
     exception:
       not_authorized_access: "Accès refusé!"
     customer:
@@ -38,6 +47,7 @@ fr:
       lastname: Nom
       birthdate: Date de naissance
       city: Ville
+      Address: Adresse
       reference: Référence
       gender: Sexe
       civilstatus: Statut civil
@@ -72,6 +82,7 @@ fr:
     bill:
         Description: Description
         Customer_name: Nom du client
+        Billing_date: Date de Facturation
         Reference: Référence
         Amount_TVAC: Montant TVAC
         Bills: Factures
@@ -113,15 +124,15 @@ fr:
         header_quantity: Quantitée
         header_unit_price: Prix unitère
         header_tva: TVA
-        header_htva: HTVA
-        header_tvac: TVAC
+        header_htva: Total htva
+        header_tvac: Total tvac
         Bill: Facture
         Page: Page
         Bill: Facture
         Date: Date
-        Total_htva: Total HTVA
-        Total_tvac: Total TVAC
-        
+        Total_htva: Total htva
+        Total_tvac: Total à payer tvac
+        Quantity: Quantitée
     company:
         name: Nom
         name_description: "ex: Ma compagnie Sprl"
