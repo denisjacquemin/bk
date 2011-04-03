@@ -30,7 +30,13 @@ class BillsController < ApplicationController
   def new
     @bill = Bill.new
     @bill.products.build
-    @bill.reference = 'B-' + current_user.company_id.to_s + (Bill.by_company(current_user.company_id).last.id + 1).to_s
+    
+    lastid = 1
+    if Bill.by_company(current_user.company_id).size > 0
+      lastid = Bill.by_company(current_user.company_id).maximum('id')
+    end
+    
+    @bill.reference = 'B-' + current_user.company_id.to_s + (lastid + 1).to_s
     
     @bill.note = current_user.company.bill_footer
     
