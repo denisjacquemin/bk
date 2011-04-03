@@ -1,0 +1,7 @@
+.block.notice
+  %h3 Cancel my account
+  .content
+    %table
+      %tr
+        %td.strong Unhappy?
+        %td.text-right=  link_to "Cancel my account", registration_path(resource_name), :confirm => t('assur.general.are_you_sure'), :method => :delete

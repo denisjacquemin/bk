@@ -9,35 +9,27 @@
       %li.active= link_to t("assur.general.profile"), edit_user_registration_path
   .content
     %h2.title
-      = t("assur.general.Company")
+      = t("assur.general.profile")
     .inner
       = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => :form }) do |f|
         = render "shared/error_messages", :target => @user
         .group
-          = f.label :email, t("assur.devise.email"), :class => :label
+          = f.label :email, t("assur.general.Email"), :class => :label
           = f.text_field :email, :class => 'text_field focus'
+        .group
+          = f.label :current_password, t("assur.general.curent_password"), :class => :label
+          = f.password_field :current_password, :class => 'text_field'
+          %span.description= t("assur.devise.current_password_help")
         .fieldset
           .group
-            = f.label :password, t("assur.devise.password"), :class => :label
+            = f.label :password, t("assur.general.Password"), :class => :label
             = f.password_field :password, :class => 'text_field'
-            %span.description leave blank if you don't want to change it
+            %span.description= t("assur.devise.leave_blank") 
           .group
-            = f.label :password_confirmation, t("assur.devise.confirmation_password"), :class => :label
+            = f.label :password_confirmation, t("assur.general.confirmation_password"), :class => :label
             = f.password_field :password_confirmation, :class => 'text_field'
-          .group
-            = f.label :current_password, t("assur.devise.curent_password"), :class => :label
-            = f.password_field :current_password, :class => 'text_field'
-            %span.description we need your current password to confirm your changes
         .group.navform.wat-cf
           %button.button{:type => "submit"}
             = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
             = t("assur.general.save")
--# content_for :sidebar, render(:partial => 'edit_sidebar', :locals => {:customer => @customer})
-
-
-
-  %p= f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete}.
-= link_to "Back", :back
+- content_for :sidebar, render(:partial => 'edit_sidebar', :locals => {:customer => @customer})
