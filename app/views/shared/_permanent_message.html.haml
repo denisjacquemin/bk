@@ -1,4 +1,6 @@
 - unless current_user.company.completed?
   #permanent-message
     %ul
-      %li= t 'assur.general.complete_company_profile'
+      %li
+        = "#{t 'assur.general.complete_company_profile'}"  
+        = link_to 'configuration', configuration_url
