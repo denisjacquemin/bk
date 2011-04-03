@@ -1,0 +1,23 @@
+#tour
+  #hcarousel.ui-carousel-horizontal
+    .ui-carousel-container
+      %ul
+        %li.item
+          .pro-image
+            = image_tag 'slide1.png', :width => "430", :height => "300"
+          .pro-caption
+            Gestion des clients et des factures
+        %li.item
+          .pro-image
+            = image_tag 'slide2.png', :width => "430", :height => "300"
+          .pro-caption
+            Formulaire de creation de factures
+        %li.item
+          .pro-image
+            = image_tag 'slide3.png', :width => "430", :height => "300"
+          .pro-caption
+            Export de vos factures en PDF
+    #hpaginate.ui-carousel-paginate
+      .ui-icon.ui-icon-circle-arrow-w.ui-carousel-prev
+      %ul
+      .ui-icon.ui-icon-circle-arrow-e.ui-carousel-next
