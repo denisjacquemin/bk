@@ -1,0 +1,28 @@
+/* Horizontal */
+.ui-carousel-horizontal .ui-carousel-container {
+  overflow:hidden;
+}
+
+.ui-carousel-horizontal .ui-carousel-container ul {
+  width: 10000000px;
+  margin:0;
+  padding:0;
+}
+
+
+/* Vertical */
+.ui-carousel-vertical .ui-carousel-container {
+  overflow:hidden;
+}
+
+.ui-carousel-vertical .ui-carousel-container ul {
+  height: 10000000px;
+  margin:0;
+  padding:0;
+}
+
+/* Paginator */
+.ui-carousel-horizontal .ui-carousel-paginate ul li {
+  text-indent: -10000px;
+  cursor:pointer;
+}
