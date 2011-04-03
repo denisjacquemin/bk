@@ -10,8 +10,14 @@ body {
   border: none;
 }
 
+#header {
+    background: #333;
+}
+
+
 .secondary-navigation ul li.active, .secondary-navigation ul li.active a:hover {
-    background-color: #F2F5FB;
+    background-color: #F1F8FE;
+    font-weight: bold;
 }
 
 #main .block .content {
@@ -19,10 +25,10 @@ body {
 }
 
 #main .block .content h2 {
-    background-color: #F2F5FB;
+    background-color: #F1F8FE;
     padding: 15px;
     margin: 0 0 20px 0;
-    border-bottom: 1px solid #C0D1EC;
+    border-bottom: 1px solid #DADEE5;
 }
 
 .fieldset {
@@ -229,4 +235,8 @@ body {
 
 table#products.table tfoot {
     font-size: 14px;
+}
+
+#permanent-message a {
+    color: white;
 }
