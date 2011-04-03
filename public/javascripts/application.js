@@ -10,10 +10,10 @@ document.observe("dom:loaded", function() {
 
   window.setTimeout(function() {
       Effect.SlideDown('message', { duration:0.7 });
-  }, 500);
+  }, 400);
   window.setTimeout(function() {
       Effect.SlideUp('message', { duration:0.7 });
-  }, 5000);
+  }, 3500);
 
   // init Quick Search on customers/index
   if ($('qs-target') != undefined) {
@@ -75,7 +75,10 @@ document.observe("dom:loaded", function() {
 });
 
 function toCurrency(amount) {
-  return amount.toFixed(2);
+  var value = amount.toFixed(2) + '';
+  
+  
+  return value.replace('.', ',');
 }
 
 Number.prototype.toCurrency = function () {
