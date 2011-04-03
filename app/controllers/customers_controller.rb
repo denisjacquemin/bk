@@ -33,8 +33,13 @@ class CustomersController < ApplicationController
     @customer.build_language
     @customer.build_nationality
     @customer.build_title
+    
+    lastid = 1
+    if Customer.by_company(current_user.company_id).size > 0
+      lastid = Customer.by_company(current_user.company_id).maximum('id')
+    end
 
-    @customer.reference = 'C-' + current_user.company_id.to_s + (Customer.by_company(current_user.company_id).last.id + 1).to_s
+    @customer.reference = 'C-' + current_user.company_id.to_s + (lastid + 1).to_s
 
     respond_to do |format|
       format.html # new.html.erb
