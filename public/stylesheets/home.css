@@ -1,0 +1,183 @@
+body {
+    font: 14px/1 "Helvetica Neue",Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#top-nav {
+    background: none repeat scroll 0 0 #234B6F;
+    color: #FFFFFF;
+    font-size: 11px;
+    overflow: hidden;
+    padding: 8px 0;
+}
+
+#top-nav .container {
+    
+}
+
+#top-nav ul {
+    list-style: none outside none;
+    margin: 5px 0 5px 0;
+    padding: 0;
+}
+
+#top-nav li {
+    float: right;
+    margin: 0 0 0 20px;
+}
+
+#top-nav li a {
+    color: #C3CCD9;
+    text-decoration: none;
+}
+
+#main-nav {
+    background: none repeat scroll 0 0 #4E7BA3;
+    border-bottom: 1px solid #427EB4;
+    border-top: 1px solid #6C9CC7;
+    height: 69px;
+}
+
+#main-nav ul {
+    float: right;
+    list-style: none outside none;
+    margin: 25px 0 5px 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+#main-nav li {
+    float: left;
+    margin: 0 0 0 20px;
+}
+
+#main-nav li a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 #032B4D;
+}
+
+#content {
+    height: 450px;
+    border-bottom: 1px solid #B8C4D4;
+    margin: 0;
+    padding:0;
+    background: #D1DBE5;
+}
+
+
+
+#content .container {
+    padding: 50px 0 0 0;
+    height:450px;
+    background-image: -moz-radial-gradient(50% 10% 0deg,circle , rgba(255,255,255, 1), rgba(255,255,255, 0) 45%);
+    background-image: -webkit-gradient(radial, 50% 10%, 400, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,1) ));
+}
+
+.box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #C7C7C7;
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: 0 1px 5px rgba(78, 123, 163, 0.22);
+    padding: 20px;
+}
+
+#tour {
+    width: 450px;
+    float:left;
+}
+#register {
+    width: 400px;
+    float:right;
+}
+
+label {
+    display: block;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    width: 150px;
+}
+
+input {
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    background-color: #F4F4F4;
+    background-repeat: no-repeat;
+    border: 1px solid #C6C6C6;
+    font-family: Arial,Helvetica,Calibri,sans-serif;
+    font-size: 18px;
+    padding: 7px 6px;
+    float: right;
+    width: 230px;
+}
+
+span.description {
+    float:left;
+    width: 100%;
+    padding: 0 0 0 160px;
+}
+
+a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 12px;
+}
+
+a:hover {
+  color: #333;
+}
+
+#user_submit {
+    background: #B6DD44;
+    background-image: -moz-radial-gradient(50% 10% 0deg,circle , rgba(230,244,186, 1), rgba(230,244,186, 0) 75%);
+    background-image: -webkit-gradient(radial, 50% 10%, 400, 35% 0, 0, from( rgba(230,244,186,0) ), to( rgba(230,244,186,1) ));
+}
+
+h2 {
+    color: #18334C;
+    text-shadow: 0 1px 0 #FFFFFF;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+h2 span.small {
+    color: #aaa;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.group {
+    width: 100%;
+    float: left;
+    margin: 6px 0;
+}
+
+.nav {
+    width: 100%;
+    float: left;
+    margin: 25px 0 0 0;
+    text-align: center;
+}
+
+a.sign-up {
+    background: url("/images/cta-buttons.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 48px;
+    text-indent: -9999em;
+    width: 164px;
+}
+
+a.sign-up:hover {
+    background: url("/images/cta-buttons.png") repeat scroll 0 -48px transparent;
+}
+a.sign-up:active {
+    background: url("/images/cta-buttons.png") repeat scroll 0 -96px transparent;
+}
