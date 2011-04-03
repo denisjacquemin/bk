@@ -12,22 +12,24 @@
         = text_field_tag :quicksearch, '', :class => 'text_field focus', :onKeyUp => 'quicksearch.filter(this.value);'
     .inner
       %table.table{:id => 'qs-target'}
-        %tr
-          %th &nbsp;  
+        %tr  
           %th 
             = t("assur.bill.Description")
           %th 
             = t("assur.bill.Customer_name")
           %th 
             = t("assur.bill.Reference")
+          %th
+            = t("assur.bill.Billing_date")
           %th.last.text-right
             = t("assur.bill.Amount_TVAC")
         - @bills.each do |bill|
           %tr.row{:class => cycle("odd", "even")}
-            %td= render :partial => 'status', :locals => {:state => bill.status}
+            -#%td= render :partial => 'status', :locals => {:state => bill.status}
             %td= link_to "#{bill.name}", edit_bill_path(bill)
             %td= "#{bill.customer_firstname} #{bill.customer_lastname}"
             %td= bill.reference
+            %td.text-right= l bill.effective_date
             %td.last.text-right= bill.totaltvac  
       .actions-bar.wat-cf
         .actions
