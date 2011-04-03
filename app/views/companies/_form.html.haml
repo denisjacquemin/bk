@@ -51,6 +51,6 @@
   .group
     = link_to  t('assur.company.Add_bankaccout'), '#bankaccount', :class => "add_nested_item", :rel => "bankaccounts"
 .group.navform.wat-cf
-  %button.button{:type => "submit"}
+  %button.button{:type => "button", :onclick => 'document.forms[0].submit();'}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
     = t("assur.general.save")
