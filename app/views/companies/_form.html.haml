@@ -11,19 +11,17 @@
 = f.fields_for :address do |a|
   .fieldset
     .group
-      .columns.wat-cf 
-        .verylargecolumn.left
-          = a.label :street, t("assur.customer.street"), :class => :label
-          = a.text_field :street, :class => 'text_field'
-        .verysmallcolumn.right
+      = a.label :street, t("assur.customer.street"), :class => :label
+      = a.text_field :street, :class => 'text_field'
+    .group
+      .columns.wat-cf.fourcols
+        .column.one
           = a.label :number, t("assur.customer.number"), :class => :label
           = a.text_field :number, :class => 'text_field'
-    .group
-      .columns.wat-cf 
-        .column.left     
+        .column.two     
           = a.label :box, t("assur.customer.box"), :class => :label
           = a.text_field :box, :class => 'text_field'
-        .column.right
+        .column.three
           = a.label :zipcode, t("assur.customer.zipcode"), :class => :label
           = a.text_field :zipcode, :class => 'text_field'        
     .group
