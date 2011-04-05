@@ -31,6 +31,7 @@ class Bill < ActiveRecord::Base
   scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
   scope :with_id, lambda { |bill_id| where("id =?", bill_id)}
   scope :active, where('deleted = ?', false)
+  scope :latest, order('updated_at desc')
   
   def location_for_bill(company)
     # if location not set

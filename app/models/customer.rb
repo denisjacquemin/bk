@@ -22,6 +22,7 @@ class Customer < ActiveRecord::Base
   
   scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
   scope :active, where('deleted = ?', false)
+  scope :latest, order('updated_at desc')
   
   def fullname
     "#{self.firstname} #{self.lastname}"
