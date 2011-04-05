@@ -1,3 +1,7 @@
+.in_place_edit .readonly {
+    font-size: 1.2em;
+}
+
 .in_place_edit .readonly:hover {
     background: yellow;
 }
@@ -7,5 +11,5 @@
     font-size: 1.2em;
     margin: 0;
     padding: 1px 0;
-    width:120px;
+    width:100%;
 }
