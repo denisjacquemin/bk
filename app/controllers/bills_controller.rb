@@ -4,7 +4,7 @@ class BillsController < ApplicationController
   # GET /bills
   # GET /bills.xml
   def index
-    @bills = Bill.by_company(current_user.company_id).active
+    @bills = Bill.by_company(current_user.company_id).active.latest
 
     respond_to do |format|
       format.html # index.html.erb
@@ -87,7 +87,8 @@ class BillsController < ApplicationController
   # PUT /bills/1
   # PUT /bills/1.xml
   def update
-    @bill = Bill.find(params[:id]) 
+    @bill = Bill.find(params[:id])
+    @tvas = Tva.by_company(current_user.company_id).ordered
 
     respond_to do |format|
       if @bill.update_attributes(params[:bill])
