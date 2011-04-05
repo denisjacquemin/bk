@@ -26,10 +26,14 @@ document.observe("dom:loaded", function() {
   
   $$('.in_place_edit').each(function(ipe) {
       var input = ipe.down('input');
+      var desc = ipe.down('.description');
        
-      if (ipe.down('input').value=='') { 
+      if (ipe.down('input').value=='') { // if input is empty, show in edit mode
         ipe.down('.readonly').hide();
         input.show();
+        if (desc) {
+            desc.show();
+        }
       }
   });
   
@@ -56,6 +60,10 @@ document.observe("dom:loaded", function() {
       if (el = e.findElement('.in_place_edit')) {
           el.down('.readonly').hide();
           el.down('input').show().select();
+          var desc = el.down('.description');
+          if (desc) {
+              desc.show();
+          }
       }
       
   });
