@@ -15,9 +15,9 @@
         %tr  
           %th 
             = t("assur.bill.Description")
-          %th 
+          %th
             = t("assur.bill.Customer_name")
-          %th 
+          %th
             = t("assur.bill.Reference")
           %th
             = t("assur.bill.Billing_date")
@@ -29,7 +29,7 @@
             %td= link_to "#{bill.name}", edit_bill_path(bill)
             %td= "#{bill.customer_firstname} #{bill.customer_lastname}"
             %td= bill.reference
-            %td.text-right= l bill.effective_date
+            %td= l bill.effective_date
             %td.last.text-right= bill.totaltvac  
       .actions-bar.wat-cf
         .actions
