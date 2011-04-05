@@ -1,24 +1,6 @@
 .block
-  %h3= t('assur.bill.Actions_on_bill') 
-  %ul.navigation
-    %li
-      = link_to t('assur.bill.Generate_pdf'), bill_path(b, :format => :pdf), :target => "_blank"
-    %li
-      = link_to t('assur.bill.Send_by_email')
-    %li
-      = link_to 'Envoyer via Zoomit'
--#.block.notice
--#  %h3 
--#    Statut de la facture
--#  .content
--#    %table
--#      = form_tag('/bill/update_status', :id => 'bill_update_status', :remote => 'true') do
--#        = hidden_field_tag 'bill_id', b.id
--#        - for status in Status.all_active_ordered
--#          %tr
--#            %td
--#              = radio_button_tag :status, status.id, nil, :onchange => "$('bill_update_status').submit()"
--#              = t status.name
+  .sidebar-block
+    %p= link_to image_tag("web-app-theme/icons/page_white_acrobat.png", :alt => t("assur.bill.Generate_pdf")) + " " + t("assur.bill.Generate_pdf"), bill_path(b, :format => :pdf), :target => "_blank", :class => "button"
 .block.notice
   %h3= t('assur.bill.Info_bill')
   .content
