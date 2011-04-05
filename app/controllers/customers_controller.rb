@@ -4,7 +4,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.xml
   def index
-    @customers = Customer.by_company(current_user.company_id).active
+    @customers = Customer.by_company(current_user.company_id).active.latest
 
     respond_to do |format|
       format.html # index.html.erb
