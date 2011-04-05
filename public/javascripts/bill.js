@@ -49,14 +49,16 @@ function computeTotalForAProduct(product) {
     var tva = 0.0;
     
     product.select('.ct').each(function(ct){
-        if (ct.hasClassName('q'))  { 
-            if (validateNumeric(ct.value, ct)) {
-                quantity = parseFloat(ct.value); 
+        if (ct.hasClassName('q'))  {
+            var numeric = ct.value;
+            if (validateNumeric(numeric, ct)) {
+                quantity = parseFloat(numeric); 
             }
         }
         if (ct.hasClassName('up')) { 
-            if (validateNumeric(ct.value, ct)) {
-                up = parseFloat(ct.value);
+            var numeric = ct.value.replace(',', '.');
+            if (validateNumeric(numeric, ct)) {
+                up = parseFloat(numeric);
             } 
         }
         if (ct.hasClassName('tva')) { 
