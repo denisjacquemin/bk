@@ -22,11 +22,13 @@
   .columns.wat-cf 
     .column.left     
       = f.label :customer_id, t("assur.bill.Customer") + mark_required(@bill, :customer_id), :class => :label
-      = text_field_tag 'customer_autocomplete',@bill.customer_fullname_with_reference , :class => 'text_field'
-      = f.hidden_field :customer_id
-      %span.description 
-        Entrez minimum 2 caracteres du nom, prenom ou de la reference client
-        = link_to 'aide', '#'
+      %span.in_place_edit{:target => 'bill_customer_id'}
+        %span.readonly= @bill.customer_fullname_with_reference
+        = text_field_tag 'customer_autocomplete', @bill.customer_fullname_with_reference , :class => 'in_place_edit_text_field', :style => 'display:none'
+        = f.hidden_field :customer_id
+        %span.description{:style => 'display:none;'}
+          Entrez minimum 2 caracteres du nom, prenom ou de la reference client
+          = link_to 'aide', '#'
     .column.right
       = f.label :effective_date, t("assur.bill.Effective_date") + mark_required(@bill, :effective_date), :class => :label
       %span.in_place_edit{:target => 'bill_location'}
