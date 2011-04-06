@@ -12,6 +12,7 @@
     .group
       = f.label :password, 'Mot de passe'
       = f.password_field :password
+      %span.small.description= t('assur.devise.password_help')
     .group
       = f.label :password_confirmation, 'Confirmation mot de passe'
       = f.password_field :password_confirmation
