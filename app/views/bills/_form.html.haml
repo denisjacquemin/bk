@@ -72,7 +72,7 @@
       %button.button{:type => "button", :onclick => 'document.forms[0].submit();'}
         = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
         = t("assur.general.save")
-      = link_to image_tag("web-app-theme/icons/cross.png", :alt => t("assur.general.cancel")) + " " + t("assur.general.cancel"), customers_path, :class => "button"
+      = link_to image_tag("web-app-theme/icons/cross.png", :alt => t("assur.general.cancel")) + " " + t("assur.general.cancel"), bills_path, :class => "button"
     - unless f.object.new_record?
       .column.right
         = link_to image_tag("web-app-theme/icons/bin.png", :alt => t("assur.general.delete")) + " " + t("assur.general.delete"), bill_path(@bill), :class => "button rbutton", :method => :delete, :confirm => t("assur.general.are_you_sure")

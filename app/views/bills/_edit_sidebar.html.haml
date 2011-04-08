@@ -1,6 +1,7 @@
 .block
   .sidebar-block
-    %p= link_to image_tag("web-app-theme/icons/page_white_acrobat.png", :alt => t("assur.bill.Generate_pdf")) + " " + t("assur.bill.Generate_pdf"), bill_path(b, :format => :pdf), :target => "_blank", :class => "button"
+    - unless b.name.empty?
+      %p= link_to image_tag("web-app-theme/icons/page_white_acrobat.png", :alt => t("assur.bill.Generate_pdf")) + " " + t("assur.bill.Generate_pdf"), bill_name_path(URI.encode(b.name), :format => :pdf), :target => "_blank", :class => "button"
 .block.notice
   %h3= t('assur.bill.Info_bill')
   .content

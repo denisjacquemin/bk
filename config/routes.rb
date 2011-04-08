@@ -83,4 +83,5 @@ Billit::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  get 'bill/:name' => 'bills#show', :constrain => { :name => /[a-zA-Z-0-9-]+/ }, :as => 'bill_name'
 end
