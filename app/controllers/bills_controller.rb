@@ -15,7 +15,7 @@ class BillsController < ApplicationController
   # GET /bills/1
   # GET /bills/1.xml
   def show
-    @bill = Bill.find(params[:id])
+    @bill = Bill.find_by_name(URI.unescape(params[:name]))
     
     # set filename :format => fct_Cutomer-fullname_bill-reference_bill-effective-date.pdf
     prawnto :filename => "fct_#{@bill.customer_fullname_with_underscore}_#{@bill.reference}_#{@bill.effective_date}.pdf"
@@ -65,6 +65,7 @@ class BillsController < ApplicationController
     @bill.author_id = current_user.id
     company = current_user.company
     @bill.company_id = company.id
+    @tvas = Tva.by_company(current_user.company_id).ordered
     
     # init location with company's address city... if exists
     unless company.address.nil?
