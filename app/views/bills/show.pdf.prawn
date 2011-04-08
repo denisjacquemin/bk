@@ -14,17 +14,16 @@ pdf.repeat :all do
       pdf.text company.name, :align => :left, :size => 20 unless company.name.nil?
       pdf.text company.slogan, :size => 10, :style => :italic unless company.slogan.nil?
       pdf.move_down(5)
-      pdf.text "#{company.address.number}, #{company.address.street}", :size => 10
-      pdf.text "#{company.address.zipcode}, #{company.address.city}", :size => 10
-      pdf.text "Tel: 061/61.25.99", :size => 10
-      pdf.text "Fax: 061/61.25.99", :size => 10
-      pdf.text "GSM: 0461/61.25.99", :size => 10
-      pdf.move_down(15)
-      pdf.text "#{t('assur.pdf.Bill_reference')}: #{@bill.reference}", :align => :left, :size => 10
-      pdf.text "#{t('assur.pdf.Customer_reference')}: #{@bill.customer.reference}", :align => :left, :size => 10 unless @bill.customer.nil?
+      pdf.text "#{company.address.number}, #{company.address.street}", :size => 9
+      pdf.text "#{company.address.zipcode}, #{company.address.city}", :size => 9
+      pdf.text "#{company.address.country.name}", :size => 9
+      pdf.text "#{t('assur.pdf.tel')}: #{company.tel}", :size => 9 unless company.tel.empty?
+      pdf.text "#{t('assur.pdf.fax')}: #{company.fax}", :size => 9 unless company.fax.empty?
+      pdf.text "#{t('assur.pdf.gsm')}: #{company.gsm}", :size => 9 unless company.gsm.empty?
+      pdf.text "#{t('assur.pdf.email')}: #{company.email}", :size => 9 unless company.email.empty?
       
   end
-  pdf.bounding_box [pdf.bounds.left, pdf.bounds.top], :width  => pdf.bounds.width do
+  pdf.bounding_box [pdf.bounds.right-250, pdf.bounds.top], :width  => 250 do
       pdf.fill_color "AAAAAA"
       pdf.font "Helvetica"
       pdf.text t('assur.pdf.Bill'), :align => :right, :size => 30, :style => :bold
@@ -32,20 +31,22 @@ pdf.repeat :all do
       pdf.fill_color "000000"
       pdf.text location_and_date, :align => :right, :size => 15
       pdf.move_down(10)
-      
-      
+      pdf.move_down(15)
+  end
+  
+  pdf.bounding_box [pdf.bounds.right-350, pdf.bounds.top - 100], :width  => 350 do
+    pdf.text "#{t('assur.pdf.Bill_reference')}: #{@bill.reference}", :align => :right, :size => 10
+    pdf.text "#{t('assur.pdf.Customer_reference')}: #{@bill.customer.reference}", :align => :right, :size => 10 unless @bill.customer.nil?
   end
   
   # Customer Address
-  pdf.bounding_box [pdf.bounds.left, pdf.bounds.top - 100], :width  => pdf.bounds.width - 70 do
+  pdf.bounding_box [pdf.bounds.left+50, pdf.bounds.top - 130], :width  => 250 do
     unless @bill.customer.nil?
-      pdf.text "#{@bill.customer_firstname} #{@bill.customer_lastname}", :size => 12, :align => :right
+      pdf.text "#{@bill.customer_firstname} #{@bill.customer_lastname}", :size => 12, :align => :left
       unless @bill.customer.address.nil?
-        pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 12, :align => :right
-        pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 12, :align => :right
-      end
-      unless @bill.customer.tva_number.empty?
-        pdf.text @bill.customer.tva_number, :size => 12, :align => :right
+        pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 12, :align => :left
+        pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 12, :align => :left
+        pdf.text "#{@bill.customer.address.country.name}", :size => 12, :align => :left
       end
     end
   end
@@ -75,7 +76,7 @@ pdf.repeat :all do
   }
 end
 
-pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.width, :height => pdf.bounds.height - 300) do                 
+pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 210], :width  => pdf.bounds.width, :height => pdf.bounds.height - 300) do                 
    
    pdf.text @bill.name, :size => 14
    pdf.move_down(10)
@@ -84,6 +85,7 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.
        [
            item.name,
            item.quantity,
+           item.price,
            item.totalhtva,
            item.totaltvac
        ]
@@ -91,12 +93,15 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 180], :width  => pdf.bounds.
    
    pdf.table items, :border_style => :grid,
        :row_colors => :pdf_writer,
-       :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.Quantity'), t('assur.pdf.header_htva'), t('assur.pdf.header_tvac')], 
-       :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right},
-       :column_widths => { 0 => 335, 1 => 65, 2 => 70, 3 => 70}
+       :font_size => 10,
+       :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.header_quantity'), t('assur.pdf.header_pu'), t('assur.pdf.header_htva'), t('assur.pdf.header_tvac')], 
+       :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right, 4 => :right},
+       :column_widths => { 0 => 283, 1 => 55, 2 => 62, 3 => 70, 4 => 70}    
    
    pdf.move_down(20)  
    pdf.text "#{t('assur.pdf.Total_htva')} #{@bill.totalhtva}", :size => 10, :align => :right
+   pdf.move_down(5)
+   pdf.text "#{t('assur.pdf.Total_tva')} #{@bill.totaltvac - @bill.totalhtva}", :size => 10, :align => :right
    pdf.move_down(5)
    pdf.text "#{t('assur.pdf.Total_tvac')} #{@bill.totaltvac}", :size => 15, :align => :right
 end

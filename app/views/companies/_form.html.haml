@@ -33,6 +33,24 @@
           = a.label :country_id, t("assur.customer.country"), :class => :label
           = a.collection_select(:country_id, Country.all, :id, :name)
 .group
+  .fieldset
+    .group
+      .columns.wat-cf 
+        .column.left
+          = f.label :tel, t("assur.company.tel"), :class => :label
+          = f.text_field :tel, :class => 'text_field'
+        .column.right
+          = f.label :fax, t("assur.company.fax"), :class => :label
+          = f.text_field :fax, :class => 'text_field'
+    .group
+      .columns.wat-cf 
+        .column.left
+          = f.label :gsm, t("assur.company.gsm"), :class => :label
+          = f.text_field :gsm, :class => 'text_field'
+        .column.right
+          = f.label :email, t("assur.company.email"), :class => :label
+          = f.text_field :email, :class => 'text_field'
+.group
   .columns.wat-cf 
     .column.left
       = f.label :tva_number, t("assur.company.Tva_number"), :class => :label
@@ -47,7 +65,8 @@
     = f.fields_for :bankaccounts do |b|
       = render :partial => 'bankaccount', :locals => {:f => b}
   .group
-    = link_to  t('assur.company.Add_bankaccout'), '#bankaccount', :class => "add_nested_item", :rel => "bankaccounts"
+    .columns.wat-cf
+      = link_to  image_tag("web-app-theme/icons/add.png", :alt => t('assur.company.Add_bankaccout')) + " " + t('assur.company.Add_bankaccout'), '#bankaccount', :class => "button add_nested_item", :rel => "bankaccounts"
 .group.navform.wat-cf
   %button.button{:type => "button", :onclick => 'document.forms[0].submit();'}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")

@@ -11,10 +11,10 @@ class Company < ActiveRecord::Base
   
   def completed?
     complete = true
-    complete = false if name.nil? 
-    complete = false if address.nil? 
-    complete = false if address.city.nil?
-    complete = false if address.street.nil?
+    complete = false if name.nil? || name.empty?
+    complete = false if address.nil?
+    complete = false if address.city.nil? || address.city.empty?
+    complete = false if address.street.nil? || address.street.empty?
     complete
   end
 end
