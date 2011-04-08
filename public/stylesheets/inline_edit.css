@@ -3,7 +3,8 @@
 }
 
 .in_place_edit .readonly:hover {
-    background: yellow;
+    background: #FFFCC3;
+    cursor: pointer;
 }
 
 .in_place_edit_text_field {

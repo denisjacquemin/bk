@@ -46,26 +46,51 @@ body {
     width: 18%;
     
 }
-.form .columns .verysmallcolumn .readonly {
-    font-size: 1.2em;
-}
+
 .form .columns .verylargecolumn {
     width: 78%;
 }
 
-.form .custform1 .one {
-    width: 33%;
+.form .threecols .one {
+    width: 28%;
     float: left;
+    margin: 0 30px 0 0;
 }
 
-.form .custform1 .two{
-    width: 30%;
+.form .threecols .two{
+    width: 28%;
     float: left;
+    margin: 0 30px 0 0;
 }
 
-.form .custform1 .three {
-    width: 30%;
+.form .threecols .three {
+    width: 28%;
     float: left;
+    margin: 0 30px 0 0;
+}
+
+.form .fourcols .one {
+    width: 15%;
+    float: left;
+    margin: 0 30px 0 0;
+}
+
+.form .fourcols .two{
+    width: 15%;
+    float: left;
+    margin: 0 30px 0 0;
+}
+
+.form .fourcols .three {
+    width: 15%;
+    float: left;
+    margin: 0 30px 0 0;
+}
+
+.form .fourcols .four {
+    width: 15%;
+    float: left;
+    margin: 0 30px 0 0;
 }
 
 #quick-search {
@@ -123,8 +148,26 @@ body {
     margin-top: 15px;
 }
 
+.table th.text-right {
+    text-align: right;
+}
+
+.table th.text-center {
+    text-align: center;
+}
+
+.table th {
+    padding: 10px 5px;
+    font-weight: bold;
+}
+
 .table td.right {
 	text-align: right;
+}
+
+#sidebar h3 {
+    padding: 10px 2px;
+    font-weight: bold;
 }
 
 .notice ul {
