@@ -18,7 +18,7 @@ fr:
       we_need_current_password_to_change_it: Nous avons besoin de votre mot de passe courant pour pouvoir le changer
       listing: Listing
       list: Liste
-      are_you_sure: Ex sûr?
+      are_you_sure: Etes vous sûr?
       quick_search: Recherche rapide
       Company: Compagnie
       Bills: Factures
@@ -37,6 +37,9 @@ fr:
       forgot_password: Oublié votre mot de passe?
       Connection: Connexion 
       send_new_password: Reset de mot de passe
+      cancel_account: Clôturer mon compte
+      unhappy: Pas content?
+      password_help: Au moins 6 caractères
     exception:
       not_authorized_access: "Accès refusé!"
     customer:
@@ -60,8 +63,8 @@ fr:
       city: Ville
       country: Pays
       title: Titre
-      primary_email: Email 1
-      secondary_email: Email 2
+      primary_email: E-mail 1
+      secondary_email: E-mail 2
       private_phone: Téléphone privé
       office_phone: Téléphone professionnel
       cellphone: GSM
@@ -71,7 +74,7 @@ fr:
       jobdescription: Profession
       comment: Commentaires
       cancelaccount: Annuler mon compte
-      email: Email
+      email: E-mail
       password: Mot de passe
       sign_in: Identification
       confirmpassword: Confirmer mot de passe
@@ -93,7 +96,7 @@ fr:
         New_bill: Nouvelle facture
         Customer: Client
         Generate_pdf: Générer facture (.pdf)
-        Send_by_email: Envoyer par email
+        Send_by_email: Envoyer par e-mail
         Actions_on_bill: Actions sur la facture
         Successfully_created: Facture créée avec succès
         Successfully_updated: Facture mise à jour avec succès
@@ -106,6 +109,7 @@ fr:
         location: le
         new_bill: Nouvelle facture
         config_note_help: Il est conseillé d’indiquer au pied de la facture, le délai de règlement et la date d’échéance
+        customer_help: Entrez minimum 2 caractères du nom, prénom ou de la référence client
     product:
         Product_name_description: Description article(s)
         Quantity: Quantité
@@ -122,7 +126,7 @@ fr:
         Bill_reference: Référence facture
         header_product_description: Description article(s)
         header_quantity: Quantitée
-        header_unit_price: Prix unitère
+        header_pu: Prix unitère
         header_tva: TVA
         header_htva: Total htva
         header_tvac: Total tvac
@@ -132,22 +136,31 @@ fr:
         Date: Date
         Total_htva: Total htva
         Total_tvac: Total à payer tvac
-        Quantity: Quantitée
+        Total_tva: Total tva
+        tel: Téléphone
+        fax: Fax
+        gsm: Gsm
+        email: E-mail
     company:
         name: Nom
         name_description: "ex: Ma compagnie Sprl"
         slogan: Slogan
         successfully_created: Infos compagnie créées avec succès
         successfully_updated: Infos compagnie mises à jour avec succès
-        enreg_number: NE
+        enreg_number: Numéro d'entreprise
         ie_enreg_number_description: "11.22.33"
         Tva_number: Numéro TVA
         bank_account_name: Compte Bancaire
         bank_account_name_description: "ex: Fortis IBAN BE35 210-1234567-24 BIC 686899"
         bank_account_help: "Il est conseillé d’indiquer les comptes bancaires en format IBAN ainsi que le code BIC (ex: IBAN BE35 210-1234567-24 BIC 686899)."
-        Add_bankaccout: Ajouter un CCP
+        Add_bankaccout: Ajouter un compte bancaire
         bill_footer: Note de pied de page
         bill_footer_desc: Ce texte est perssonalisable pour chaque facture
+        Practical_information: Informations pratiques
+        tel: Téléphone
+        fax: Fax
+        gsm: Gsm
+        email: E-mail
     status:
         late: Retard
         sent: Envoyé
