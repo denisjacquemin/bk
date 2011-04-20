@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110407060324) do
+ActiveRecord::Schema.define(:version => 20110420144844) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -177,6 +177,7 @@ ActiveRecord::Schema.define(:version => 20110407060324) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
+    t.integer  "tutorial_step",                       :default => 0
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
