@@ -2,6 +2,7 @@ class Bill < ActiveRecord::Base
   belongs_to :customer
   has_many :products
   belongs_to :author, :class_name => "User", :foreign_key => "author_id"
+  belongs_to :company
   
   composed_of :totaltvac,
               :class_name => "Money",
