@@ -4,17 +4,9 @@ class Company < ActiveRecord::Base
   belongs_to :address
   has_many :bankaccounts
   has_many :tvas
+  has_many :bills
   
   accepts_nested_attributes_for :address
   accepts_nested_attributes_for :bankaccounts, :allow_destroy => true
   accepts_nested_attributes_for :tvas
-  
-  def completed?
-    complete = true
-    complete = false if name.nil? || name.empty?
-    complete = false if address.nil?
-    complete = false if address.city.nil? || address.city.empty?
-    complete = false if address.street.nil? || address.street.empty?
-    complete
-  end
 end
