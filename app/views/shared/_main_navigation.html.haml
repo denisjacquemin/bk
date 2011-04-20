@@ -1,4 +1,5 @@
 #main-navigation
   %ul.wat-cf
     %li.first{:class => "#{['customers'].include?(controller_name) ? 'active' : '' }"}= link_to t("assur.customer.Customers"), customers_url
-    %li{:class => "#{['bills'].include?(controller_name) ? 'active' : '' }"}= link_to t("assur.bill.Bills"), bills_url
+    - if current_user.company.bills.active.count > 0
+      %li{:class => "#{['bills'].include?(controller_name) ? 'active' : '' }"}= link_to t("assur.bill.Bills"), bills_url
