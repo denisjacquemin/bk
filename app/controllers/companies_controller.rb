@@ -58,7 +58,10 @@ class CompaniesController < ApplicationController
   # PUT /companies/1.xml
   def update
     @company = Company.find(params[:id])
-
+    if current_user.tutorial_step == 0
+      current_user.tutorial_step = 1
+      current_user.save
+    end
     respond_to do |format|
       if @company.update_attributes(params[:company])
         format.html { redirect_to edit_company_url(@company), :notice => "#{t('assur.company.successfully_updated')}." }

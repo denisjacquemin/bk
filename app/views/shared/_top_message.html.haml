@@ -1,0 +1,26 @@
+-# Step 1 check Company configuration
+-# Step 2 check Bill configuration
+-# Step 3 show big button + text 'Create first customer', hide bills tab
+-# Step 4 tooltip on 'create new bill' on customer's row
+-# Step 5 when bill created, tooltip on Bills tab
+
+
+-# Step 1
+- if current_user.tutorial_step == 0
+  #permanent-message
+    %ul
+      %li
+        = "#{t 'assur.general.complete_company_profile'}"
+        = link_to 'configuration', configuration_url
+- elsif current_user.tutorial_step == 1
+  #permanent-message
+    %ul
+      %li
+        = "#{t 'assur.general.complete_bill_default'}"
+        = link_to 'configuration facture', configuration_bill_url
+- elsif current_user.tutorial_step == 2
+  #permanent-message
+    %ul
+      %li
+        = "#{t 'assur.general.create_first_customer'}"
+        = link_to t('assur.general.create_first_client_link'), new_customer_url        

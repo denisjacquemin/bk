@@ -59,6 +59,10 @@ class CustomersController < ApplicationController
     @customer.company_id = current_user.company_id
     respond_to do |format|
       if @customer.save
+        if current_user.tutorial_step == 2
+          current_user.tutorial_step = 3
+          current_user.save
+        end
         format.html { redirect_to edit_customer_url(@customer), :notice => "#{t('assur.customer.successfully_created')}." }
         format.xml  { render :xml => @customer, :status => :created, :location => @customer }
       else
