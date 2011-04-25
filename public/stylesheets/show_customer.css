@@ -1,0 +1,33 @@
+
+h2 .city, h2 .reference {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+    line-height: 15px;
+}
+
+#customer-details {
+    list-style: none;
+    margin: 0 0 0 10px;
+}
+
+#customer-details li {
+    font-size: 12px;
+    margin: 0;
+    font-weight: normal;
+    font-family: "Lucida Grande","Lucida Sans Unicode",helvetica,arial,verdana,sans-serif;
+    line-height: 20px;
+    padding: 0 0 0 25px;
+}
+
+#customer-details li.phone {
+    background: url('../images/customer_details_sprite.png') left -0px no-repeat;
+}
+
+#customer-details li.email {
+    background: url('../images/customer_details_sprite.png') left -25px no-repeat;
+}
+#customer-details li span.desc {
+    color: #888;
+    font-size: 10px;
+}

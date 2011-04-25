@@ -1,84 +1,47 @@
+- content_for :css do
+  = stylesheet_link_tag "show_customer"
 .block
-  .secondary-navigation
-    %ul.wat-cf
-      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", customers_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_customer_path
-      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", customer_path
   .content
+    %h2{:style => 'vertical-align:top;'}
+      %table{:width => '100%'}
+        %tr
+          %td
+            = @customer.fullname
+            %span.reference
+              = @customer.reference
+            - unless @customer.address_city.empty?
+              .city
+                = "#{t('assur.general.of')} #{@customer.address_city}" 
+          %td{:width => '300px', :style => 'border-left: 1px solid #ddd; padding: 0 0 0 10px'}
+            %ul{:id => 'customer-details'}
+              - unless @customer.phone.nil? || @customer.phone.empty?
+                %li.phone
+                  = @customer.phone
+                  %span.desc
+                    =t('assur.customer.phone')
+              %li.email= mail_to @customer.email  unless @customer.email.nil? || @customer.email.empty?
     .inner
-      .group
-        = t("activerecord.attributes.customer.firstname", :default => t("activerecord.labels.firstname", :default => "Firstname"))
-        = @customer.firstname
-      .group
-        = t("activerecord.attributes.customer.lastname", :default => t("activerecord.labels.lastname", :default => "Lastname"))
-        = @customer.lastname
-      
-      %p
-        %b
-          = t("activerecord.attributes.customer.firstname", :default => t("activerecord.labels.firstname", :default => "Firstname"))
-          \:
-        = @customer.firstname
-      %p
-        %b
-          = t("activerecord.attributes.customer.lastname", :default => t("activerecord.labels.lastname", :default => "Lastname"))
-          \:
-        = @customer.lastname
-      %p
-        %b
-          = t("activerecord.attributes.customer.address_id", :default => t("activerecord.labels.address_id", :default => "Address"))
-          \:
-        = @customer.address_id
-      %p
-        %b
-          = t("activerecord.attributes.customer.birthdate", :default => t("activerecord.labels.birthdate", :default => "Birthdate"))
-          \:
-        = @customer.birthdate
-      %p
-        %b
-          = t("activerecord.attributes.customer.email", :default => t("activerecord.labels.email", :default => "Email"))
-          \:
-        = @customer.email
-      %p
-        %b
-          = t("activerecord.attributes.customer.contact_id", :default => t("activerecord.labels.contact_id", :default => "Contact"))
-          \:
-        = @customer.contact_id
-      %p
-        %b
-          = t("activerecord.attributes.customer.comment", :default => t("activerecord.labels.comment", :default => "Comment"))
-          \:
-        = @customer.comment
-      %p
-        %b
-          = t("activerecord.attributes.customer.idnum", :default => t("activerecord.labels.idnum", :default => "Idnum"))
-          \:
-        = @customer.idnum
-      %p
-        %b
-          = t("activerecord.attributes.customer.sex_id", :default => t("activerecord.labels.sex_id", :default => "Sex"))
-          \:
-        = @customer.sex_id
-      %p
-        %b
-          = t("activerecord.attributes.customer.nationality_id", :default => t("activerecord.labels.nationality_id", :default => "Nationality"))
-          \:
-        = @customer.nationality_id
-      %p
-        %b
-          = t("activerecord.attributes.customer.civilstatus_id", :default => t("activerecord.labels.civilstatus_id", :default => "civilstatus"))
-          \:
-        = @customer.civilstatus_id
-      %p
-        %b
-          = t("activerecord.attributes.customer.language_id", :default => t("activerecord.labels.language_id", :default => "Language"))
-          \:
-        = @customer.language_id
-      %p
-        %b
-          = t("activerecord.attributes.customer.jobdescription", :default => t("activerecord.labels.jobdescription", :default => "Jobdescription"))
-          \:
-        = @customer.jobdescription
-      .wat-cf
-        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_customer_path(@customer), :class => "button"
-        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), customer_path(@customer), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
-- content_for :sidebar, render(:partial => 'sidebar')
+      %table{:width => '100%'}
+        %tr
+          %td{:width => '140px', :style => 'vertical-align:top;border-right: 1px solid #EAEAEA;'}
+            = link_to image_tag("web-app-theme/icons/calculator_add.png", :alt => t('assur.bill.new_bill')) + " " + t('assur.bill.new_bill'), new_bill_path(:c => @customer.id), :class => "button"
+          %td{:style => 'padding-left:5px;'}
+            %table.table{:id => 'qs-target'}
+              %tr
+                %th Statut
+                %th 
+                  = t("assur.bill.Description")
+                %th
+                  = t("assur.bill.Reference")
+                %th
+                  = t("assur.bill.Billing_date")
+                %th.last.text-right
+                  = t("assur.bill.Amount_TVAC")
+                - @customer.bills.each do |bill|
+                  %tr.row{:class => cycle("odd", "even")}
+                    %td
+                      %span.github-label.github-label-orange Envoyee
+                    %td= link_to "#{bill.name}", edit_bill_path(bill)
+                    %td= bill.reference
+                    %td= l bill.effective_date
+                    %td.last.text-right= bill.totaltvac        
