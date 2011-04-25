@@ -1,0 +1,61 @@
+span.github-label, span.github-label a {
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 4px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+.github-label-green, .github-label-green a {
+    background: #1DA855;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#1DA855', endColorstr='#116F26');
+    background: -webkit-gradient(linear, left top, left bottom, from(#1DA855), to(#116F26));
+    background: -moz-linear-gradient(top, #1DA855, #116F26);
+    color: white;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.github-label-blue, .github-label-blue a {
+    background: #8FB1F0;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#8FB1F0', endColorstr='#79BCE5');
+    background: -webkit-gradient(linear, left top, left bottom, from(#8FB1F0), to(#79BCE5));
+    background: -moz-linear-gradient(top, #8FB1F0, #79BCE5);
+    color: white;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.github-label-red, .github-label-red a {
+    background: #FC2B2B;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FC2B2B', endColorstr='#FB2626');
+    background: -webkit-gradient(linear, left top, left bottom, from(#FC2B2B), to(#FB2626));
+    background: -moz-linear-gradient(top, #FC2B2B, #FB2626);
+    color: white;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.github-label-orange, .github-label-orange a {
+    background: #FFDF6F;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFDF6F', endColorstr='#FFD462');
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFDF6F), to(#FFD462));
+    background: -moz-linear-gradient(top, #FFDF6F, #FFD462);
+    color: #665729;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+}
+
+.github-label-black, .github-label-black a {
+    background: #7F7F7F;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#7F7F7F', endColorstr='black');
+    background: -webkit-gradient(linear, left top, left bottom, from(#7F7F7F), to(black));
+    background: -moz-linear-gradient(top, #7F7F7F, black);
+    color: white;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    font-weight: normal;
+}
