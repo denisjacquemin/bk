@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110420144844) do
+ActiveRecord::Schema.define(:version => 20110425051827) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -76,21 +76,17 @@ ActiveRecord::Schema.define(:version => 20110420144844) do
     t.string   "firstname"
     t.string   "lastname"
     t.integer  "address_id"
-    t.date     "birthdate"
     t.string   "email"
     t.text     "comment"
-    t.integer  "gender_id"
-    t.integer  "nationality_id"
     t.integer  "title_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sex_id"
-    t.integer  "language_id"
     t.string   "phone"
     t.string   "reference"
     t.integer  "company_id"
     t.string   "tva_number"
-    t.boolean  "deleted",        :default => false
+    t.boolean  "deleted",    :default => false
   end
 
   create_table "languages", :force => true do |t|

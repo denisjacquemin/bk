@@ -29,9 +29,6 @@ class CustomersController < ApplicationController
     @customer = Customer.new
     @customer.build_address
     @customer.address.build_country
-    @customer.build_sex
-    @customer.build_language
-    @customer.build_nationality
     @customer.build_title
     
     lastid = 1
