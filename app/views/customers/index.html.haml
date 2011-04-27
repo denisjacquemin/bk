@@ -1,35 +1,36 @@
+- content_for :breadcrumb do
+  %ul{:id => 'breadcrumb'}
+    %li= t('assur.customer.My_customers')
 .block
-  .secondary-navigation
-    %ul.wat-cf
-      %li.first.active= link_to "#{t("assur.general.list")}", customers_path
-      %li= link_to "#{t("assur.general.new")}", new_customer_path
-  .content
-    %h2.title
-      = t("assur.general.listing")
-      = t("assur.customer.customers")
-      #quick-search.form 
+  .content.wat-cf
+    %h2
+      = t("assur.customer.My_customers")
+      #quick-search.form.right 
         = label_tag :quicksearch, t("assur.general.quick_search")
         = text_field_tag :quicksearch, '', :class => 'text_field focus', :onKeyUp => 'quicksearch.filter(this.value);'
-    .inner
-      %table.table{:id => 'qs-target'}
-        %tr
-          %th 
-            = "#{t("assur.customer.lastname")} - #{t("assur.customer.firstname")}"
-          %th 
-            = t("assur.customer.Address")            
-          %th 
-            = t("assur.customer.reference")
-          %th.last &nbsp;
-        - @customers.each do |customer|
-          %tr.row{:class => cycle("odd", "even")}
-            %td
-              = link_to "#{customer.firstname} #{customer.lastname}", edit_customer_path(customer)
-            %td
-              = customer.address.full_address
-            %td
-              = customer.reference
-            %td.last
-              = link_to t('assur.bill.new_bill'), new_bill_path(:c => customer.id)
-      .actions-bar.wat-cf
-        .actions
+    .content
+      .inner
+        %table{:width => '100%'}
+          %tr
+            %td{:width => '130px', :style => 'vertical-align:top;border-right: 1px solid #EAEAEA;'}
+              = link_to image_tag("web-app-theme/icons/user_add.png", :alt => t('assur.customer.new_customer')) + " " + t('assur.customer.new_customer'), new_customer_path, :class => "button"
+            %td{:style => 'padding-left:5px;'}
+              %table.table{:id => 'qs-target'}
+                %tr
+                  %th 
+                    = "#{t("assur.customer.lastname")} - #{t("assur.customer.firstname")}"
+                  %th 
+                    = t("assur.customer.Address")
+                  %th.last.text-center Factures
+                - @customers.each do |customer|
+                  %tr.row{:class => cycle("odd", "even")}
+                    %td
+                      = link_to customer.fullname_with_reference, customer_path(customer)
+                    %td
+                      = customer.address.full_address
+                    %td.last
+                      %span.github-label.github-label-orange
+                        = link_to '2 envoyees', new_bill_path(:c => customer.id)
+                      %span.github-label.github-label-black
+                        = link_to t('assur.general.create'), new_bill_path(:c => customer.id)
 - content_for :sidebar, render(:partial => 'index_sidebar')

@@ -1,5 +1,9 @@
 - content_for :css do
   = stylesheet_link_tag "show_customer"
+- content_for :breadcrumb do
+  %ul{:id => 'breadcrumb'}
+    %li= link_to t('assur.customer.My_customers'), customers_path
+    %li.last= @customer.fullname
 .block
   .content
     %h2{:style => 'vertical-align:top;'}
@@ -23,8 +27,9 @@
     .inner
       %table{:width => '100%'}
         %tr
-          %td{:width => '140px', :style => 'vertical-align:top;border-right: 1px solid #EAEAEA;'}
+          %td.actions{:width => '140px', :style => 'vertical-align:top;border-right: 1px solid #EAEAEA;'}
             = link_to image_tag("web-app-theme/icons/calculator_add.png", :alt => t('assur.bill.new_bill')) + " " + t('assur.bill.new_bill'), new_bill_path(:c => @customer.id), :class => "button"
+            = link_to image_tag("web-app-theme/icons/user_edit.png", :alt => t('assur.customer.edit_user')) + " " + t('assur.customer.edit_user'), edit_customer_path(@customer), :class => "button"
           %td{:style => 'padding-left:5px;'}
             %table.table{:id => 'qs-target'}
               %tr
@@ -37,11 +42,11 @@
                   = t("assur.bill.Billing_date")
                 %th.last.text-right
                   = t("assur.bill.Amount_TVAC")
-                - @customer.bills.each do |bill|
+                - @customer.bills.active.each do |bill|
                   %tr.row{:class => cycle("odd", "even")}
                     %td
                       %span.github-label.github-label-orange Envoyee
                     %td= link_to "#{bill.name}", edit_bill_path(bill)
-                    %td= bill.reference
-                    %td= l bill.effective_date
-                    %td.last.text-right= bill.totaltvac        
+                    %td= link_to bill.reference, edit_bill_path(bill)
+                    %td= link_to "#{l bill.effective_date}", edit_bill_path(bill)
+                    %td.last.text-right= link_to "#{bill.totaltvac}", edit_bill_path(bill)

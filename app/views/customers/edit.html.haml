@@ -1,13 +1,12 @@
+- content_for :breadcrumb do
+  %ul{:id => 'breadcrumb'}
+    %li= link_to t('assur.customer.My_customers'), customers_path
+    %li= link_to @customer.fullname, customer_path(@customer)
+    %li.last= t('assur.customer.edit_user')
 .block
-  .secondary-navigation
-    %ul.wat-cf
-      %li.first= link_to t("assur.general.list"), customers_path
-      %li= link_to t("assur.general.new"), new_customer_path
-      %li.active= link_to t("assur.general.Details"), edit_customer_path
   .content
-    %h2.title
-      = t("assur.general.Details")
-      = t("assur.customer.customer")
+    %h2
+      = @customer.fullname
     .inner
       = form_for @customer, :url => customer_path(@customer), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f }

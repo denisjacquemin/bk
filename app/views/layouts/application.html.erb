@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Bill it</title>
-  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", "custom", "status", "inline_edit", "button", "bill", "footer", "message" %>
+  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", "custom", "status", "inline_edit", "button", "bill", "footer", "message", 'github_label', 'breadcrumb' %>
   <%= yield(:css) %>
   <%= csrf_meta_tag %>
 </head>
@@ -20,21 +20,20 @@
       <h1><a href="/"><%= current_user.company.name %></a></h1>
       <div id="user-navigation">
         <ul class="wat-cf">
-            <% if current_user.company.nil? %>
-              <li><%= link_to t('assur.general.Configuration'), new_company_path %></li>
-            <% else %>
+            <li><%= link_to t("assur.customer.My_customers"), customers_path %></li> 
+            <% unless current_user.company.nil? %>
               <li><%= link_to t('assur.general.Configuration'), configuration_path %></li>
             <% end %>
-            <li><%= link_to t("assur.general.logout"), destroy_user_session_path, :class => 'logout' %></li>         
+            <li><%= link_to t("assur.general.logout"), destroy_user_session_path %></li>         
         </ul>
       </div>
-      <%= render :partial => 'shared/main_navigation' %>
       <div id="main-navigation">
         <ul class="wat-cf"></ul>
       </div>
     </div>    
     <div id="wrapper" class="wat-cf">
       <div id="main">
+        <%= yield(:breadcrumb) %>
         <%= yield %>
         <div id="footer">
           <%= render :partial => 'shared/footer' %>      

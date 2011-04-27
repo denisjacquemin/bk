@@ -1,8 +1,10 @@
+- content_for :breadcrumb do
+  %ul{:id => 'breadcrumb'}
+    %li= link_to t('assur.customer.My_customers'), customers_path
+    %li.last
+      = t("assur.general.new")
+      = t("assur.customer.customer")
 .block
-  .secondary-navigation
-    %ul.wat-cf
-      %li.first= link_to "#{t("web-app-theme.list", :default => "Liste")}", customers_path
-      %li.active= link_to "#{t("web-app-theme.new", :default => "Nouveau")}", new_customer_path
   .content
     %h2.title
       = t("assur.general.new")

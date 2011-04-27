@@ -1,0 +1,27 @@
+#breadcrumb {
+    list-style-type: none;
+    margin: 0  0 5px 10px;
+    padding: 0;
+    color: #666666;
+    height: 15px;
+}
+
+#breadcrumb li {
+    margin: 0;
+    padding: 0 15px 0 0;
+    float: left;
+}
+
+#breadcrumb li.last {
+    padding: 0;
+}
+
+#breadcrumb li a {
+    color: #666666;
+    text-decoration: underline;
+}
+
+#breadcrumb li a:hover {
+    color: #000;
+    text-decoration: none;
+}
