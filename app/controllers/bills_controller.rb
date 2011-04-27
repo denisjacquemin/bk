@@ -110,7 +110,7 @@ class BillsController < ApplicationController
     @bill.save
 
     respond_to do |format|
-      format.html { redirect_to(bills_url) }
+      format.html { redirect_to(customer_path(@bill.customer)) }
       format.xml  { head :ok }
     end
   end
