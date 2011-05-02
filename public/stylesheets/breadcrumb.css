@@ -8,12 +8,14 @@
 
 #breadcrumb li {
     margin: 0;
-    padding: 0 15px 0 0;
+    padding: 0 16px 0 0;
     float: left;
+    background: url('../images/breadcrumb_separator_arrow_full.png') no-repeat right;
 }
 
 #breadcrumb li.last {
     padding: 0;
+    background-image: none;
 }
 
 #breadcrumb li a {
