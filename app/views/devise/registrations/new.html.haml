@@ -8,7 +8,7 @@
     = devise_error_messages!
     .group
       = f.label :email, 'E-mail'
-      = f.text_field :email, :class => 'focus'
+      = f.email_field :email, :class => 'focus'
     .group
       = f.label :password, 'Mot de passe'
       = f.password_field :password
