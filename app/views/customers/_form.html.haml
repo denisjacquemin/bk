@@ -1,5 +1,6 @@
 = render "shared/error_messages", :target => @customer
 .group
+  = f.hidden_field :reference
   .columns.wat-cf 
     .column.left
       = f.label :firstname, t("assur.customer.firstname") + mark_required(@customer, :firstname), :class => :label
@@ -7,28 +8,6 @@
     .column.right
       = f.label :lastname, t("assur.customer.lastname") + mark_required(@customer, :lastname), :class => :label
       = f.text_field :lastname, :class => 'text_field'
-.group
-  .columns.wat-cf.threecols
-    .one
-      - now = Time.now
-      = f.label :birthdate, t("assur.customer.birthdate") + mark_required(@customer, :birthdate), :class => :label
-      = f.date_select :birthdate, :class => 'date_select', :start_year => now.year - 120, :end_year => now.year + 1, :default => { :day => 1, :month => 1, :year => now.year - 30 }
-    .two
-      = f.label :sex_id, t("assur.customer.gender") + mark_required(@customer, :sex_id), :class => :label
-      = f.collection_select(:sex_id, Sex.all, :id, :name)
-    .three
-      = f.label :reference, t("assur.customer.reference") + mark_required(@customer, :reference), :class => :label
-      %span.in_place_edit{:target => 'customer_reference'}
-        %span.readonly= @customer.reference
-        = text_field_tag 'customer[reference]', @customer.reference, :class => 'in_place_edit_text_field', :style => 'display:none'
-.group
-  .columns.wat-cf.threecols 
-    .one
-      = f.label :nationality_id, t("assur.customer.nationality") + mark_required(@customer, :nationality_id), :class => :label
-      = f.collection_select(:nationality_id, Nationality.all, :id, :name)
-    .two
-      = f.label :language_id, t("assur.customer.language"), :class => :label
-      = f.collection_select(:language_id, Language.all, :id, :name)
 = f.fields_for :address do |a|
   .fieldset
     .group
@@ -83,7 +62,8 @@
       %button.button{:type => "button", :onclick => 'document.forms[0].submit();'}
         = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
         = t("assur.general.save")
-      = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("assur.general.cancel")}") + " " + t("assur.general.cancel"), customers_path, :class => "button"
+      - unless @customer.new_record?
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("assur.general.cancel")}") + " " + t("assur.general.cancel"), customer_path(@customer), :class => "button"
     - unless f.object.new_record?
       .column.right
-        = link_to image_tag("web-app-theme/icons/bin.png", :alt => t("assur.general.delete")) + " " + t("assur.general.delete"), customer_path(@bill), :class => "button rbutton", :method => :delete, :confirm => t("assur.general.are_you_sure")
+        = link_to image_tag("web-app-theme/icons/bin.png", :alt => t("assur.general.delete")) + " " + t("assur.general.delete"), customer_path(@customer), :class => "button rbutton", :method => :delete, :confirm => t("assur.general.are_you_sure")
