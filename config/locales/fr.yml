@@ -9,6 +9,7 @@ fr:
       details: détails
       Details: Détails
       add: Ajouter
+      create: Créer
       created_on: créé le
       forgotpassword: Oublié mon mot de passe
       notyetregistered: Pas encore inscrit?
@@ -27,10 +28,16 @@ fr:
       ie: 'Ex:'
       ie_tva: BE 0123.456.789
       complete_company_profile: "Prenez le temps de compléter les détails de votre entreprise, addresse, comptes bancaire, etc... dans le menu"
+      complete_bill_default: "Verifiez si les factures sont configurées comme vous le souhaitez dans "
+      create_first_customer: "Vous pouvez maintenant "
+      create_first_client_link: créer votre premier client
       Email: Email
       Password: Mot de passe
       confirmation_password: Confirmation mot de passe
       curent_password: Mot de passe courant
+      of: de
+      for: pour
+      Edit: Edition
     devise:
       leave_blank: laissez ce champ vide si vous ne souhatez pas modifier votre mot de passe
       current_password_help: pour des raisons de sécurité, veuiller entrer votre mot de passe courant
@@ -43,6 +50,8 @@ fr:
     exception:
       not_authorized_access: "Accès refusé!"
     customer:
+      My_customers: Mes Clients
+      new_customer: Nouveau client
       customers: clients
       Customers: Clients
       customer: client
@@ -51,7 +60,7 @@ fr:
       birthdate: Date de naissance
       city: Ville
       Address: Adresse
-      reference: Référence
+      reference: Référence client
       gender: Sexe
       civilstatus: Statut civil
       nationality: Nationalité
@@ -82,11 +91,13 @@ fr:
       successfully_created: Client créé avec succès
       successfully_updated: Client mis à jour avec succès
       Tva_number: Numéro TVA
+      edit_user: Edition client
+      no_customer_exist: "Aucun client, pour l'instant"
     bill:
         Description: Description
         Customer_name: Nom du client
         Billing_date: Date de Facturation
-        Reference: Référence
+        Reference: Référence facture
         Amount_TVAC: Montant TVAC
         Bills: Factures
         bills: factures
@@ -100,7 +111,7 @@ fr:
         Actions_on_bill: Actions sur la facture
         Successfully_created: Facture créée avec succès
         Successfully_updated: Facture mise à jour avec succès
-        new_bill_right_notice: Sauver la facture pour pouvoir générer une version pdf ou l'envoyer. 
+        new_bill_right_notice: Sauver la facture pour pouvoir générer une version pdf ou l'envoyer
         Info_bill: Informations facture
         Author: Auteur
         creation_date: Création
@@ -108,8 +119,9 @@ fr:
         note: Note de pied de page
         location: le
         new_bill: Nouvelle facture
-        config_note_help: Il est conseillé d’indiquer au pied de la facture, le délai de règlement et la date d’échéance
+        config_note_help: Indiquer au pied de la facture, le délai de règlement et la date d’échéance
         customer_help: Entrez minimum 2 caractères du nom, prénom ou de la référence client
+        no_bill_exist: Aucune facture pour ce client
     product:
         Product_name_description: Description article(s)
         Quantity: Quantité
@@ -141,6 +153,8 @@ fr:
         fax: Fax
         gsm: Gsm
         email: E-mail
+        euro_sign: €
+        percent: %
     company:
         name: Nom
         name_description: "ex: Ma compagnie Sprl"
@@ -152,7 +166,8 @@ fr:
         Tva_number: Numéro TVA
         bank_account_name: Compte Bancaire
         bank_account_name_description: "ex: Fortis IBAN BE35 210-1234567-24 BIC 686899"
-        bank_account_help: "Il est conseillé d’indiquer les comptes bancaires en format IBAN ainsi que le code BIC (ex: IBAN BE35 210-1234567-24 BIC 686899)."
+        bank_account_help: "Indiquer les comptes bancaires en format IBAN ainsi que le code BIC (ex: IBAN BE35 210-1234567-24 BIC 686899)."
+        no_mandatory_field: "Aucun champ n'est obligatoire, seul les champs remplit seront affichés sur une facture."
         Add_bankaccout: Ajouter un compte bancaire
         bill_footer: Note de pied de page
         bill_footer_desc: Ce texte est perssonalisable pour chaque facture
@@ -165,6 +180,7 @@ fr:
         late: Retard
         sent: Envoyé
         paid: Payé
+        none: Aucun
             
     all_customers: Tous les Clients
     delete: Effacer

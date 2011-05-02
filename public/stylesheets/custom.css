@@ -1,5 +1,7 @@
+html { overflow-y: scroll; }
+
 body {
-    background: url('../images/greybg.jpg') repeat-x #EBEBEB;
+    background: url('../images/60degree_gray.gif') repeat #EBEBEB;
 }
 
 #sidebar ul li {
@@ -24,6 +26,8 @@ body {
 }
 
 #main .block .content h2 {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
     background-color: #F1F8FE;
     padding: 15px;
     margin: 0 0 20px 0;
@@ -96,17 +100,27 @@ body {
     margin: 0 30px 0 0;
 }
 
-#quick-search {
+h2 .right {
     float:right;
+}
+
+.h2-reference {
     width: 300px;
-    
     font-weight: normal;
     text-align: right;
-    padding: 0 15px 0 0;
+    padding: 0;
     margin: 0;
 }
 
-#quick-search label {
+#quick-search {    
+    width: 300px;
+    font-weight: normal;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+h2 .right label {
     color:#666666;
     padding: 0 2px 0 0;
     font-size: 0.6em;
@@ -119,12 +133,19 @@ body {
     font-size: 0.7em;
 }
 
-#user-navigation li.blank, #user-navigation li a:link.blank, #user-navigation li a:visited.blank {
-  color: #fff;
-  padding: 1px 4px;
+#user-navigation {
+    position: absolute;
+    top: 0px;
+    right: 10px;
 }
-#user-navigation li.blank {
-  padding:5px 10px;
+
+#user-navigation ul li.blank, #user-navigation ul li a:link, #user-navigation ul li a:visited {
+  color: #fff;
+  padding: 1px 0;
+}
+
+#user-navigation ul li a:hover {
+    text-decoration: underline;
 }
 
 .blue-box {
@@ -166,6 +187,10 @@ body {
 
 .table td.right {
 	text-align: right;
+}
+
+.table .row:hover {
+    background: #FFC;
 }
 
 #sidebar h3 {
@@ -282,3 +307,18 @@ table#products.table tfoot {
 #permanent-message a {
     color: white;
 }
+
+.actions a.button {
+    margin: 0 0 10px 0;
+}
+
+.message {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+    text-shadow: 0 1px 0 #888;
+}
+
