@@ -15,12 +15,15 @@ pdf.repeat :all do
       pdf.text company.slogan, :size => 10, :style => :italic unless company.slogan.nil?
       pdf.move_down(5)
       pdf.text "#{company.address.number}, #{company.address.street}", :size => 9
-      pdf.text "#{company.address.zipcode}, #{company.address.city}", :size => 9
-      pdf.text "#{company.address.country.name}", :size => 9
+      pdf.text "#{company.address.zipcode}, #{company.address.city}, #{company.address.country.name}", :size => 9
+      pdf.move_down(5)
       pdf.text "#{t('assur.pdf.tel')}: #{company.tel}", :size => 9 unless company.tel.empty?
       pdf.text "#{t('assur.pdf.fax')}: #{company.fax}", :size => 9 unless company.fax.empty?
       pdf.text "#{t('assur.pdf.gsm')}: #{company.gsm}", :size => 9 unless company.gsm.empty?
       pdf.text "#{t('assur.pdf.email')}: #{company.email}", :size => 9 unless company.email.empty?
+      for bankaccount in @bill.author.company.bankaccounts do
+        pdf.text bankaccount.name, :size => 9
+      end
       
   end
   pdf.bounding_box [pdf.bounds.right-250, pdf.bounds.top], :width  => 250 do
@@ -87,23 +90,26 @@ pdf.bounding_box([pdf.bounds.left, pdf.bounds.top - 210], :width  => pdf.bounds.
            item.quantity,
            item.price,
            item.totalhtva,
+           "#{item.tva_value}#{t('assur.pdf.percent')}",
            item.totaltvac
        ]
    end
    
    pdf.table items, :border_style => :grid,
        :row_colors => :pdf_writer,
-       :font_size => 10,
-       :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.header_quantity'), t('assur.pdf.header_pu'), t('assur.pdf.header_htva'), t('assur.pdf.header_tvac')], 
-       :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right, 4 => :right},
-       :column_widths => { 0 => 283, 1 => 55, 2 => 62, 3 => 70, 4 => 70}    
+       :font_size => 9,
+       :headers => [t('assur.pdf.header_product_description'), t('assur.pdf.header_quantity'), t('assur.pdf.header_pu'), t('assur.pdf.header_htva'), t('assur.pdf.header_tva'), t('assur.pdf.header_tvac')], 
+       :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right, 4 => :right, 5 => :right},
+       :column_widths => { 0 => 250, 1 => 55, 2 => 62, 3 => 70, 4 => 33, 5 => 70}    
    
    pdf.move_down(20)  
    pdf.text "#{t('assur.pdf.Total_htva')} #{@bill.totalhtva}", :size => 10, :align => :right
    pdf.move_down(5)
    pdf.text "#{t('assur.pdf.Total_tva')} #{@bill.totaltvac - @bill.totalhtva}", :size => 10, :align => :right
    pdf.move_down(5)
-   pdf.text "#{t('assur.pdf.Total_tvac')} #{@bill.totaltvac}", :size => 15, :align => :right
+   pdf.stroke_horizontal_line 360, 540
+   pdf.move_down(10)
+   pdf.text "#{t('assur.pdf.Total_tvac')} #{t('assur.pdf.euro_sign')} #{@bill.totaltvac}", :size => 15, :align => :right
 end
 
 pdf.bounding_box [pdf.bounds.left, pdf.bounds.bottom + 70], :width  => pdf.bounds.width do
