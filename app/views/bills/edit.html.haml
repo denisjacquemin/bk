@@ -1,13 +1,33 @@
+- content_for :css do
+  = stylesheet_link_tag "show_customer"
+- content_for :breadcrumb do
+  %ul{:id => 'breadcrumb'}
+    %li= link_to t('assur.customer.My_customers'), customers_path
+    %li= link_to @bill.customer.fullname, customer_path(@bill.customer)
+    %li.last
+      = t("assur.general.Edit")
+      = t("assur.bill.bill")
 .block
-  .secondary-navigation
-    %ul.wat-cf
-      %li.first= link_to "#{t("web-app-theme.list", :default => "Liste")}", bills_path
-      %li= link_to t("assur.general.new"), new_bill_path
-      %li.active= link_to t("assur.general.Details"), edit_bill_path
   .content
     %h2.title
-      = t("assur.general.Details")
-      = t("assur.bill.bill")
+      %table{:width => '100%'}
+        %tr
+          %td
+            = t("assur.general.Edit")
+            = t("assur.bill.bill")
+            .reference
+              = t('assur.general.for')
+              = @bill.customer.fullname_with_reference
+              - unless @bill.customer.address_city.empty?
+                = "#{t('assur.general.of')} #{@bill.customer.address_city}" 
+          %td{:width => '300px', :style => 'border-left: 1px solid #ddd; padding: 0 0 0 10px'}
+            %ul{:id => 'customer-details'}
+              - unless @bill.customer.phone.nil? || @bill.customer.phone.empty?
+                %li.phone
+                  = @bill.customer.phone
+                  %span.desc
+                    =t('assur.customer.phone')
+              %li.email= mail_to @bill.customer.email  unless @bill.customer.email.nil? || @bill.customer.email.empty?
     .inner
       = form_for @bill, :url => bill_path(@bill), :html => { :class => :form } do |f|
         = render :partial => "form", :locals => {:f => f}

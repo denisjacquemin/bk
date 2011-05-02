@@ -31,22 +31,25 @@
             = link_to image_tag("web-app-theme/icons/calculator_add.png", :alt => t('assur.bill.new_bill')) + " " + t('assur.bill.new_bill'), new_bill_path(:c => @customer.id), :class => "button"
             = link_to image_tag("web-app-theme/icons/user_edit.png", :alt => t('assur.customer.edit_user')) + " " + t('assur.customer.edit_user'), edit_customer_path(@customer), :class => "button"
           %td{:style => 'padding-left:5px;'}
-            %table.table{:id => 'qs-target'}
-              %tr
-                %th Statut
-                %th 
-                  = t("assur.bill.Description")
-                %th
-                  = t("assur.bill.Reference")
-                %th
-                  = t("assur.bill.Billing_date")
-                %th.last.text-right
-                  = t("assur.bill.Amount_TVAC")
-                - @customer.bills.active.each do |bill|
-                  %tr.row{:class => cycle("odd", "even")}
-                    %td
-                      %span.github-label.github-label-orange Envoyee
-                    %td= link_to "#{bill.name}", edit_bill_path(bill)
-                    %td= link_to bill.reference, edit_bill_path(bill)
-                    %td= link_to "#{l bill.effective_date}", edit_bill_path(bill)
-                    %td.last.text-right= link_to "#{bill.totaltvac}", edit_bill_path(bill)
+            - if @customer.bills.active.count == 0
+              .message= t 'assur.bill.no_bill_exist'
+            - else
+              %table.table{:id => 'qs-target'}
+                %tr
+                  %th{:width => '12%'} Statut
+                  %th{:width => '52%'}
+                    = t("assur.bill.Description")
+                  %th{:width => '12%'}
+                    = t("assur.bill.Reference")
+                  %th{:width => '11%'}
+                    = t("assur.bill.Billing_date")
+                  %th.last.text-right{:width => '13%'}
+                    = t("assur.bill.Amount_TVAC")
+                  - @customer.bills.active.each do |bill|
+                    %tr.row{:class => cycle("odd", "even")}
+                      %td
+                        %span.github-label.github-label-orange Envoyee
+                      %td= link_to "#{bill.name.truncate(50)}", edit_bill_path(bill), :title => bill.name
+                      %td= link_to bill.reference, edit_bill_path(bill)
+                      %td= link_to "#{l bill.effective_date}", edit_bill_path(bill)
+                      %td.last.text-right= link_to "#{bill.totaltvac}", edit_bill_path(bill)
