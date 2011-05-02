@@ -17,20 +17,23 @@
             %td{:style => 'padding-left:5px;'}
               %table.table{:id => 'qs-target'}
                 %tr
-                  %th 
-                    = "#{t("assur.customer.lastname")} - #{t("assur.customer.firstname")}"
-                  %th 
-                    = t("assur.customer.Address")
-                  %th.last.text-center Factures
-                - @customers.each do |customer|
-                  %tr.row{:class => cycle("odd", "even")}
-                    %td
-                      = link_to customer.fullname_with_reference, customer_path(customer)
-                    %td
-                      = customer.address.full_address
-                    %td.last
-                      %span.github-label.github-label-orange
-                        = link_to '2 envoyees', new_bill_path(:c => customer.id)
-                      %span.github-label.github-label-black
-                        = link_to t('assur.general.create'), new_bill_path(:c => customer.id)
+                  - if @customers.count == 0
+                    .message= t 'assur.customer.no_customer_exist'
+                  - else
+                    %th 
+                      = "#{t("assur.customer.lastname")} - #{t("assur.customer.firstname")}"
+                    %th 
+                      = t("assur.customer.Address")
+                    %th.last.text-center Factures
+                  - @customers.each do |customer|
+                    %tr.row{:class => cycle("odd", "even")}
+                      %td
+                        = link_to customer.fullname_with_reference, customer_path(customer)
+                      %td
+                        = customer.address.full_address
+                      %td.last
+                        %span.github-label.github-label-orange
+                          = link_to '2 envoyees', new_bill_path(:c => customer.id)
+                        %span.github-label.github-label-black
+                          = link_to t('assur.general.create'), new_bill_path(:c => customer.id)
 - content_for :sidebar, render(:partial => 'index_sidebar')
