@@ -22,6 +22,7 @@ class Bill < ActiveRecord::Base
   validates_uniqueness_of :reference
   
   accepts_nested_attributes_for :products, :allow_destroy => true
+  
   delegate :firstname, :to => :customer, :prefix => true, :allow_nil => true
   delegate :lastname, :to => :customer, :prefix => true, :allow_nil => true
   delegate :fullname, :to => :customer, :prefix => true, :allow_nil => true
@@ -44,5 +45,4 @@ class Bill < ActiveRecord::Base
     end
     self.location
   end
-  
 end
