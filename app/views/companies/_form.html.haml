@@ -38,18 +38,18 @@
       .columns.wat-cf 
         .column.left
           = f.label :tel, t("assur.company.tel"), :class => :label
-          = f.text_field :tel, :class => 'text_field'
+          = f.phone_field :tel, :class => 'text_field'
         .column.right
           = f.label :fax, t("assur.company.fax"), :class => :label
-          = f.text_field :fax, :class => 'text_field'
+          = f.phone_field :fax, :class => 'text_field'
     .group
       .columns.wat-cf 
         .column.left
           = f.label :gsm, t("assur.company.gsm"), :class => :label
-          = f.text_field :gsm, :class => 'text_field'
+          = f.phone_field :gsm, :class => 'text_field'
         .column.right
           = f.label :email, t("assur.company.email"), :class => :label
-          = f.text_field :email, :class => 'text_field'
+          = f.email_field :email, :class => 'text_field'
 .group
   .columns.wat-cf 
     .column.left
