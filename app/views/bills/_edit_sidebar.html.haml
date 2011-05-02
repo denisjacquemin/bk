@@ -3,6 +3,28 @@
     - unless b.name.empty?
       %p= link_to image_tag("web-app-theme/icons/page_white_acrobat.png", :alt => t("assur.bill.Generate_pdf")) + " " + t("assur.bill.Generate_pdf"), bill_name_path(URI.encode(b.name), :format => :pdf), :target => "_blank", :class => "button"
 .block.notice
+  %h3
+    = t('assur.bill.Status')
+    = t('assur.bill.bill')
+  .content
+    %table
+      %tr
+        %td= "#{t('assur.status.none')}"
+        %td= radio_button_tag 'status', :value => '0'
+      %tr
+        %td
+          %span.github-label.github-label-orange= "#{t('assur.status.sent')}"
+        %td= radio_button_tag 'status', :value => '1'
+      %tr
+        %td
+          %span.github-label.github-label-green= "#{t('assur.status.paid')}"
+        %td= radio_button_tag 'status', :value => '2'
+      %tr
+        %td
+          %span.github-label.github-label-red= "#{t('assur.status.late')}"
+        %td= radio_button_tag 'status', :value => '3'
+        
+.block.notice
   %h3= t('assur.bill.Info_bill')
   .content
     %table
