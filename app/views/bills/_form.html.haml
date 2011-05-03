@@ -2,6 +2,7 @@
   = f.label :reference, t("assur.bill.Reference"), :class => :label
   = f.text_field :reference, :class => 'text_field'
 - content_for :javascripts do
+  = javascript_include_tag 'bill'
   = javascript_tag do
     = "var product='#{generate_template(f, :products)}'"
 = render "shared/error_messages", :target => @bill
