@@ -1,7 +1,7 @@
 document.observe("dom:loaded", function() {
    $$('.product').each(function(p){
-       p.down('.totalhtva').innerHTML = parseFloat(p.down('.totalhtvahidden').value).toCurrency();
-       p.down('.totaltvac').innerHTML = parseFloat(p.down('.totaltvachidden').value).toCurrency();
+       p.down('.totalhtva').innerHTML = parseFloat(p.down('.totalhtvahidden').value.replace(',', '.')).toCurrency();
+       p.down('.totaltvac').innerHTML = parseFloat(p.down('.totaltvachidden').value.replace(',', '.')).toCurrency();
    });
    
    computeGlobalTotal();
