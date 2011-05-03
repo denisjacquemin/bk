@@ -17,4 +17,4 @@
       = f.label :password_confirmation, 'Confirmation mot de passe'
       = f.password_field :password_confirmation
     .nav
-      = f.submit "je m'inscris"
+      = f.submit "je m'inscris", :disable_with => t('assur.general.Please_wait')

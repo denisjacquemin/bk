@@ -38,6 +38,7 @@ fr:
       of: de
       for: pour
       Edit: Edition
+      Please_wait: Veuillez patienter
     devise:
       leave_blank: laissez ce champ vide si vous ne souhatez pas modifier votre mot de passe
       current_password_help: pour des raisons de sécurité, veuiller entrer votre mot de passe courant

@@ -14,4 +14,4 @@
       = f.password_field :password
       %span.small.description= link_to t('assur.devise.forgot_password'), new_password_path(resource_name)
     .nav
-      = f.submit "Je me connecte"
+      = f.submit "Je me connecte", :disable_with => t('assur.general.Please_wait')
