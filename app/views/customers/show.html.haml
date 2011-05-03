@@ -48,7 +48,7 @@
                   - @customer.bills.active.each do |bill|
                     %tr.row{:class => cycle("odd", "even")}
                       %td
-                        %span.github-label.github-label-orange Envoyee
+                        = render :partial => 'current_status', :locals => {:bill => bill}
                       %td= link_to "#{bill.name.truncate(50)}", edit_bill_path(bill), :title => bill.name
                       %td= link_to bill.reference, edit_bill_path(bill)
                       %td= link_to "#{l bill.effective_date}", edit_bill_path(bill)
