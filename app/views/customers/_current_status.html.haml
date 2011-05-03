@@ -1,0 +1,6 @@
+- if bill.status == 1
+  %span.github-label.github-label-orange= "#{t('assur.status.sent')}"
+- elsif bill.status == 2
+  %span.github-label.github-label-green= "#{t('assur.status.paid')}"
+- elsif bill.status == 3
+  %span.github-label.github-label-red= "#{t('assur.status.late')}"
