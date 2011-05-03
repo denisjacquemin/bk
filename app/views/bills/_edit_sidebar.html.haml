@@ -7,23 +7,27 @@
     = t('assur.bill.Status')
     = t('assur.bill.bill')
   .content
-    %table
-      %tr
-        %td= "#{t('assur.status.none')}"
-        %td= radio_button_tag 'status', :value => '0'
-      %tr
-        %td
-          %span.github-label.github-label-orange= "#{t('assur.status.sent')}"
-        %td= radio_button_tag 'status', :value => '1'
-      %tr
-        %td
-          %span.github-label.github-label-green= "#{t('assur.status.paid')}"
-        %td= radio_button_tag 'status', :value => '2'
-      %tr
-        %td
-          %span.github-label.github-label-red= "#{t('assur.status.late')}"
-        %td= radio_button_tag 'status', :value => '3'
-        
+    = form_tag '/bill/update_status', :remote => true do
+      = hidden_field_tag :bill_id, @bill.id
+      %table
+        %tr
+          %td= "#{t('assur.status.none')}"
+          %td= radio_button_tag :status, '0', @bill.status==0
+        %tr
+          %td
+            %span.github-label.github-label-orange= "#{t('assur.status.sent')}"
+          %td= radio_button_tag :status, '1', @bill.status==1
+        %tr
+          %td
+            %span.github-label.github-label-green= "#{t('assur.status.paid')}"
+          %td= radio_button_tag :status, '2', @bill.status==2
+        %tr
+          %td
+            %span.github-label.github-label-red= "#{t('assur.status.late')}"
+          %td= radio_button_tag :status, '3', @bill.status==3
+        %tr
+          %td
+            = submit_tag
 .block.notice
   %h3= t('assur.bill.Info_bill')
   .content
