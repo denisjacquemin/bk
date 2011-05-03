@@ -5,27 +5,6 @@ document.observe("dom:loaded", function() {
    });
    
    computeGlobalTotal();
-
-   Autocomplete.isDomLoaded = true;
-   new Autocomplete('customer_autocomplete', { 
-       serviceUrl:'/customers/autocomplete',
-       minChars:2, 
-       maxHeight:400,
-       width:403,
-       deferRequestBy:100,
-       // callback function:
-       onSelect: function(value, data){
-           $('customer_autocomplete').value = value;
-           $('bill_customer_id').value = data;
-       }
-   });
-});
-
-// if customer_autocomplete field is changed, set bill_customer_id's value to nothing
-$('customer_autocomplete').observe('change', function(field) {
-    if ($F('customer_autocomplete').strip() == '') {
-        $('bill_customer_id').value = '';
-    }
 });
 
 document.observe('change', function(e, el) {
