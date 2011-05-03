@@ -32,8 +32,6 @@
                       %td
                         = customer.address.full_address
                       %td.last
-                        %span.github-label.github-label-orange
-                          = link_to '2 envoyees', new_bill_path(:c => customer.id)
                         %span.github-label.github-label-black
                           = link_to t('assur.general.create'), new_bill_path(:c => customer.id)
 - content_for :sidebar, render(:partial => 'index_sidebar')
