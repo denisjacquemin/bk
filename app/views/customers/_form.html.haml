@@ -59,7 +59,7 @@
 .group.navform
   .columns.wat-cf
     .column.left
-      %button.button{:type => "button", :onclick => 'document.forms[0].submit();'}
+      %button.button{:type => "button", :onclick => 'document.forms[0].submit();', 'data-disable-with' => t('assur.general.Please_wait')}
         = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
         = t("assur.general.save")
       - unless @customer.new_record?

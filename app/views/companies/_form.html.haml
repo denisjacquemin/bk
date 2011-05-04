@@ -68,7 +68,7 @@
     .columns.wat-cf
       = link_to  image_tag("web-app-theme/icons/add.png", :alt => t('assur.company.Add_bankaccout')) + " " + t('assur.company.Add_bankaccout'), '#bankaccount', :class => "button add_nested_item", :rel => "bankaccounts"
 .group.navform.wat-cf
-  %button.button{:type => "button", :onclick => 'document.forms[0].submit();'}
+  %button.button{:type => "button", :onclick => 'document.forms[0].submit();', 'data-disable-with' => t('assur.general.Please_wait')}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("assur.general.save")}")
     = t("assur.general.save")
   = link_to image_tag("web-app-theme/icons/cross.png", :alt => t("assur.general.cancel")) + " " + t("assur.general.cancel"), root_path, :class => "button"
