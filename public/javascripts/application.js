@@ -82,6 +82,12 @@ document.observe("dom:loaded", function() {
   });
 });
 
+document.on("click", "button[data-disable-with]", function(event, el) {
+    var buttonContent = new Template('<button disabled="disabled" class="button" type="button"><img src="/images/web-app-theme/icons/#{imgname}" alt="#{imgalt}">#{buttontext}</button>');
+    var data = {imgname: el.readAttribute('data-icon'), imgalt: el.readAttribute('data-label'), buttontext: el.readAttribute('data-label') };
+    el.replace(buttonContent.evaluate(data));
+});
+
 function toCurrency(amount) {
   var value = amount.toFixed(2) + '';
   
