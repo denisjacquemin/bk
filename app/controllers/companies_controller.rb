@@ -59,7 +59,7 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
     if current_user.tutorial_step == 0
-      current_user.tutorial_step = 1
+      current_user.tutorial_step = 2
       current_user.save
     end
     respond_to do |format|
