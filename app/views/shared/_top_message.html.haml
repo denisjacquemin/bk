@@ -18,7 +18,7 @@
       %li
         = "#{t 'assur.general.complete_bill_default'}"
         = link_to 'configuration facture', configuration_bill_url
-- elsif current_user.tutorial_step == 2
+- elsif current_user.tutorial_step == 2 and current_user.company.customers.count == 0
   #permanent-message
     %ul
       %li
