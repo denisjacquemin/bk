@@ -1,4 +1,4 @@
 %p
-  Welcome #{@resource.email}!
-%p You can confirm your account through the link below:
-%p= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+  = "#{t('assur.mail.confirmation.welcome')} #{@resource.email}!"
+%p= "#{t('assur.mail.confirmation.you_can_confirm')}:"
+%p= link_to t('assur.mail.confirmation.confirm_my_account'), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
