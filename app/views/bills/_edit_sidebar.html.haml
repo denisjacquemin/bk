@@ -27,7 +27,7 @@
           %td= radio_button_tag :status, '3', @bill.status==3
         %tr
           %td
-            = submit_tag
+            = submit_tag t('assur.general.save'), :disable_with => t('assur.general.Please_wait')
 .block.notice
   %h3= t('assur.bill.Info_bill')
   .content
