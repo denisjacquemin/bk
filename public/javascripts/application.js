@@ -83,8 +83,8 @@ document.observe("dom:loaded", function() {
 });
 
 document.on("click", "button[data-disable-with]", function(event, el) {
-    var buttonContent = new Template('<button disabled="disabled" class="button" type="button"><img src="/images/web-app-theme/icons/#{imgname}" alt="#{imgalt}">#{buttontext}</button>');
-    var data = {imgname: el.readAttribute('data-icon'), imgalt: el.readAttribute('data-label'), buttontext: el.readAttribute('data-label') };
+    var buttonContent = new Template('<button disabled="disabled" class="button" type="button"><img src="/images/web-app-theme/icons/hourglass.png" alt="#{imgalt}">#{buttontext}</button>');
+    var data = {imgalt: el.readAttribute('data-disable-with'), buttontext: el.readAttribute('data-disable-with') };
     el.replace(buttonContent.evaluate(data));
 });
 
