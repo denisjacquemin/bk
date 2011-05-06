@@ -38,16 +38,7 @@ fr:
       of: de
       for: pour
       Edit: Edition
-      Please_wait: Veuillez patienter
-    devise:
-      leave_blank: laissez ce champ vide si vous ne souhatez pas modifier votre mot de passe
-      current_password_help: pour des raisons de sécurité, veuiller entrer votre mot de passe courant
-      forgot_password: Oublié votre mot de passe?
-      Connection: Connexion 
-      send_new_password: Reset de mot de passe
-      cancel_account: Clôturer mon compte
-      unhappy: Pas content?
-      password_help: Au moins 6 caractères
+      Please_wait: Veuillez patienter...
     exception:
       not_authorized_access: "Accès refusé!"
     customer:
@@ -156,6 +147,11 @@ fr:
         email: E-mail
         euro_sign: €
         percent: %
+    mail:
+        confirmation:
+            welcome: Bienvenue
+            you_can_confirm: "Vous pouvez confirmer l'ouverture de votre compte avec le lien ci-dessous"
+            confirm_my_account: Confirmer mon compte
     company:
         name: Nom
         name_description: "ex: Ma compagnie Sprl"
@@ -368,4 +364,115 @@ fr:
       products:
         quantity: quantitée
         unit_price: Prix unitère
+
+
+  devise:
+    leave_blank: laissez ce champ vide si vous ne souhatez pas modifier votre mot de passe
+    current_password_help: pour des raisons de sécurité, veuiller entrer votre mot de passe courant
+    forgot_password: Oublié votre mot de passe?
+    Connection: Connexion 
+    send_new_password: Reset de mot de passe
+    cancel_account: Clôturer mon compte
+    unhappy: Pas content?
+    password_help: Au moins 6 caractères
+    errors:
+        messages:
+          not_found: "n'a pas été trouvé(e)"
+          already_confirmed: "a déjà été confirmé(e)"
+          not_locked: "n'était pas verrouillé(e)"
+    failure:
+      unauthenticated: "Vous devez vous connecter ou vous inscrire pour continuer."
+      unconfirmed: "Vous devez confirmer votre compte pour continuer."
+      locked: "Votre compte est verrouillé."
+      invalid: "Email ou mot de passe incorrect."
+      invalid_token: "Jeton d'authentification incorrect."
+      timeout: "Votre session est expirée, veuillez vous reconnecter pour continuer."
+      inactive: "Votre compte n'est pas encore activé."
+    sessions:
+      signed_in: "Vous êtes connecté."
+      signed_out: "Vous êtes déconnecté."
+    passwords:
+      send_instructions: "Vous allez recevoir un email contenant des instructions pour changer votre mot de passe."
+      updated: "Votre mot de passe a été changé. Vous êtes maintenant connecté."
+    confirmations:
+      send_instructions: "Vous allez recevoir un email contenant des instructions pour activer votre compte."
+      confirmed: "Votre compte a été activé. Vous êtes maintenant connecté."
+    registrations:
+      signed_up: "Votre inscription est enregistrée. Si demandé, un email de confirmation vous a été envoyé."
+      updated: "Votre mise à jour a été prise en compte."
+      destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
+      email: Email
+    unlocks:
+      send_instructions: "Vous allez recevoir un email avec des instructions pour déverrouiller votre compte."
+      unlocked: "Votre compte est déverrouillé. Vous êtes maintenant connecté."
+    mailer:
+      confirmation_instructions: "Instructions de confirmation"
+      reset_password_instructions: "Instructions pour changer le mot de passe"
+      unlock_instructions: "Instructions pour déverrouiller le compte"
+  
+    ##########################################################################################################
+    # For generated views: By "rails generate devise_views".
+    #                      Assuming to use I18n "Lazy" lookup, except for the ones under "common" namespace.
+    #                      e.g. Under views/devise/confirmations/new.html.erb, 
+    #                           <h2>Resend confirmation instructions</h2>
+    #                           is changed to
+    #                           <h2><%= t(".resend_confirmation_instructions") %></h2>
+    #                           locally.
+    ########################################################################################################## 
+    common:
+      forgot_your_password?: "Mot de passe oublié ?"
+      hello: "Bonjour"
+      sign_in: "Se connecter"
+      sign_up: "S'enregistrer"
+    shared:
+      links:    
+        didnt_receive_confirmation_instructions?: "Vous n'avez pas reçu d'email de confirmation ?"
+        didnt_receive_unlock_instructions?: "Vous n'avez pas reçu d'email de déverrouillage de votre compte ?"
+    confirmations:
+      new:
+        resend_confirmation_instructions: "Renvoyer l'email de confirmation"
+    mailer:
+      confirmation_instructions:
+        welcome: "Bienvenu(e)"
+        you_can_confirm_your_account_through_the_link_below: "Vous pouvez confirmer votre compte en cliquant sur le lien ci-dessous"
+        confirm_my_account: "Confirmer mon compte"
+      reset_password_instructions:
+        # For "Someone has requested a link to change your password, and you can do this through the link below."
+        reset_password_instruction: "Un changement de mot de passe a été demandé. Vous pouvez le faire en cliquant sur le lien ci-dessous."
+        change_my_password: "Changer mon mot de passe"
+        # For "If you didn't request this, please ignore this email."
+        wrong_request_instruction: "Si vous n'avez pas demandé ce changement, ignorez ce message."
+        # For "Your password won't change until you access the link above and create a new one."
+        unchange_password_message: "Votre mot de passe ne sera pas changé tant que vous n'aurez pas accédé au lien ci-dessus pour en créer un nouveau."
+      unlock_instructions:
+        # For "Your account has been locked due to an excessive amount of unsuccessful sign in attempts."
+        locked_account_message: "Votre compte a été verrouillé à la suite d'un trop grand nombre de tentatives d'authentification."
+        # For "Click the link below to unlock your account"
+        unlock_account_instruction: "Cliquez sur le lien ci-dessous pour déverrouiller votre compte"
+        unlock_my_account: "Déverrouiller mon compte"
+    passwords:
+      edit: 
+        change_your_password: "Changez votre mot de passe"
+        change_my_password: "Changer mon mot de passe"
+      new:
+        send_me_reset_password_instructions: "Envoyez-moi un email pour changer mon mot de passe"
+    registrations:
+      edit:
+        edit: "Modifier"
+        # For "leave blank if you don't want to change it"
+        password_instruction: "Laisser vide si vous ne voulez pas le changer"
+        # For "we need your current password to confirm your changes"
+        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changement"                
+        update: "Mettre à jour"
+        cancel_my_account: "Annuler mon compte"
+        unhappy?: "Pas content(e) ?"
+        are_you_sure?: "Êtes-vous sûr ?"
+        back: "Retour"
+      user:
+        updated: Votre compte a été mis à jour avec succès
+        signed_up: Votre compte a été créé avec succès
+      
+    unlocks:
+      new:
+        resend_unlock_instructions: "Renvoyez le mail pour déverrouiller mon compte"
   
