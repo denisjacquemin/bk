@@ -19,12 +19,12 @@
         .group
           = f.label :current_password, t("assur.general.curent_password"), :class => :label
           = f.password_field :current_password, :class => 'text_field'
-          %span.description= t("assur.devise.current_password_help")
+          %span.description= t("devise.current_password_help")
         .fieldset
           .group
             = f.label :password, t("assur.general.Password"), :class => :label
             = f.password_field :password, :class => 'text_field'
-            %span.description= t("assur.devise.leave_blank") 
+            %span.description= t("devise.leave_blank") 
           .group
             = f.label :password_confirmation, t("assur.general.confirmation_password"), :class => :label
             = f.password_field :password_confirmation, :class => 'text_field'
