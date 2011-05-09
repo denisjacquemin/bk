@@ -1,7 +1,7 @@
 = render :partial => 'shared/slideshow'
 #register.box
   %h2 
-    = t('assur.devise.Connection')
+    = t('devise.Connection')
     %span.small
       = raw link_to 'pas encore inscrit?', new_registration_path(resource_name)
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
@@ -12,6 +12,6 @@
     .group
       = f.label :password, 'Mot de passe'
       = f.password_field :password
-      %span.small.description= link_to t('assur.devise.forgot_password'), new_password_path(resource_name)
+      %span.small.description= link_to t('devise.forgot_password'), new_password_path(resource_name)
     .nav
       = f.submit "Je me connecte", :disable_with => t('assur.general.Please_wait')
