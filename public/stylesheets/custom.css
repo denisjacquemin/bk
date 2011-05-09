@@ -322,3 +322,6 @@ table#products.table tfoot {
     text-shadow: 0 1px 0 #888;
 }
 
+.group br {
+    margin: 0 0 5px 0;
+}
