@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110425051827) do
+ActiveRecord::Schema.define(:version => 20110509104026) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -86,7 +86,9 @@ ActiveRecord::Schema.define(:version => 20110425051827) do
     t.string   "reference"
     t.integer  "company_id"
     t.string   "tva_number"
-    t.boolean  "deleted",    :default => false
+    t.boolean  "deleted",       :default => false
+    t.integer  "customer_type", :default => 1
+    t.string   "company_name"
   end
 
   create_table "languages", :force => true do |t|
