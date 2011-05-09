@@ -85,6 +85,8 @@ fr:
       Tva_number: Numéro TVA
       edit_user: Edition client
       no_customer_exist: "Aucun client, pour l'instant"
+      company: Entreprise
+      physical_person: Personne physique
     bill:
         Description: Description
         Customer_name: Nom du client
@@ -152,6 +154,12 @@ fr:
             welcome: Bienvenue
             you_can_confirm: "Vous pouvez confirmer l'ouverture de votre compte avec le lien ci-dessous"
             confirm_my_account: Confirmer mon compte
+        reset:
+            Dear: Cher
+            explanation: Un changement de mot de passe a été demandé. Vous pouvez le faire en cliquant sur le lien ci-dessous.
+            change_my_password: Changer mon mot de passe
+            not_my_request: "Si vous n'avez pas demandé ce changement, ignorez ce message."
+            unchange_password_message: "Votre mot de passe ne sera pas changé tant que vous n'aurez pas accédé au lien ci-dessus pour en créer un nouveau."
     company:
         name: Nom
         name_description: "ex: Ma compagnie Sprl"
