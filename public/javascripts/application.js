@@ -14,6 +14,14 @@ document.observe("dom:loaded", function() {
   window.setTimeout(function() {
       Effect.SlideUp('message', { duration:0.7 });
   }, 3500);
+  
+  $$('input[data-action]').each(function(el) {
+      if (el.checked) {
+          $$('.' + el.readAttribute('data-target-show')).invoke('show');
+      } else {
+          $$('.' + el.readAttribute('data-target-show')).invoke('hide');
+      }
+  });
 
   // init Quick Search on customers/index
   if ($('qs-target') != undefined) {
@@ -88,10 +96,13 @@ document.on("click", "button[data-disable-with]", function(event, el) {
     el.replace(buttonContent.evaluate(data));
 });
 
+document.on("change", "input[data-action]", function(event, el) {
+    $$('.' + el.readAttribute('data-target-group')).invoke('hide');
+    $$('.' + el.readAttribute('data-target-show')).invoke('show');
+});
+
 function toCurrency(amount) {
   var value = amount.toFixed(2) + '';
-  
-  
   return value.replace('.', ',');
 }
 
