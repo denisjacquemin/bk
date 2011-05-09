@@ -1,7 +1,7 @@
 .block.notice
-  %h3= t('assur.devise.cancel_account')
+  %h3= t('devise.cancel_account')
   .content
     %table
       %tr
-        %td= t('assur.devise.unhappy')
-        %td.text-right=  link_to t('assur.devise.cancel_account'), registration_path(resource_name), :confirm => t('assur.general.are_you_sure'), :method => :delete
+        %td= t('devise.unhappy')
+        %td.text-right=  link_to t('devise.cancel_account'), registration_path(resource_name), :confirm => t('assur.general.are_you_sure'), :method => :delete
