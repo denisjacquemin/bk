@@ -1,13 +1,13 @@
 = render :partial => 'shared/slideshow'
 #register.box
   %h2
-    = t('assur.devise.forgot_password')
+    = t('devise.forgot_password')
     %span.small
-      = raw link_to t('assur.devise.Connection'), new_session_path(resource_name)
+      = raw link_to t('devise.Connection'), new_session_path(resource_name)
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     = devise_error_messages!
     .group
       = f.label :email, 'E-mail'
       = f.text_field :email, :class => 'focus'
     .nav
-      = f.submit t('assur.devise.send_new_password'), :disable_with => t('assur.general.Please_wait')
+      = f.submit t('devise.send_new_password'), :disable_with => t('assur.general.Please_wait')
