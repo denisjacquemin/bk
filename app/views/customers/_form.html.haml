@@ -1,6 +1,12 @@
 = render "shared/error_messages", :target => @customer
-.group
-  = f.hidden_field :reference
+= f.hidden_field :reference
+.group 
+  = f.radio_button :customer_type, 1, 'data-action' => 'toggle-field', 'data-target-group' => 'customertype', 'data-target-show' => 'customertype1'
+  = f.label :customer_type_1, t('assur.customer.physical_person')
+  %br
+  = f.radio_button :customer_type, 2, 'data-action' => 'show-field', 'data-target-group' => 'customertype', 'data-target-show' => 'customertype2'
+  = f.label :customer_type_2, t('assur.customer.company')
+.group.customertype.customertype1
   .columns.wat-cf 
     .column.left
       = f.label :firstname, t("assur.customer.firstname") + mark_required(@customer, :firstname), :class => :label
@@ -8,6 +14,9 @@
     .column.right
       = f.label :lastname, t("assur.customer.lastname") + mark_required(@customer, :lastname), :class => :label
       = f.text_field :lastname, :class => 'text_field'
+.group.customertype.customertype2
+  = f.label :company_name, t("assur.customer.company_name") + mark_required(@customer, :firstname), :class => :label
+  = f.text_field :company_name, :class => 'text_field focus'
 = f.fields_for :address do |a|
   .fieldset
     .group
@@ -23,7 +32,7 @@
           = a.text_field :box, :class => 'text_field'
         .column.three
           = a.label :zipcode, t("assur.customer.zipcode") + mark_required(@customer.address, :zipcode), :class => :label
-          = a.text_field :zipcode, :class => 'text_field'        
+          = a.text_field :zipcode, :class => 'text_field'
     .group
       .columns.wat-cf 
         .column.left     
@@ -36,7 +45,7 @@
 .fieldset
   .group
     .columns.wat-cf 
-      .column.left
+      .column.left.customertype.customertype1
         = f.label :title_id, t("assur.customer.title") + mark_required(@customer, :title_id), :class => :label
         = f.collection_select(:title_id, Title.all, :id, :name)
       .column.right
