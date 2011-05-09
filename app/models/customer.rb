@@ -11,8 +11,8 @@ class Customer < ActiveRecord::Base
   delegate :city, :to => :address, :prefix => true, :allow_nil => true
   
   validates_uniqueness_of :reference, :presence => true
-  
-  validate :presence_of_firstname_and_lastname_or_company_name
+  validates_presence_of :firstname, :lastname, :if => "customer_type == 1"
+  validates_presence_of :company_name, :if => "customer_type == 2"
   
   scope :by_company, lambda { |company_id| where("company_id = ?", company_id) }
   scope :active, where('deleted = ?', false)
@@ -32,13 +32,5 @@ class Customer < ActiveRecord::Base
   
   def fullname_with_reference
     "#{self.fullname} (ref: #{self.reference})"
-  end
-  
-  def presence_of_firstname_and_lastname_or_company_name
-    if customer_type == 1
-      validates_presence_of :firstname, :lastname
-    elsif customer_type == 2
-      validates_presence_of :company_name
-    end
   end
 end
