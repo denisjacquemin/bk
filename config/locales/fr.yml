@@ -87,6 +87,10 @@ fr:
       no_customer_exist: "Aucun client, pour l'instant"
       company: Entreprise
       physical_person: Personne physique
+      company_name: Nom entreprise
+      label_help: "Dans la colonne <i>Factures</i> est indiqué le nombre de facture en statut <span class='github-label github-label-orange'>Envoyé</span> et/ou en <span class='github-label github-label-red'>Retard</span>."  
+      index_help: Cet écran liste vos clients. Le champ <i>Recherche rapide</i> permet de filtrer la liste, tapez un nom, une référence client ou une partie d'adresse pour trouver un client rapidement. 
+      create_button_help: "Le bouton <span class='github-label github-label-black'>Créer</span> est un raccourci vers l'écran de création d'une nouvelle facture pour ce client."
     bill:
         Description: Description
         Customer_name: Nom du client
@@ -150,16 +154,20 @@ fr:
         euro_sign: €
         percent: %
     mail:
+        Dear: Cher
         confirmation:
             welcome: Bienvenue
             you_can_confirm: "Vous pouvez confirmer l'ouverture de votre compte avec le lien ci-dessous"
             confirm_my_account: Confirmer mon compte
         reset:
-            Dear: Cher
             explanation: Un changement de mot de passe a été demandé. Vous pouvez le faire en cliquant sur le lien ci-dessous.
             change_my_password: Changer mon mot de passe
             not_my_request: "Si vous n'avez pas demandé ce changement, ignorez ce message."
             unchange_password_message: "Votre mot de passe ne sera pas changé tant que vous n'aurez pas accédé au lien ci-dessus pour en créer un nouveau."
+        unlock:
+            locked_account_message: "Votre compte a été verrouillé à la suite d'un trop grand nombre de tentatives d'authentification."
+            unlock_account_instruction: "Cliquez sur le lien ci-dessous pour déverrouiller votre compte"
+            unlock_my_account: "Déverrouiller mon compte"
     company:
         name: Nom
         name_description: "ex: Ma compagnie Sprl"
