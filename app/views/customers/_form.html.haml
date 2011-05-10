@@ -41,27 +41,21 @@
         .column.right
           = a.label :country_id, t("assur.customer.country") + mark_required(@customer.address, :country_id), :class => :label
           = a.collection_select(:country_id, Country.all, :id, :name)
-
-.fieldset
-  .group
-    .columns.wat-cf 
-      .column.left.customertype.customertype1
-        = f.label :title_id, t("assur.customer.title") + mark_required(@customer, :title_id), :class => :label
-        = f.collection_select(:title_id, Title.all, :id, :name)
-      .column.right
-        = f.label :tva_number, t("assur.customer.Tva_number") + mark_required(@customer, :tva_number), :class => :label
-        = f.text_field :tva_number, :class => 'text_field'
-        %span.description= "#{t("assur.general.ie")} #{t("assur.general.ie_tva")}"
-  .group
-    .columns.wat-cf 
-      .column.left
-        = f.label :email, t("assur.customer.email") + mark_required(@customer, :email), :class => :label
-        = f.text_field :email, :class => 'text_field'
-        %span.description Ex: george.dupont@example.com
-      .column.right
-        = f.label :phone, t("assur.customer.phone") + mark_required(@customer, :phone), :class => :label
-        = f.text_field :phone, :class => 'text_field'
-        %span.description Ex: 0123 23 45 67
+.group.customertype.customertype1
+  = f.label :title_id, t("assur.customer.title") + mark_required(@customer, :title_id), :class => :label
+  = f.collection_select(:title_id, Title.all, :id, :name)
+.group
+  = f.label :tva_number, t("assur.customer.Tva_number") + mark_required(@customer, :tva_number), :class => :label
+  = f.text_field :tva_number, :class => 'text_field'
+  %span.description= "#{t("assur.general.ie")} #{t("assur.general.ie_tva")}"
+.group  
+  = f.label :email, t("assur.customer.email") + mark_required(@customer, :email), :class => :label
+  = f.text_field :email, :class => 'text_field'
+  %span.description Ex: george.dupont@example.com
+.group
+  = f.label :phone, t("assur.customer.phone") + mark_required(@customer, :phone), :class => :label
+  = f.text_field :phone, :class => 'text_field'
+  %span.description Ex: 0123 23 45 67
 .group
   = f.label :comment, t("assur.customer.comment") + mark_required(@customer, :comment), :class => :label
   = f.text_area :comment, :class => 'text_area', :rows => 5
