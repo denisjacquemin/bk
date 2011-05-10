@@ -18,6 +18,14 @@ class Customer < ActiveRecord::Base
   scope :active, where('deleted = ?', false)
   scope :latest, order('updated_at desc')
   
+  def number_of_bills_late
+    bills.where('status=3').active.count
+  end
+  
+  def number_of_bills_sent
+    bills.where('status=1').active.count
+  end
+  
   def fullname
     if customer_type == 1
       "#{self.firstname} #{self.lastname}"
