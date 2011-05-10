@@ -61,14 +61,13 @@ function computeGlobalTotal() {
     var globaltotal_tvac = 0.0;
     $$('.totaltvac').each(function(t){
         if (t.up('.product').visible()) {
-            globaltotal_tvac = globaltotal_tvac + parseFloat(t.innerHTML);
+            globaltotal_tvac = globaltotal_tvac + parseFloat(t.innerHTML.replace(',', '.'));
         }
     });
-    
     var globaltotal_htva = 0.0;
     $$('.totalhtva').each(function(t){
         if (t.up('.product').visible()) {
-            globaltotal_htva = globaltotal_htva + parseFloat(t.innerHTML);
+            globaltotal_htva = globaltotal_htva + parseFloat(t.innerHTML.replace(',', '.'));
         }
     });
     
