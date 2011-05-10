@@ -45,7 +45,7 @@ pdf.repeat :all do
   # Customer Address
   pdf.bounding_box [pdf.bounds.left+50, pdf.bounds.top - 130], :width  => 250 do
     unless @bill.customer.nil?
-      pdf.text "#{@bill.customer_firstname} #{@bill.customer_lastname}", :size => 12, :align => :left
+      pdf.text @bill.customer_fullname, :size => 12, :align => :left
       unless @bill.customer.address.nil?
         pdf.text "#{@bill.customer.address.number}, #{@bill.customer.address.street}", :size => 12, :align => :left
         pdf.text "#{@bill.customer.address.zipcode} #{@bill.customer.address.city}", :size => 12, :align => :left
