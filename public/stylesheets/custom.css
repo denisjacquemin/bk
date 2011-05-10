@@ -325,3 +325,16 @@ table#products.table tfoot {
 .group br {
     margin: 0 0 5px 0;
 }
+
+p i {
+    background: #FFFCC3;
+    font-style: normal;
+}
+
+#sidebar p {
+    line-height: 15px;
+}
+
+#sidebar {
+    padding: 20px 0 0 0;
+}
