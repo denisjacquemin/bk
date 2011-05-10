@@ -1,0 +1,6 @@
+- late = customer.number_of_bills_late
+- sent = customer.number_of_bills_sent
+- if late > 0
+  %span.github-label.github-label-red= "#{late} #{t('assur.status.late')}"
+- if sent > 0
+  %span.github-label.github-label-orange= "#{sent} #{t('assur.status.sent')}"
