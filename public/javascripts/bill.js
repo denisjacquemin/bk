@@ -19,6 +19,12 @@ document.observe('change', function(e, el) {
     }
 });
 
+$$('.ct').each(function(el){
+    el.onfocus = function() {
+      Form.Element.select(this);
+    } 
+});
+
 
 function computeTotalForAProduct(product) {
 
