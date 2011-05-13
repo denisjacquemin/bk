@@ -18,7 +18,7 @@ var CustomerFilter = Class.create({
   },
   
   filter: function(pattern) {
-    var re = new RegExp(pattern, 'i'); 
+    var re = new RegExp(pattern.toLowerCase(), 'i'); 
  
     this.rows().each(function(r){
 
@@ -26,6 +26,9 @@ var CustomerFilter = Class.create({
         
         r.childElements().each(function(c){
           var value = c.textContent ? c.textContent : c.innerText;
+          
+          value = value.toLowerCase();
+          
           
           if (re.test(value)) {
               found = true;
