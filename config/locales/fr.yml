@@ -1,4 +1,4 @@
-fr: 
+﻿fr: 
   assur:
     general:
       links: Liens
@@ -13,7 +13,7 @@ fr:
       created_on: créé le
       forgotpassword: Oublié mon mot de passe
       notyetregistered: Pas encore inscrit?
-      profile: Profile utilisateur
+      profile: Profil utilisateur
       logout: Déconnexion
       leave_blank_if_you_dont_want_to_change_it: Laisser blanc si vous ne voulez pas le changer
       we_need_current_password_to_change_it: Nous avons besoin de votre mot de passe courant pour pouvoir le changer
@@ -71,7 +71,7 @@ fr:
       cellphone: GSM
       fax: Fax
       phone: Téléphone
-      idnum: Numéro de carte d'identitée
+      idnum: Numéro de carte d'identité
       jobdescription: Profession
       comment: Commentaires
       cancelaccount: Annuler mon compte
@@ -123,7 +123,7 @@ fr:
     product:
         Product_name_description: Description article(s)
         Quantity: Quantité
-        Unit_price: Prix unitère (htva)
+        Unit_price: Prix unitaire (htva)
         VAT: TVA
         Total_VAT: Total (tvac)
         Total_HVAT: Total (htva)
@@ -135,9 +135,9 @@ fr:
         Customer_reference: Référence client
         Bill_reference: Référence facture
         header_product_description: Description article(s)
-        header_quantity: Quantitée
-        header_pu: Prix unitère
-        header_tva: TVA
+        header_quantity: Quantité
+        header_pu: Prix unitaire
+        header_tva: TV
         header_htva: Total htva
         header_tvac: Total tvac
         Bill: Facture
@@ -180,10 +180,10 @@ fr:
         bank_account_name: Compte Bancaire
         bank_account_name_description: "ex: Fortis IBAN BE35 210-1234567-24 BIC 686899"
         bank_account_help: "Indiquer les comptes bancaires en format IBAN ainsi que le code BIC (ex: IBAN BE35 210-1234567-24 BIC 686899)."
-        no_mandatory_field: "Aucun champ n'est obligatoire, seul les champs remplit seront affichés sur une facture."
+        no_mandatory_field: "Aucun champ n'est obligatoire, seuls les champs remplis seront affichés sur une facture."
         Add_bankaccout: Ajouter un compte bancaire
         bill_footer: Note de pied de page
-        bill_footer_desc: Ce texte est perssonalisable pour chaque facture
+        bill_footer_desc: Ce texte est personnalisable pour chaque facture
         Practical_information: Informations pratiques
         tel: Téléphone
         fax: Fax
@@ -379,11 +379,11 @@ fr:
         customer_id: Client
       products:
         quantity: quantitée
-        unit_price: Prix unitère
+        unit_price: Prix unitaire
 
 
   devise:
-    leave_blank: laissez ce champ vide si vous ne souhatez pas modifier votre mot de passe
+    leave_blank: laissez ce champ vide si vous ne souhaitez pas modifier votre mot de passe
     current_password_help: pour des raisons de sécurité, veuiller entrer votre mot de passe courant
     forgot_password: Oublié votre mot de passe?
     Connection: Connexion 
